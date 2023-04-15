@@ -1,0 +1,11 @@
+*.core
+*.dat
+*.fasl
+*.gif
+*.mp4
+*.obj
+*.png
+*.svg
+*.tmp
+system-index.txt
+tmp.lisp
