@@ -10,16 +10,7 @@
 (veq:fvdef* 2non-line (n (:va 2 a b))
   (declare #.*opt* (veq:pn n) (veq:ff a b))
   "n random points between a,b."
-  (veq:fwith-arrays (:n n :itr k
-    :arr ((arr 2))
-    :fxs ((f () (2on-line a b)))
-    :exs ((arr k (f))))
-    arr)
-  ; TODO: port. need to call m@fx for every line?
-  ; (labels ((fx () (2on-line a b)))
-  ;   (f2!@$+! (veq:f2$zero n) (@_ (m*@fx)))) prject with symbol around fx?
-  )
-
+  (f2!@$+! (veq:f2$zero n) (?@ (2on-line a b))))
 
 (veq:fvdef* 2in-rect ((:va 2 s))
   (declare #.*opt* (veq:ff s))
@@ -34,21 +25,12 @@
 (veq:fvdef* 2nin-rect (n (:va 2 s))
   (declare #.*opt* (veq:pn n) (veq:ff s))
   "n random points in rectangle of size sx,sy. centered at origin."
-  (veq:fwith-arrays (:n n :itr k
-    :arr ((a 2))
-    :fxs ((f () (2in-rect s)))
-    :exs ((a k (f))))
-    a))
+  (f2!@$+! (veq:f2$zero n) (?@ (2in-rect s))))
 
 (veq:fvdef* 2nin-square (n &optional (s 1f0))
   (declare #.*opt* (veq:pn n) (veq:ff s))
   "n random points in square of size s. centered at origin."
-  (veq:fwith-arrays (:n n :itr k
-    :arr ((a 2))
-    :fxs ((f () (2in-square s)))
-    :exs ((a k (f))))
-    a))
-
+  (f2!@$+! (veq:f2$zero n) (?@ (2in-square s))))
 
 (veq:fvdef* 2on-circ (&optional (r 1f0))
   (declare #.*opt* (veq:ff r))
@@ -58,11 +40,7 @@
 (veq:fvdef* 2non-circ (n &optional (r 1f0))
   (declare #.*opt* (veq:ff r))
   "n random points on circle with rad r. centered at origin."
-  (veq:fwith-arrays (:n n :itr k
-    :arr ((a 2))
-    :fxs ((f () (2on-circ r)))
-    :exs ((a k (f))))
-    a))
+  (f2!@$+! (veq:f2$zero n) (?@ (2on-circ r))))
 
 (veq:fvdef* 2in-circ (&optional (r 1f0))
   (declare #.*opt* (veq:ff r))
@@ -76,9 +54,5 @@
 (veq:fvdef* 2nin-circ (n &optional (r 1f0))
   (declare #.*opt* (veq:ff r))
   "n random points in circle with rad r. centered at origin."
-  (veq:fwith-arrays (:n n :itr k
-    :arr ((a 2))
-    :fxs ((f () (2in-circ r)))
-    :exs ((a k (f))))
-    a))
+  (f2!@$+! (veq:f2$zero n) (?@ (2in-circ r))))
 

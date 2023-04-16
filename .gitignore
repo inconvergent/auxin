@@ -9,3 +9,4 @@
 *.tmp
 system-index.txt
 tmp.lisp
+tmp*.lisp

@@ -58,7 +58,7 @@ view plane offset (xy) and scaling (s).
   (veq:f3let ((cam (veq:f3$ (ortho-cam proj)))
               (vpn (veq:f3$ (ortho-vpn proj))))
     (lambda ((:va 3 pt)) (declare (veq:ff pt))
-      (auxin:mvb (hit d) (veq:f3planex vpn cam pt (veq:f3+ pt vpn))
+      (auxin:mvb (hit d) (veq:f3planex vpn cam pt (f3!@+ pt vpn))
         (declare (boolean hit) (veq:ff d))
         (if hit d 0f0)))))
 
@@ -82,7 +82,7 @@ view plane offset (xy) and scaling (s).
                                 (ortho-raylen proj))))
     (lambda ((:va 3 pt))
       (declare #.*opt* (veq:ff pt))
-      (veq:~ pt (veq:f3+ pt dir)))))
+      (veq:~ pt (f3!@+ pt dir)))))
 
 (veq:fvdef make (&key (up (veq:f3$point 0f0 0f0 1f0))
                       (cam (veq:f3$point 1000f0 1000f0 1000f0))
@@ -162,11 +162,11 @@ view plane offset (xy) and scaling (s).
     (case axis
       (:pitch (veq:f3let ((pos (rot :cam :u))
                           (up (veq:f3norm (rot :up :u)))
-                          (vpn (veq:f3norm (veq:f3- pos (veq:f3$ look)))))
+                          (vpn (veq:f3norm (f3!@- pos (veq:f3$ look)))))
                 (update c :cam (_ pos) :vpn (_ vpn) :up (_ up))))
       (:yaw (veq:f3let ((pos (rot :cam :v))
                         (up (veq:f3norm (rot :up :v)))
-                        (vpn (veq:f3norm (veq:f3- pos (veq:f3$ look)))))
+                        (vpn (veq:f3norm (f3!@- pos (veq:f3$ look)))))
                 (update c :cam (_ pos) :vpn (_ vpn) :up (_ up))))
       (:roll (update c :up (veq:f3$point
                              (veq:f3rot (veq:f3$s ortho- c :up :vpn val))))))))
@@ -185,6 +185,7 @@ view plane offset (xy) and scaling (s).
                                                  #(d1 d2 ...)) "
   (with-struct (ortho- projfx dstfx) proj
     (declare (function projfx dstfx))
+    ; TODO: make this work somehow: (values (f2_@$projfx path ) (f_@$dstfx path))
     (veq:fwith-arrays (:n (veq:3$num path) :itr k
       :arr ((path 3 path) (p 2) (d 1))
       :fxs ((proj ((:va 3 x)) (declare #.*opt* (veq:ff x))

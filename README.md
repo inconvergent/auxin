@@ -10,7 +10,7 @@ This system is auxilary utilities i have found useful for working with
 generative algorithms it is primarily intended for use with my grph library
 (https://github.com/inconvergent/cl-grph) and my vector mathematics library
 (https://github.com/inconvergent/cl-veq). Auxin is a stripped down fork of
-weird (https://github.com/inconvergent/cl-veq).
+weird (https://github.com/inconvergent/weird).
 
 ![Elastic Web](img/web.png)
 
