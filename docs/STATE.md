@@ -1,9 +1,6 @@
 #### STATE:AWITH
 
 ```
-access state[key] as state:it,
-   the final form of body is assigned back to state[key]
-
  ; STATE:AWITH
  ;   [symbol]
  ; 
@@ -27,8 +24,6 @@ access state[key] as state:it,
 #### STATE:LGET
 
 ```
-get keys of state (or default)
-
  ; STATE:LGET
  ;   [symbol]
  ; 
@@ -44,8 +39,6 @@ get keys of state (or default)
 #### STATE:LSET
 
 ```
-set keys of st to v. returns keys
-
  ; STATE:LSET
  ;   [symbol]
  ; 
@@ -74,8 +67,6 @@ set keys of st to v. returns keys
 #### STATE:SGET
 
 ```
-get k of state (or default)
-
  ; STATE:SGET
  ;   [symbol]
  ; 
@@ -93,8 +84,6 @@ get k of state (or default)
 #### STATE:TO-LIST
 
 ```
-get state as alist
-
  ; STATE:TO-LIST
  ;   [symbol]
  ; 

@@ -1,8 +1,6 @@
 #### FN:FN
 
 ```
-generate file names using https://github.com/inconvergent/fn
-
  ; FN:FN
  ;   [symbol]
  ; 

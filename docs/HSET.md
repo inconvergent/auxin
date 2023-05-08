@@ -1,8 +1,6 @@
 #### HSET:ADD
 
 ```
-add e to fixnum set.
-
  ; HSET:ADD
  ;   [symbol]
  ; 
@@ -19,8 +17,6 @@ add e to fixnum set.
 #### HSET:ADD\*
 
 ```
-add sequence of fixnums to fixnum set.
-
  ; HSET:ADD*
  ;   [symbol]
  ; 
@@ -35,8 +31,6 @@ add sequence of fixnums to fixnum set.
 #### HSET:COPY
 
 ```
-copy fixnum set.
-
  ; HSET:COPY
  ;   [symbol]
  ; 
@@ -53,8 +47,6 @@ copy fixnum set.
 #### HSET:DEL
 
 ```
-del e from fixnum set.
-
  ; HSET:DEL
  ;   [symbol]
  ; 
@@ -71,8 +63,6 @@ del e from fixnum set.
 #### HSET:DEL\*
 
 ```
-del sequence of fixnum from fixnum set.
-
  ; HSET:DEL*
  ;   [symbol]
  ; 
@@ -87,8 +77,6 @@ del sequence of fixnum from fixnum set.
 #### HSET:INTER
 
 ```
-return new fixnum set which contains the intersection of a,b.
-
  ; HSET:INTER
  ;   [symbol]
  ; 
@@ -104,8 +92,6 @@ return new fixnum set which contains the intersection of a,b.
 #### HSET:MAKE
 
 ```
-create fixnum set. init (optional) is a list of integers.
-
  ; HSET:MAKE
  ;   [symbol]
  ; 
@@ -121,8 +107,6 @@ create fixnum set. init (optional) is a list of integers.
 #### HSET:MEM
 
 ```
-t if e is member of fixnum set s.
-
  ; HSET:MEM
  ;   [symbol]
  ; 
@@ -139,8 +123,6 @@ t if e is member of fixnum set s.
 #### HSET:MEM\*
 
 ```
-returns list with a boolean for each fixnum in sequence ee.
-
  ; HSET:MEM*
  ;   [symbol]
  ; 
@@ -155,8 +137,6 @@ returns list with a boolean for each fixnum in sequence ee.
 #### HSET:NUM
 
 ```
-count elements in fixnum set.
-
  ; HSET:NUM
  ;   [symbol]
  ; 
@@ -172,8 +152,6 @@ count elements in fixnum set.
 #### HSET:SYMDIFF
 
 ```
-return new fixnum set which contains the symmetric difference of a,b.
-
  ; HSET:SYMDIFF
  ;   [symbol]
  ; 
@@ -189,8 +167,6 @@ return new fixnum set which contains the symmetric difference of a,b.
 #### HSET:TO-LIST
 
 ```
-get unordered list of elements in fixnum set.
-
  ; HSET:TO-LIST
  ;   [symbol]
  ; 
@@ -205,8 +181,6 @@ get unordered list of elements in fixnum set.
 #### HSET:UNI
 
 ```
-return new fixnum set which contains the union of a,b.
-
  ; HSET:UNI
  ;   [symbol]
  ; 

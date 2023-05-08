@@ -1,7 +1,7 @@
 
 (in-package #:auxin-tests)
 
-(plan 1)
+(plan 2)
 
 
 (subtest "bzspl"
@@ -39,6 +39,7 @@
                 98.79012 -5.0617294 83.9753 -10.0 50.0)
         :test #'equalp)
 
+
     (is (bzspl:pos* (bzspl:make pts-b :closed t) (math:linspace 10 0f0 1f0))
         #(-10.0 50.0 1.1111113 10.666667 12.777779 20.222223 55.0 60.0 72.11111
                 69.55556 20.055546 10.166655 -1.5 -6.5 -4.611115 23.944466
@@ -57,8 +58,20 @@
           -1.6050373 3.9095097 -2.1377919 3.9621549 -2.0189571 3.4709005 -1.0625432
           1.8142115 -0.3262586 0.9360465 0.15631074 0.71509457 0.5 1.0)
         :test #'equalp)
-    (is (bzspl:len (bzspl:make pts-a)) 225.00311)
+    (is (bzspl:len (bzspl:make pts-a)) 225.00311) ; len uses adaptive-pos inside
     (is (bzspl:len (bzspl:make pts-a :closed t)) 275.0494)))
+
+(subtest "bzspl2"
+  (veq:fvprogn
+    (let ((bz (bzspl:make
+                (veq:f$_ `((-20.0f0 99.0f0) (0.0f0 1.0f0) (10.0f0 20.0f0) (100.0f0 100.0f0)))
+                :closed t)))
+      (labels ((fx (a) (bzspl:pos bz a)))
+        (is (f12_@$fx (veq:f$lspace 10 0f0 1f0))
+             #(-10.0 50.0 -2.0987654 18.0 3.8271606 9.111111 12.777779 20.222223
+             36.97531 43.728394 69.81482 75.77778 68.33333 95.33334 27.530859
+             98.79012 -5.0617294 83.9753 -10.0 50.0)
+             :test #'equalp)))))
 
 (unless (finalize) (error "error in bzspl tests"))
 

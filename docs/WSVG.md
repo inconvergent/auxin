@@ -53,11 +53,6 @@
 #### WSVG:BZSPL
 
 ```
-draw quadratic bezier from 2d vector array (veq:fvec) or list of lists.
-use fill, stroke, sw, so, fo, as described in wsvg:make to override.
-if closed is t, the path will join back to the initial coordinate.
-must provide at least three points.
-
  ; WSVG:BZSPL
  ;   [symbol]
  ; 
@@ -88,8 +83,6 @@ must provide at least three points.
 #### WSVG:CIRC
 
 ```
-draw a circle of radius rad at xy. defaults to origin.
-
  ; WSVG:CIRC
  ;   [symbol]
  ; 
@@ -124,17 +117,14 @@ draw a circle of radius rad at xy. defaults to origin.
 #### WSVG:DRAW
 
 ```
-draw any svg dpath from string d
-ex: M20,230 Q40,205 50,230 T90,230
-
  ; WSVG:DRAW
  ;   [symbol]
  ; 
  ; DRAW names a compiled function:
  ;   Lambda-list: (WSVG D &KEY SW STROKE FILL SO FO)
  ;   Derived type: (FUNCTION
- ;                  (WSVG::WSVG VECTOR &KEY (:SW T) (:STROKE T) (:FILL T)
- ;                   (:SO T) (:FO T))
+ ;                  (WSVG::WSVG VECTOR &KEY (:SW T) (:FILL T) (:STROKE T)
+ ;                   (:FO T) (:SO T))
  ;                  (VALUES T &OPTIONAL))
  ;   Documentation:
  ;     draw any svg dpath from string d
@@ -154,12 +144,6 @@ ex: M20,230 Q40,205 50,230 T90,230
 #### WSVG:JPATH
 
 ```
-draw jpath from 2d vector array (veq:fvec) or list of lists.
-a jpath is a wide line emulation useful for drawing wide lines in plotter drawings.
-- ns: sets the number of parallel lines used to fill
-- rs: set fill repetiton scale. you must set either rs or ns.
-- width: width of emulated path.
-
  ; WSVG:JPATH
  ;   [symbol]
  ; 
@@ -183,15 +167,6 @@ a jpath is a wide line emulation useful for drawing wide lines in plotter drawin
 #### WSVG:MAKE
 
 ```
-make wsvg instance for drawing svgs.
-- layout: :a4-landscape, :a4-portrait or corresponding values for a3 and a2
-- stroke sets default stroke color. default is black
-- stroke-width (sw) sets default width. default is 1.1
-- rep-scale (rs) sets the default repetition density for functions that perform any
-  kind of hatching or wide line emulation.
-- stroke-opacity (so) sets default opacity. default is 1.0
-- fill-opacity (fo) sets default fill opacity. default is 1.0
-
  ; WSVG:MAKE
  ;   [symbol]
  ; 
@@ -218,11 +193,6 @@ make wsvg instance for drawing svgs.
 #### WSVG:MAKE\*
 
 ```
-make wsvg instance for drawing svgs.
-- height: default 1000.0
-- width: default 1000.0
-remaining arguments are identical to wsvg:make.
-
  ; WSVG:MAKE*
  ;   [symbol]
  ; 
@@ -245,11 +215,6 @@ remaining arguments are identical to wsvg:make.
 #### WSVG:PATH
 
 ```
-draw path from 2d vector array (veq:fvec) or list of lists
-such as ((1f0 2f0) (3f0 4f0)).
-use fill, stroke, sw, so, fo, as described in wsvg:make
-if closed is t, the path will join back to the initial coordinate.
-
  ; WSVG:PATH
  ;   [symbol]
  ; 
@@ -271,8 +236,6 @@ if closed is t, the path will join back to the initial coordinate.
 #### WSVG:RECT
 
 ```
-draw a rectangle of size w,h at xy. defaults to origin.
-
  ; WSVG:RECT
  ;   [symbol]
  ; 
@@ -290,8 +253,6 @@ draw a rectangle of size w,h at xy. defaults to origin.
 #### WSVG:SAVE
 
 ```
-save wsvg as fn
-
  ; WSVG:SAVE
  ;   [symbol]
  ; 
@@ -306,8 +267,6 @@ save wsvg as fn
 #### WSVG:SIGN
 
 ```
-write str along the edge at :tl, :tr :bl or :br (default). shift with x,y
-
  ; WSVG:SIGN
  ;   [symbol]
  ; 
@@ -326,8 +285,6 @@ write str along the edge at :tl, :tr :bl or :br (default). shift with x,y
 #### WSVG:SQUARE
 
 ```
-draw a square of size s at xy. defaults to origin.
-
  ; WSVG:SQUARE
  ;   [symbol]
  ; 
@@ -362,8 +319,6 @@ draw a square of size s at xy. defaults to origin.
 #### WSVG:WCIRC
 
 ```
-draw a circled filled with concentric circles. use rs to set density.
-
  ; WSVG:WCIRC
  ;   [symbol]
  ; 

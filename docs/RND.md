@@ -1,11 +1,6 @@
 #### RND:2IN-CIRC
 
 ```
-WRAPS: %2IN-CIRC
-ARGS: (&OPTIONAL (R 1.0))
-DOCSTRING: random point in circle with rad r. centered at origin.
-defined via veq:FVDEF*
-
  ; RND:2IN-CIRC
  ;   [symbol]
  ; 
@@ -22,11 +17,6 @@ defined via veq:FVDEF*
 #### RND:2IN-RECT
 
 ```
-WRAPS: %2IN-RECT
-ARGS: ((VA 2 S))
-DOCSTRING: random point in rectangle of size sx,sy. centered at origin.
-defined via veq:FVDEF*
-
  ; RND:2IN-RECT
  ;   [symbol]
  ; 
@@ -43,11 +33,6 @@ defined via veq:FVDEF*
 #### RND:2IN-SQUARE
 
 ```
-WRAPS: %2IN-SQUARE
-ARGS: (&OPTIONAL (S 1.0))
-DOCSTRING: random point in square of size s. centered at origin.
-defined via veq:FVDEF*
-
  ; RND:2IN-SQUARE
  ;   [symbol]
  ; 
@@ -64,11 +49,6 @@ defined via veq:FVDEF*
 #### RND:2NIN-CIRC
 
 ```
-WRAPS: %2NIN-CIRC
-ARGS: (N &OPTIONAL (R 1.0))
-DOCSTRING: n random points in circle with rad r. centered at origin.
-defined via veq:FVDEF*
-
  ; RND:2NIN-CIRC
  ;   [symbol]
  ; 
@@ -85,11 +65,6 @@ defined via veq:FVDEF*
 #### RND:2NIN-RECT
 
 ```
-WRAPS: %2NIN-RECT
-ARGS: (N (VA 2 S))
-DOCSTRING: n random points in rectangle of size sx,sy. centered at origin.
-defined via veq:FVDEF*
-
  ; RND:2NIN-RECT
  ;   [symbol]
  ; 
@@ -106,11 +81,6 @@ defined via veq:FVDEF*
 #### RND:2NIN-SQUARE
 
 ```
-WRAPS: %2NIN-SQUARE
-ARGS: (N &OPTIONAL (S 1.0))
-DOCSTRING: n random points in square of size s. centered at origin.
-defined via veq:FVDEF*
-
  ; RND:2NIN-SQUARE
  ;   [symbol]
  ; 
@@ -127,11 +97,6 @@ defined via veq:FVDEF*
 #### RND:2NON-CIRC
 
 ```
-WRAPS: %2NON-CIRC
-ARGS: (N &OPTIONAL (R 1.0))
-DOCSTRING: n random points on circle with rad r. centered at origin.
-defined via veq:FVDEF*
-
  ; RND:2NON-CIRC
  ;   [symbol]
  ; 
@@ -148,11 +113,6 @@ defined via veq:FVDEF*
 #### RND:2NON-LINE
 
 ```
-WRAPS: %2NON-LINE
-ARGS: (N (VA 2 A B))
-DOCSTRING: n random points between a,b.
-defined via veq:FVDEF*
-
  ; RND:2NON-LINE
  ;   [symbol]
  ; 
@@ -178,11 +138,6 @@ defined via veq:FVDEF*
 #### RND:2ON-CIRC
 
 ```
-WRAPS: %2ON-CIRC
-ARGS: (&OPTIONAL (R 1.0))
-DOCSTRING: random point on circle with rad r. centered at origin.
-defined via veq:FVDEF*
-
  ; RND:2ON-CIRC
  ;   [symbol]
  ; 
@@ -199,11 +154,6 @@ defined via veq:FVDEF*
 #### RND:2ON-LINE
 
 ```
-WRAPS: %2ON-LINE
-ARGS: ((VA 2 A B))
-DOCSTRING: random point between a,b.
-defined via veq:FVDEF*
-
  ; RND:2ON-LINE
  ;   [symbol]
  ; 
@@ -229,11 +179,6 @@ defined via veq:FVDEF*
 #### RND:2WALKER
 
 ```
-WRAPS: %2WALKER
-ARGS: ((VA 2 X))
-DOCSTRING: random 2d walker.
-defined via veq:FVDEF*
-
  ; RND:2WALKER
  ;   [symbol]
  ; 
@@ -250,11 +195,6 @@ defined via veq:FVDEF*
 #### RND:2WALKER-ACC
 
 ```
-WRAPS: %2WALKER-ACC
-ARGS: ((VA 2 X A))
-DOCSTRING: accelerated random 2d walker.
-defined via veq:FVDEF*
-
  ; RND:2WALKER-ACC
  ;   [symbol]
  ; 
@@ -271,11 +211,6 @@ defined via veq:FVDEF*
 #### RND:3IN-BOX
 
 ```
-WRAPS: %3IN-BOX
-ARGS: ((VA 3 S))
-DOCSTRING: random point in box of size sx,sy,sz. centered at origin.
-defined via veq:FVDEF*
-
  ; RND:3IN-BOX
  ;   [symbol]
  ; 
@@ -292,11 +227,6 @@ defined via veq:FVDEF*
 #### RND:3IN-CUBE
 
 ```
-WRAPS: %3IN-CUBE
-ARGS: (&OPTIONAL (S 1.0))
-DOCSTRING: random point in cube of size s. centered at origin.
-defined via veq:FVDEF*
-
  ; RND:3IN-CUBE
  ;   [symbol]
  ; 
@@ -313,8 +243,6 @@ defined via veq:FVDEF*
 #### RND:3IN-SPHERE
 
 ```
-random point in sphere with rad r. centered at origin.
-
  ; RND:3IN-SPHERE
  ;   [symbol]
  ; 
@@ -332,11 +260,6 @@ random point in sphere with rad r. centered at origin.
 #### RND:3NIN-BOX
 
 ```
-WRAPS: %3NIN-BOX
-ARGS: (N (VA 3 S))
-DOCSTRING: n random points in box of size sx,sy,sz. centered at origin.
-defined via veq:FVDEF*
-
  ; RND:3NIN-BOX
  ;   [symbol]
  ; 
@@ -353,8 +276,6 @@ defined via veq:FVDEF*
 #### RND:3NIN-CUBE
 
 ```
-n random points in cube of size sx. centered at origin.
-
  ; RND:3NIN-CUBE
  ;   [symbol]
  ; 
@@ -370,8 +291,6 @@ n random points in cube of size sx. centered at origin.
 #### RND:3NIN-SPHERE
 
 ```
-n random points in sphere with rad r. centered at origin.
-
  ; RND:3NIN-SPHERE
  ;   [symbol]
  ; 
@@ -388,11 +307,6 @@ n random points in sphere with rad r. centered at origin.
 #### RND:3NON-LINE
 
 ```
-WRAPS: %3NON-LINE
-ARGS: (N (VA 3 A B))
-DOCSTRING: n random points between a,b.
-defined via veq:FVDEF*
-
  ; RND:3NON-LINE
  ;   [symbol]
  ; 
@@ -418,8 +332,6 @@ defined via veq:FVDEF*
 #### RND:3NON-SPHERE
 
 ```
-n random points on sphere with rad r. centered at origin.
-
  ; RND:3NON-SPHERE
  ;   [symbol]
  ; 
@@ -436,11 +348,6 @@ n random points on sphere with rad r. centered at origin.
 #### RND:3ON-LINE
 
 ```
-WRAPS: %3ON-LINE
-ARGS: ((VA 3 A B))
-DOCSTRING: random point between a,b.
-defined via veq:FVDEF*
-
  ; RND:3ON-LINE
  ;   [symbol]
  ; 
@@ -466,8 +373,6 @@ defined via veq:FVDEF*
 #### RND:3ON-SPHERE
 
 ```
-random point on sphere with rad r. centered at origin.
-
  ; RND:3ON-SPHERE
  ;   [symbol]
  ; 
@@ -485,11 +390,6 @@ random point on sphere with rad r. centered at origin.
 #### RND:3WALKER
 
 ```
-WRAPS: %3WALKER
-ARGS: ((VA 3 X))
-DOCSTRING: random 3d walker.
-defined via veq:FVDEF*
-
  ; RND:3WALKER
  ;   [symbol]
  ; 
@@ -506,11 +406,6 @@ defined via veq:FVDEF*
 #### RND:3WALKER-ACC
 
 ```
-WRAPS: %3WALKER-ACC
-ARGS: ((VA 3 X A))
-DOCSTRING: accelerated random 3d walker.
-defined via veq:FVDEF*
-
  ; RND:3WALKER-ACC
  ;   [symbol]
  ; 
@@ -536,8 +431,6 @@ defined via veq:FVDEF*
 #### RND:BERNOULLI
 
 ```
-n random numbers from bernoulli distribution with mean p.
-
  ; RND:BERNOULLI
  ;   [symbol]
  ; 
@@ -553,8 +446,6 @@ n random numbers from bernoulli distribution with mean p.
 #### RND:EITHER
 
 ```
-excecutes either a or b, with a probablility of 0.5. b is optional.
-
  ; RND:EITHER
  ;   [symbol]
  ; 
@@ -568,8 +459,6 @@ excecutes either a or b, with a probablility of 0.5. b is optional.
 #### RND:MAKE-RND-STATE
 
 ```
-generate a new random state.
-
  ; RND:MAKE-RND-STATE
  ;   [symbol]
  ; 
@@ -593,9 +482,6 @@ generate a new random state.
 #### RND:NORM
 
 ```
-two random numbers from normal distribution with (mu 0f0) and (sigma 1f0).
-generated using the box-muller transform.
-
  ; RND:NORM
  ;   [symbol]
  ; 
@@ -614,8 +500,6 @@ generated using the box-muller transform.
 #### RND:NRND
 
 ```
-n random floates below x.
-
  ; RND:NRND
  ;   [symbol]
  ; 
@@ -632,8 +516,6 @@ n random floates below x.
 #### RND:NRND\*
 
 ```
-n random floats in range (x -x).
-
  ; RND:NRND*
  ;   [symbol]
  ; 
@@ -650,8 +532,6 @@ n random floats in range (x -x).
 #### RND:NRND-FROM
 
 ```
-n random elements from a.
-
  ; RND:NRND-FROM
  ;   [symbol]
  ; 
@@ -667,8 +547,6 @@ n random elements from a.
 #### RND:NRND-FROM\*
 
 ```
-n random distinct elements from a. assumes no dupes in a.
-
  ; RND:NRND-FROM*
  ;   [symbol]
  ; 
@@ -684,8 +562,6 @@ n random distinct elements from a. assumes no dupes in a.
 #### RND:NRNDI
 
 ```
-n random fixnums in range: (0 a].
-
  ; RND:NRNDI
  ;   [symbol]
  ; 
@@ -702,8 +578,6 @@ n random fixnums in range: (0 a].
 #### RND:NRNDRNG
 
 ```
-n random floats in range (a b).
-
  ; RND:NRNDRNG
  ;   [symbol]
  ; 
@@ -721,8 +595,6 @@ n random floats in range (a b).
 #### RND:NRNDRNGI
 
 ```
-n fixnums in range [a b).
-
  ; RND:NRNDRNGI
  ;   [symbol]
  ; 
@@ -739,10 +611,6 @@ n fixnums in range [a b).
 #### RND:PROB
 
 ```
-evaluate first form in body with probability p.
-second form (optional) is executed with probability 1-p.
-ex: (prob 0.1 (print :a) (print :b)) ; returns :a or :b
-
  ; RND:PROB
  ;   [symbol]
  ; 
@@ -758,9 +626,6 @@ ex: (prob 0.1 (print :a) (print :b)) ; returns :a or :b
 #### RND:PROB\*
 
 ```
-evaluate body with probability p. returns the last form as if in a progn.
-ex: (prob 0.1 (print :a) (print :b)) ; returns :b
-
  ; RND:PROB*
  ;   [symbol]
  ; 
@@ -775,10 +640,6 @@ ex: (prob 0.1 (print :a) (print :b)) ; returns :b
 #### RND:RCOND
 
 ```
-executes the forms in clauses according to the probability of the weighted sum
-ex: (rcond (0.1 (print :a)) (0.3 (print :b)) ...)
-will print :a 1 times out of 4.
-
  ; RND:RCOND
  ;   [symbol]
  ; 
@@ -794,8 +655,6 @@ will print :a 1 times out of 4.
 #### RND:REP
 
 ```
-repeat body at most a times, or between a and b times.
-
  ; RND:REP
  ;   [symbol]
  ; 
@@ -809,8 +668,6 @@ repeat body at most a times, or between a and b times.
 #### RND:RND
 
 ```
-random float below x.
-
  ; RND:RND
  ;   [symbol]
  ; 
@@ -827,8 +684,6 @@ random float below x.
 #### RND:RND\*
 
 ```
-random float in range (-x x).
-
  ; RND:RND*
  ;   [symbol]
  ; 
@@ -845,8 +700,6 @@ random float in range (-x x).
 #### RND:RNDGET
 
 ```
-get random item from sequence l.
-
  ; RND:RNDGET
  ;   [symbol]
  ; 
@@ -861,8 +714,6 @@ get random item from sequence l.
 #### RND:RNDI
 
 ```
-random fixnum in range (0 a].
-
  ; RND:RNDI
  ;   [symbol]
  ; 
@@ -879,8 +730,6 @@ random fixnum in range (0 a].
 #### RND:RNDRNG
 
 ```
-random float in range (a b).
-
  ; RND:RNDRNG
  ;   [symbol]
  ; 
@@ -897,8 +746,6 @@ random float in range (a b).
 #### RND:RNDRNGI
 
 ```
-random fixnum in range (a b].
-
  ; RND:RNDRNGI
  ;   [symbol]
  ; 
@@ -917,8 +764,6 @@ random fixnum in range (a b].
 #### RND:RNDSPACE
 
 ```
-n random numbers in range (a b). use :order t to sort result.
-
  ; RND:RNDSPACE
  ;   [symbol]
  ; 
@@ -936,8 +781,6 @@ n random numbers in range (a b). use :order t to sort result.
 #### RND:RNDSPACEI
 
 ```
-n random fixnums in range [a b). use order to sort result.
-
  ; RND:RNDSPACEI
  ;   [symbol]
  ; 
@@ -954,8 +797,6 @@ n random fixnums in range [a b). use order to sort result.
 #### RND:SET-RND-STATE
 
 ```
-use this random seed. only implemented for SBCL.
-
  ; RND:SET-RND-STATE
  ;   [symbol]
  ; 
@@ -970,8 +811,6 @@ use this random seed. only implemented for SBCL.
 #### RND:SHUFFLE
 
 ```
-shuffle a with fisher yates algorithm.
-
  ; RND:SHUFFLE
  ;   [symbol]
  ; 
@@ -987,8 +826,6 @@ shuffle a with fisher yates algorithm.
 #### RND:WALKER
 
 ```
-random walker.
-
  ; RND:WALKER
  ;   [symbol]
  ; 
@@ -1004,8 +841,6 @@ random walker.
 #### RND:WALKER-ACC
 
 ```
-accelerated random walker.
-
  ; RND:WALKER-ACC
  ;   [symbol]
  ; 

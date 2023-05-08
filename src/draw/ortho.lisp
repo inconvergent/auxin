@@ -27,11 +27,11 @@ view plane offset (xy) and scaling (s).
   (rayfx #'3identity :type function :read-only nil))
 
 (declaim (inline @cam @s @up @vpn @xy))
-(veq:fvdef @cam (proj) (veq:f3$ (ortho-cam proj)))
+(veq:fvdef @cam (proj) (veq:f3$s proj ortho- :cam))
 (veq:fvdef @s (proj) (ortho-s proj))
-(veq:fvdef @up (proj) (veq:f3$ (ortho-up proj)))
-(veq:fvdef @vpn (proj) (veq:f3$ (ortho-vpn proj)))
-(veq:fvdef @xy (proj) (veq:f2$ (ortho-xy proj)))
+(veq:fvdef @up (proj) (veq:f3$s proj ortho- :up))
+(veq:fvdef @vpn (proj) (veq:f3$s proj ortho- :vpn))
+(veq:fvdef @xy (proj) (veq:f2$s proj ortho- :xy))
 
 
 (veq:fvdef -get-u-v (up* vpn* &optional (s 1f0))
@@ -39,24 +39,23 @@ view plane offset (xy) and scaling (s).
   (veq:f3let ((up (veq:f3$ up*))
               (vpn (veq:f3$ vpn*)))
 
-    (unless (< (abs (veq:f3. up vpn)) #.(- 1f0 veq:*eps*))
+    (unless (< (abs (veq:f3dot up vpn)) #.(- 1f0 veq:*eps*))
             (error "ortho: gimbal lock.~%up: ~a~%vpn: ~a" up* vpn*))
 
-    (veq:f3let ((v (veq:f3norm (veq:f3neg (veq:f3from up vpn
-                                            (- (veq:f3. up vpn))))))
+    (veq:f3let ((v (veq:f3norm (f3.@- (veq:f3from up vpn (- (veq:f3dot up vpn))))))
                 (u (veq:f3rot v vpn veq:fpi5)))
       (veq:~ u v (veq:f3scale u s) (veq:f3scale v s)))))
 
 
 (veq:fvdef -look (cam look)
   (declare #.*opt* (veq:fvec cam look))
-  (veq:f3$point (veq:f3norm (veq:f3- (veq:f3$ cam) (veq:f3$ look)))))
+  (veq:f3$point (veq:f3norm (f3!@- (veq:f3$ cam) (veq:f3$ look)))))
 
 (veq:fvdef make-dstfx (proj)
   (declare #.*opt*)
   "distance from pt to camera plane with current parameters"
-  (veq:f3let ((cam (veq:f3$ (ortho-cam proj)))
-              (vpn (veq:f3$ (ortho-vpn proj))))
+  (veq:f3let ((cam (@cam proj))
+              (vpn (@vpn proj)))
     (lambda ((:va 3 pt)) (declare (veq:ff pt))
       (auxin:mvb (hit d) (veq:f3planex vpn cam pt (f3!@+ pt vpn))
         (declare (boolean hit) (veq:ff d))
@@ -65,20 +64,20 @@ view plane offset (xy) and scaling (s).
 (veq:fvdef make-projfx (proj)
   (declare #.*opt*)
   "function to project pt into 2d with current parameters"
-  (veq:f3let ((su (veq:f3$ (ortho-su proj)))
-              (sv (veq:f3$ (ortho-sv proj)))
-              (cam (veq:f3$ (ortho-cam proj))))
-    (auxin:mvb (x y) (veq:f2$ (ortho-xy proj))
+  (veq:f3let ((su (veq:f3$s proj ortho- :su))
+              (sv (veq:f3$s proj ortho- :sv))
+              (cam (@cam proj)))
+    (auxin:mvb (x y) (@xy proj)
       (declare (veq:ff x y))
       (lambda ((:va 3 pt))
         (declare #.*opt* (veq:ff pt))
-        (veq:f3let ((pt* (veq:f3- pt cam)))
-          (veq:f2 (+ x (veq:f3. su pt*)) (+ y (veq:f3. sv pt*))))))))
+        (veq:f3let ((pt* (f3!@- pt cam)))
+          (veq:f2 (+ x (veq:f3dot su pt*)) (+ y (veq:f3dot sv pt*))))))))
 
 (veq:fvdef make-rayfx (proj)
   (declare #.*opt* (ortho proj))
   "cast a ray in direction -vpn from pt"
-  (veq:f3let ((dir (veq:f3scale (veq:f3neg (veq:f3$ (ortho-vpn proj)))
+  (veq:f3let ((dir (veq:f3scale (f3.@- (@vpn proj))
                                 (ortho-raylen proj))))
     (lambda ((:va 3 pt))
       (declare #.*opt* (veq:ff pt))
@@ -144,10 +143,10 @@ view plane offset (xy) and scaling (s).
         (auxin:mvb ((:va 3 u v su sv))
                    (-get-u-v (ortho-up proj) (ortho-vpn proj) (ortho-s proj))
           (declare (veq:ff u v su sv))
-          (setf (veq:3$ (ortho-u proj)) (list u)
-                (veq:3$ (ortho-v proj)) (list v)
-                (veq:3$ (ortho-su proj)) (list su)
-                (veq:3$ (ortho-sv proj)) (list sv))))
+          (setf (veq:3$ (ortho-u proj)) (values u)
+                (veq:3$ (ortho-v proj)) (values v)
+                (veq:3$ (ortho-su proj)) (values su)
+                (veq:3$ (ortho-sv proj)) (values sv))))
 
   (setf (ortho-dstfx proj) (make-dstfx proj)
         (ortho-projfx proj) (make-projfx proj)
@@ -158,7 +157,7 @@ view plane offset (xy) and scaling (s).
   (declare (ortho c) (keyword axis) (veq:ff val) (veq:fvec look))
   (unless (> (abs val) 0) (return-from around nil))
   (macrolet ((_ (&rest rest) `(veq:fvprogn (veq:f_ (veq:lst ,@rest))))
-             (rot (a b) `(veq:fvprogn (veq:f3rots (veq:f3$s ortho- c ,a ,b val) 0f0 0f0 0f0))))
+             (rot (a b) `(veq:fvprogn (veq:f3rots (veq:f3$s c ortho- ,a ,b val) 0f0 0f0 0f0))))
     (case axis
       (:pitch (veq:f3let ((pos (rot :cam :u))
                           (up (veq:f3norm (rot :up :u)))
@@ -169,7 +168,7 @@ view plane offset (xy) and scaling (s).
                         (vpn (veq:f3norm (f3!@- pos (veq:f3$ look)))))
                 (update c :cam (_ pos) :vpn (_ vpn) :up (_ up))))
       (:roll (update c :up (veq:f3$point
-                             (veq:f3rot (veq:f3$s ortho- c :up :vpn val))))))))
+                             (veq:f3rot (veq:f3$s c ortho- :up :vpn val))))))))
 
 
 (veq:fvdef* project (proj (:va 3 pt))
@@ -181,20 +180,11 @@ view plane offset (xy) and scaling (s).
 (veq:vdef project* (proj path)
   (declare #.*opt* (ortho proj) (veq:fvec path))
   "project a path #(x1 y1 z1 x2 y2 z2 ...).
-   returns projected path and distances: (values #(px1 py1 px2 py2 ...)
-                                                 #(d1 d2 ...)) "
-  (with-struct (ortho- projfx dstfx) proj
-    (declare (function projfx dstfx))
-    ; TODO: make this work somehow: (values (f2_@$projfx path ) (f_@$dstfx path))
-    (veq:fwith-arrays (:n (veq:3$num path) :itr k
-      :arr ((path 3 path) (p 2) (d 1))
-      :fxs ((proj ((:va 3 x)) (declare #.*opt* (veq:ff x))
-                    (funcall projfx x))
-            (dst ((:va 3 x)) (declare #.*opt* (veq:ff x))
-                    (funcall dstfx x)))
-      :exs ((p k (proj path))
-            (d k (dst path))))
-      (values p d))))
+   returns projected path and distances:
+(values #(px1 py1 px2 py2 ...) #(d1 d2 ...))"
+  (labels ((projfx ((:va 3 x)) (funcall (ortho-projfx proj) x))
+           (dstfx ((:va 3 x)) (funcall (ortho-dstfx proj) x)))
+    (values (f32_@$projfx path) (f31_@$dstfx path))))
 
 (defun export-data (p)
   (declare (ortho p))

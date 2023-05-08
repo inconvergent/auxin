@@ -1,8 +1,6 @@
 #### MATH:ADD
 
 ```
-element wise + for two lists of FIXNUM
-
  ; MATH:ADD
  ;   [symbol]
  ; 
@@ -17,9 +15,6 @@ element wise + for two lists of FIXNUM
 #### MATH:ARGMAX
 
 ```
-returns (values iv v).
-where iv is the index of v and v is the highest value in ll.
-
  ; MATH:ARGMAX
  ;   [symbol]
  ; 
@@ -36,9 +31,6 @@ where iv is the index of v and v is the highest value in ll.
 #### MATH:ARGMIN
 
 ```
-returns (values iv v).
-where iv is the index of v and v is the smallest value in ll.
-
  ; MATH:ARGMIN
  ;   [symbol]
  ; 
@@ -55,8 +47,6 @@ where iv is the index of v and v is the smallest value in ll.
 #### MATH:CLOSE-PATH
 
 ```
-append first element of p to end of p.
-
  ; MATH:CLOSE-PATH
  ;   [symbol]
  ; 
@@ -71,8 +61,6 @@ append first element of p to end of p.
 #### MATH:CLOSE-PATH\*
 
 ```
-append last element of p to front of p.
-
  ; MATH:CLOSE-PATH*
  ;   [symbol]
  ; 
@@ -87,8 +75,6 @@ append last element of p to front of p.
 #### MATH:COPY-SORT
 
 ```
-sort a without side effects to a. not very efficent.
-
  ; MATH:COPY-SORT
  ;   [symbol]
  ; 
@@ -104,8 +90,6 @@ sort a without side effects to a. not very efficent.
 #### MATH:IMOD
 
 ```
-(mod (+ i inc) m) for fixnums
-
  ; MATH:IMOD
  ;   [symbol]
  ; 
@@ -123,8 +107,6 @@ sort a without side effects to a. not very efficent.
 #### MATH:INTEGER-SEARCH
 
 ```
-binary integer search. assumes presorted list of integers
-
  ; MATH:INTEGER-SEARCH
  ;   [symbol]
  ; 
@@ -172,8 +154,6 @@ binary integer search. assumes presorted list of integers
 #### MATH:LINSPACE
 
 ```
-n veq:ffs from a to b.
-
  ; MATH:LINSPACE
  ;   [symbol]
  ; 
@@ -191,8 +171,6 @@ n veq:ffs from a to b.
 #### MATH:LIST>THAN
 
 ```
-list is longer than n?
-
  ; MATH:LIST>THAN
  ;   [symbol]
  ; 
@@ -208,9 +186,6 @@ list is longer than n?
 #### MATH:LL-TRANSPOSE
 
 ```
-transpose list of lists.
-assumes all initial lists in l have the same length.
-
  ; MATH:LL-TRANSPOSE
  ;   [symbol]
  ; 
@@ -226,8 +201,6 @@ assumes all initial lists in l have the same length.
 #### MATH:LPOS
 
 ```
-apply fx to every element in ll. 
-
  ; MATH:LPOS
  ;   [symbol]
  ; 
@@ -243,8 +216,6 @@ apply fx to every element in ll.
 #### MATH:MOD2
 
 ```
-(mod i 2) for fixnums.
-
  ; MATH:MOD2
  ;   [symbol]
  ; 
@@ -259,8 +230,6 @@ apply fx to every element in ll.
 #### MATH:MULT
 
 ```
-element wise * for two lists of FIXNUM
-
  ; MATH:MULT
  ;   [symbol]
  ; 
@@ -275,8 +244,6 @@ element wise * for two lists of FIXNUM
 #### MATH:NREP
 
 ```
-returns list with body :evaluated: n times.
-
  ; MATH:NREP
  ;   [symbol]
  ; 
@@ -290,8 +257,6 @@ returns list with body :evaluated: n times.
 #### MATH:RANGE
 
 ```
-fixnums from 0 to a, or a to b.
-
  ; MATH:RANGE
  ;   [symbol]
  ; 
@@ -306,9 +271,6 @@ fixnums from 0 to a, or a to b.
 #### MATH:RANGE-SEARCH
 
 ```
-binary range search.  range must be sorted in ascending order. f is a value
-inside the range you are looking for.
-
  ; MATH:RANGE-SEARCH
  ;   [symbol]
  ; 
@@ -326,8 +288,6 @@ inside the range you are looking for.
 #### MATH:SUB
 
 ```
-element wise - for two lists of FIXNUM
-
  ; MATH:SUB
  ;   [symbol]
  ; 

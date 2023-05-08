@@ -1,9 +1,6 @@
 #### SIMPLIFY:PATH
 
 ```
-simplify path, pts. lim is the distance of candidate pt to candidate line
-returns new path
-
  ; SIMPLIFY:PATH
  ;   [symbol]
  ; 

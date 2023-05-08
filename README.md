@@ -18,7 +18,7 @@ weird (https://github.com/inconvergent/weird).
 
 Here are the main components: TODO
 
-3. Random numbers, some examples:
+1. Random numbers, some examples:
 
    ```lisp
    (in-package :rnd)
@@ -43,9 +43,9 @@ Here are the main components: TODO
    See [rnd.lisp](src/rnd/rnd.lisp), [2rnd.lisp](src/rnd/2rnd.lisp) and
    [3rnd.lisp](src/rnd/3rnd.lisp), for all available functions.
 
-4. A tool for drawing `svg` files: `wsvg`. See [draw.lisp](/examples/draw.lisp).
+2. A tool for drawing `svg` files: `wsvg`. See [draw.lisp](/examples/draw.lisp).
 
-5. TODO add more description
+3. TODO add more description
 
 In addition the library contains a number of useful tools for dealing with
 (predominantly) vector graphics.

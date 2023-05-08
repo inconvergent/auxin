@@ -68,8 +68,6 @@
 #### ORTHO:EXPORT-DATA
 
 ```
-export the neccessary values to recreate ortho
-
  ; ORTHO:EXPORT-DATA
  ;   [symbol]
  ; 
@@ -84,8 +82,6 @@ export the neccessary values to recreate ortho
 #### ORTHO:IMPORT-DATA
 
 ```
-recreate proj from an a list exported by ortho:export-data
-
  ; ORTHO:IMPORT-DATA
  ;   [symbol]
  ; 
@@ -100,17 +96,6 @@ recreate proj from an a list exported by ortho:export-data
 #### ORTHO:MAKE
 
 ```
-
-  make projection.
-
-  default up is (0 0 1)
-  default cam is (1000 1000 1000)
-  if look and vpn are unset, the camera will look at the origin.
-
-  default scale is 1
-  default xy is (0 0)
-  
-
  ; ORTHO:MAKE
  ;   [symbol]
  ; 
@@ -142,8 +127,6 @@ recreate proj from an a list exported by ortho:export-data
 #### ORTHO:MAKE-RAYFX
 
 ```
-cast a ray in direction -vpn from pt
-
  ; ORTHO:MAKE-RAYFX
  ;   [symbol]
  ; 
@@ -176,11 +159,6 @@ cast a ray in direction -vpn from pt
 #### ORTHO:PROJECT
 
 ```
-WRAPS: %PROJECT
-ARGS: (PROJ (VA 3 PT))
-DOCSTRING: project single point. returns (values x y d)
-defined via veq:FVDEF*
-
  ; ORTHO:PROJECT
  ;   [symbol]
  ; 
@@ -197,10 +175,6 @@ defined via veq:FVDEF*
 #### ORTHO:PROJECT\*
 
 ```
-project a path #(x1 y1 z1 x2 y2 z2 ...).
-   returns projected path and distances: (values #(px1 py1 px2 py2 ...)
-                                                 #(d1 d2 ...)) 
-
  ; ORTHO:PROJECT*
  ;   [symbol]
  ; 
@@ -211,8 +185,8 @@ project a path #(x1 y1 z1 x2 y2 z2 ...).
  ;                          (SIMPLE-ARRAY SINGLE-FLOAT . #1#) &OPTIONAL))
  ;   Documentation:
  ;     project a path #(x1 y1 z1 x2 y2 z2 ...).
- ;        returns projected path and distances: (values #(px1 py1 px2 py2 ...)
- ;                                                      #(d1 d2 ...))
+ ;        returns projected path and distances:
+ ;     (values #(px1 py1 px2 py2 ...) #(d1 d2 ...))
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
 ```
 
@@ -246,15 +220,6 @@ project a path #(x1 y1 z1 x2 y2 z2 ...).
 #### ORTHO:UPDATE
 
 ```
-
-  update projection parameters.
-
-  use vpn to set view plane normal directly, or look to set view plane normal
-  relative to camera.
-
-  ensures that internal state is updated appropriately.
-  
-
  ; ORTHO:UPDATE
  ;   [symbol]
  ; 

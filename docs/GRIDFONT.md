@@ -18,8 +18,6 @@
 #### GRIDFONT:NL
 
 ```
-write a newline
-
  ; GRIDFONT:NL
  ;   [symbol]
  ; 
@@ -36,8 +34,6 @@ write a newline
 #### GRIDFONT:UPDATE
 
 ```
-update gridfont properties
-
  ; GRIDFONT:UPDATE
  ;   [symbol]
  ; 
@@ -55,8 +51,6 @@ update gridfont properties
 #### GRIDFONT:WC
 
 ```
-write single character, c
-
  ; GRIDFONT:WC
  ;   [symbol]
  ; 

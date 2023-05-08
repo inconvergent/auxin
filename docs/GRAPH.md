@@ -1,8 +1,6 @@
 #### GRAPH:ADD
 
 ```
-add edge ab. returns t if edge did not exist.
-
  ; GRAPH:ADD
  ;   [symbol]
  ; 
@@ -19,8 +17,6 @@ add edge ab. returns t if edge did not exist.
 #### GRAPH:COPY
 
 ```
-return copy of graph instance.
-
  ; GRAPH:COPY
  ;   [symbol]
  ; 
@@ -36,9 +32,6 @@ return copy of graph instance.
 #### GRAPH:CYCLE->EDGE-SET
 
 ```
-return edge set from cycle.
-ex: (1 2 3 4 5 1) -> ((1 2) (2 3) (3 4) (4 5) (1 5))
-
  ; GRAPH:CYCLE->EDGE-SET
  ;   [symbol]
  ; 
@@ -54,10 +47,6 @@ ex: (1 2 3 4 5 1) -> ((1 2) (2 3) (3 4) (4 5) (1 5))
 #### GRAPH:CYCLE-BASIS->EDGE-SETS
 
 ```
-return an edge set for every cycle in a cycle basis.
-it does not check if the cycle basis is correct. cycles must be closed.
-that is, they must begin and end on the same vertex.
-
  ; GRAPH:CYCLE-BASIS->EDGE-SETS
  ;   [symbol]
  ; 
@@ -74,8 +63,6 @@ that is, they must begin and end on the same vertex.
 #### GRAPH:DEL
 
 ```
-del edge ab. returns t if edge existed.
-
  ; GRAPH:DEL
  ;   [symbol]
  ; 
@@ -92,10 +79,6 @@ del edge ab. returns t if edge existed.
 #### GRAPH:DEL-SIMPLE-FILAMENTS
 
 ```
-recursively remove all simple filament edges until there are none left.
-
-
-
  ; GRAPH:DEL-SIMPLE-FILAMENTS
  ;   [symbol]
  ; 
@@ -113,8 +96,6 @@ recursively remove all simple filament edges until there are none left.
 #### GRAPH:EDGE-SET->GRAPH
 
 ```
-create a graph from edges in edge set.
-
  ; GRAPH:EDGE-SET->GRAPH
  ;   [symbol]
  ; 
@@ -129,10 +110,6 @@ create a graph from edges in edge set.
 #### GRAPH:EDGE-SET->PATH
 
 ```
-convert edge set: ((3 4) (4 5) (5 6) (1 2) (6 1) (2 3))
-into a path: (4 5 6 1 2 3)
-second result is a boolean for whether it is a cycle.
-
  ; GRAPH:EDGE-SET->PATH
  ;   [symbol]
  ; 
@@ -149,8 +126,6 @@ second result is a boolean for whether it is a cycle.
 #### GRAPH:EDGE-SET-SYMDIFF
 
 ```
-symmetric difference of edge set a and b. not very efficient.
-
  ; GRAPH:EDGE-SET-SYMDIFF
  ;   [symbol]
  ; 
@@ -165,8 +140,6 @@ symmetric difference of edge set a and b. not very efficient.
 #### GRAPH:EDGE-SETS->CYCLE-BASIS
 
 ```
-the opposite of cycle-basis->edge-sets.
-
  ; GRAPH:EDGE-SETS->CYCLE-BASIS
  ;   [symbol]
  ; 
@@ -190,8 +163,6 @@ the opposite of cycle-basis->edge-sets.
 #### GRAPH:GET-EDGES
 
 ```
-get list of lists of all edges.
-
  ; GRAPH:GET-EDGES
  ;   [symbol]
  ; 
@@ -206,8 +177,6 @@ get list of lists of all edges.
 #### GRAPH:GET-INCIDENT-EDGES
 
 ```
-get all incident edges of v.
-
  ; GRAPH:GET-INCIDENT-EDGES
  ;   [symbol]
  ; 
@@ -223,8 +192,6 @@ get all incident edges of v.
 #### GRAPH:GET-INCIDENT-VERTS
 
 ```
-get all incident vertices of v.
-
  ; GRAPH:GET-INCIDENT-VERTS
  ;   [symbol]
  ; 
@@ -239,9 +206,6 @@ get all incident vertices of v.
 #### GRAPH:GET-MIN-SPANNING-TREE
 
 ```
-return all minimal spanning trees of grph in a new graph.
-if start is provided, it will return a spanning tree starting at start.
-
  ; GRAPH:GET-MIN-SPANNING-TREE
  ;   [symbol]
  ; 
@@ -262,8 +226,6 @@ if start is provided, it will return a spanning tree starting at start.
 #### GRAPH:GET-NUM-EDGES
 
 ```
-return total number of edges in graph.
-
  ; GRAPH:GET-NUM-EDGES
  ;   [symbol]
  ; 
@@ -279,9 +241,6 @@ return total number of edges in graph.
 #### GRAPH:GET-NUM-VERTS
 
 ```
-return total number of verts in graph. only counts vertices with connected
-edges.
-
  ; GRAPH:GET-NUM-VERTS
  ;   [symbol]
  ; 
@@ -298,11 +257,6 @@ edges.
 #### GRAPH:GET-SEGMENTS
 
 ```
-greedily finds segments :between: multi-intersection points.
-
-note: by definition this will not return parts of the graph that have no
-multi-intersections. consider walk-graph instead.
-
  ; GRAPH:GET-SEGMENTS
  ;   [symbol]
  ; 
@@ -321,9 +275,6 @@ multi-intersections. consider walk-graph instead.
 #### GRAPH:GET-SPANNING-TREE
 
 ```
-return all spanning trees (if the graph is disjoint) of grph in a new graph.
-if start is provided, it will return a spanning tree starting at start.
-
  ; GRAPH:GET-SPANNING-TREE
  ;   [symbol]
  ; 
@@ -331,7 +282,7 @@ if start is provided, it will return a spanning tree starting at start.
  ;   Lambda-list: (GRPH &KEY START)
  ;   Derived type: (FUNCTION (GRAPH::GRAPH &KEY (:START T))
  ;                  (VALUES GRAPH::GRAPH
- ;                          (INTEGER -4611686018427387897
+ ;                          (INTEGER -4611686018427387896
  ;                           4611686018427387903)
  ;                          &OPTIONAL))
  ;   Documentation:
@@ -343,8 +294,6 @@ if start is provided, it will return a spanning tree starting at start.
 #### GRAPH:GET-VERTS
 
 ```
-return all vertices with at least one connected edge.
-
  ; GRAPH:GET-VERTS
  ;   [symbol]
  ; 
@@ -359,37 +308,6 @@ return all vertices with at least one connected edge.
 #### GRAPH:MAKE
 
 ```
-create undirected graph instance with no spatial awareness.
-
-since the graph is undirected. all edges are normalized such that the smallest
-vertex is first. any checks that compare edges in any sense will return the
-same value for (a b) and (b a).
-
-assuming the following graph:
-
-  x-y-u
-  |   |
-a-b-c-d-o
-  |
-  y
-
-this terminology is used:
-  - ab, by and do are (simple) filaments.
-  - bcd and bxyud are segments.
-  - (simple) filaments are segments.
-  - bcduyx(b) is a cycle.
-  - b and d are multi intersection points/vertices
-  - a, y, o are dead-ends.
-
-arguments:
-  - adj-size: initial size of adjacency hash-table
-    (total number of verts)
-  - adj-inc: size multiplier for hash-table
-  - set-size: initial size of vert adjecency list
-    (typical number of edges per vert)
-  - set-inc: size multiplier vert adjecency list
-default values should usually work fine.
-
  ; GRAPH:MAKE
  ;   [symbol]
  ; 
@@ -437,8 +355,6 @@ default values should usually work fine.
 #### GRAPH:MEM
 
 ```
-check if edge ab exists.
-
  ; GRAPH:MEM
  ;   [symbol]
  ; 
@@ -455,10 +371,6 @@ check if edge ab exists.
 #### GRAPH:PATH->EDGE-SET
 
 ```
-return edge set from cycle.
-ex: (1 2 3 4 5) -> ((1 2) (2 3) (3 4) (4 5))
-if closed is t, (1 5) will be included in the above output.
-
  ; GRAPH:PATH->EDGE-SET
  ;   [symbol]
  ; 
@@ -476,8 +388,6 @@ if closed is t, (1 5) will be included in the above output.
 #### GRAPH:VMEM
 
 ```
-check if v has at least one connected edge.
-
  ; GRAPH:VMEM
  ;   [symbol]
  ; 
@@ -493,10 +403,6 @@ check if v has at least one connected edge.
 #### GRAPH:WALK-GRAPH
 
 ```
-greedily walks the graph so that every edge is returned exactly once.
-in multi-intersectinons the walker selects the smallest available angle.
-this is useful for exporting a graph as a plotter drawing.
-
  ; GRAPH:WALK-GRAPH
  ;   [symbol]
  ; 
@@ -514,10 +420,6 @@ this is useful for exporting a graph as a plotter drawing.
 #### GRAPH:WITH-GRAPH-EDGES
 
 ```
-iterate over all edges as e. more efficient than get-edges because it does
-not build the entire structure.
-ex (with-graph-edges (grph e) (print e))
-
  ; GRAPH:WITH-GRAPH-EDGES
  ;   [symbol]
  ; 
@@ -533,8 +435,6 @@ ex (with-graph-edges (grph e) (print e))
 #### GRAPH:WITH-GRAPH-VERTS
 
 ```
-iterate over all verts as v.
-
  ; GRAPH:WITH-GRAPH-VERTS
  ;   [symbol]
  ; 

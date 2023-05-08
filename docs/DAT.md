@@ -1,13 +1,6 @@
 #### DAT:DO-LINES-AS-BUFFER
 
 ```
-
-  fx will receive a stream (named in). use it like this:
-    (loop for x = (read in nil nil)
-          while x
-          do something)
-  
-
  ; DAT:DO-LINES-AS-BUFFER
  ;   [symbol]
  ; 

@@ -58,7 +58,7 @@
   (declare (optimize speed (safety 0)) (veq:ff r))
   "random point in sphere with rad r. centered at origin."
   (veq:f3let ((cand (veq:f3val 0f0)))
-    (loop while t do (veq:f3vset (cand) (veq:f3rep (rnd*)))
+    (loop while t do (setf (veq:f3 cand) (veq:f3rep (rnd*)))
                      (when (< (veq:f3len2 cand) 1f0)
                        (return-from 3in-sphere (f3!@*. cand r))))))
 

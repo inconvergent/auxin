@@ -30,7 +30,7 @@
     (values
       (cond (docs (format nil "```~%~a~@[~&~%~a~&~]~&```" (cadr docs) desc))
             ((and idocs (> (length idocs) 0))
-              (format nil "```~%~a~@[~&~%~a~&~]~&```" idocs desc))
+              (format nil "```~%~a~@[~&~%~a~&~]~&```" desc nil))
             (t (format nil "```~%:missing:todo:~%~@[~&~%~a~&~]~&```" desc)))
       skip)))
 

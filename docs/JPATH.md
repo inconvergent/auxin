@@ -18,10 +18,6 @@
 #### JPATH:PATH->DIAGONALS
 
 ```
-return (orientation line) for every point in path. lerp-ing along lines will
-return controll points. lerp direction should be flipped when orientation is
-nil. sharp or chamfered points correspond to two lines
-
  ; JPATH:PATH->DIAGONALS
  ;   [symbol]
  ; 
@@ -41,8 +37,6 @@ nil. sharp or chamfered points correspond to two lines
 #### JPATH:PATH->JOINTS
 
 ```
-joints contain information about how to offset around points in path.
-
  ; JPATH:PATH->JOINTS
  ;   [symbol]
  ; 

@@ -91,7 +91,7 @@
     (loop with res of-type veq:fvec = (veq:f$make :dim 2 :n (length xx))
           for x of-type veq:ff in xx
           for i of-type veq:pn from 0
-          do (veq:2$vset (res i) (-x-to-pt vpts ns x))
+          do (setf (veq:2$ res i) (-x-to-pt vpts ns x))
           finally (return res))))
 
 (defun rndpos (b n &key order)
@@ -99,11 +99,11 @@
   (pos* b (rnd:rndspace n 0f0 1f0 :order order)))
 
 (defmacro -set (vpts opts a b)
-  `(veq:fvprogn (veq:2$vset (,vpts ,b) (veq:f2$ ,opts ,a))))
+  `(veq:fvprogn (setf (veq:2$ ,vpts ,b) (veq:f2$ ,opts ,a))))
 
 (defmacro -set-mean (vpts opts a b c)
-  `(veq:fvprogn (veq:2$vset (,vpts ,c)
-                  (f2!@/. (f2!@+ (veq:f2$ ,opts ,a ,b)) 2f0))))
+  `(veq:fvprogn (setf (veq:2$ ,vpts ,c)
+                      (f2!@/. (f2!@+ (veq:f2$ ,opts ,a ,b)) 2f0))))
 
 (defun -set-vpts-open (vpts pts n &aux (n* (- (* 2 n) 3)))
   (declare #.*opt* (veq:pn n n*) (veq:fvec vpts pts))

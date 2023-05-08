@@ -149,8 +149,6 @@
 #### AUXIN:DEFINE-STRUCT-LOAD-FORM
 
 ```
-Allow the structure named STRUCT-NAME to be dumped to FASL files.
-
  ; AUXIN:DEFINE-STRUCT-LOAD-FORM
  ;   [symbol]
  ; 
@@ -219,8 +217,6 @@ Allow the structure named STRUCT-NAME to be dumped to FASL files.
 #### AUXIN:FILTER-BY-PREDICATE
 
 ```
-split l into (values yes no) according to fx
-
  ; AUXIN:FILTER-BY-PREDICATE
  ;   [symbol]
  ; 
@@ -302,8 +298,6 @@ split l into (values yes no) according to fx
 #### AUXIN:LST>N
 
 ```
-is list, l, longer than n?
-
  ; AUXIN:LST>N
  ;   [symbol]
  ; 
@@ -320,8 +314,6 @@ is list, l, longer than n?
 #### AUXIN:LVEXTEND
 
 ```
-extend v with all items in x.
-
  ; AUXIN:LVEXTEND
  ;   [symbol]
  ; 
@@ -511,8 +503,6 @@ extend v with all items in x.
 #### AUXIN:SPLIT
 
 ```
-split s at c
-
  ; AUXIN:SPLIT
  ;   [symbol]
  ; 

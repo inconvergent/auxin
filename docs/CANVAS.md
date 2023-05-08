@@ -26,8 +26,6 @@
 #### CANVAS:MAKE
 
 ```
-make square PNG canvas instance of size to.
-
  ; CANVAS:MAKE
  ;   [symbol]
  ; 
@@ -43,8 +41,6 @@ make square PNG canvas instance of size to.
 #### CANVAS:SAVE
 
 ```
-save as 8 bit PNG file fn with gamma.
-
  ; CANVAS:SAVE
  ;   [symbol]
  ; 
@@ -60,8 +56,6 @@ save as 8 bit PNG file fn with gamma.
 #### CANVAS:SET-GRAY-PIX
 
 ```
-set (i j) to value c where 0.0 =< c =< 1.0.
-
  ; CANVAS:SET-GRAY-PIX
  ;   [symbol]
  ; 
@@ -79,8 +73,6 @@ set (i j) to value c where 0.0 =< c =< 1.0.
 #### CANVAS:SET-PIX
 
 ```
-set (i j) to value (r g b) where 0.0 =< r,g,b =< 1.0.
-
  ; CANVAS:SET-PIX
  ;   [symbol]
  ; 

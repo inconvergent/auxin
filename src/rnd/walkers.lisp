@@ -20,15 +20,15 @@
   (declare #.*opt* (veq:ff x))
   "random 2d walker."
   (lambda (s) (declare (veq:ff s))
-    (veq:f2vset (x) (f2!@+ x (2in-circ s)))
+    (setf (veq:f2 x) (f2!@+ x (2in-circ s)))
     (veq:f2 x)))
 
 (veq:fvdef* 2walker-acc ((:va 2 x a))
   (declare #.*opt* (veq:ff x a))
   "accelerated random 2d walker."
   (lambda (s) (declare (veq:ff s))
-    (veq:f2vset (a) (f2!@+ a (2in-circ s)))
-    (veq:f2vset (x) (f2!@+ x a))
+    (setf (veq:f2 a) (f2!@+ a (2in-circ s))
+          (veq:f2 x) (f2!@+ x a))
     (veq:f4 x a)))
 
 
@@ -37,7 +37,7 @@
   "random 3d walker."
   (lambda (s)
     (declare (veq:ff s))
-    (veq:f3vset (x) (f3!@+ x (3in-sphere s)))
+    (setf (veq:f3 x) (f3!@+ x (3in-sphere s)))
     (veq:f3 x)))
 
 (veq:fvdef* 3walker-acc ((:va 3 x a))
@@ -45,7 +45,7 @@
   "accelerated random 3d walker."
   (lambda (s)
     (declare (veq:ff s))
-    (veq:f3vset (a) (f3!@+ a (3in-sphere s)))
-    (veq:f3vset (x) (f3!@+ x a))
+    (setf (veq:f3 a) (f3!@+ a (3in-sphere s))
+          (veq:f3 x) (f3!@+ x a))
     (values x a)))
 

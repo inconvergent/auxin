@@ -1,8 +1,6 @@
 #### PIGMENT:AS-HEX
 
 ```
-(values #rrggbb a)
-
  ; PIGMENT:AS-HEX
  ;   [symbol]
  ; 
@@ -18,8 +16,6 @@
 #### PIGMENT:AS-HSV
 
 ```
-return pigment as (list h s v a)
-
  ; PIGMENT:AS-HSV
  ;   [symbol]
  ; 
@@ -34,8 +30,6 @@ return pigment as (list h s v a)
 #### PIGMENT:AS-LIST
 
 ```
-return list with (r g b a), (r g b) is pre multiplied
-
  ; PIGMENT:AS-LIST
  ;   [symbol]
  ; 
@@ -50,8 +44,6 @@ return list with (r g b a), (r g b) is pre multiplied
 #### PIGMENT:AS-LIST\*
 
 ```
-return (r g b a)
-
  ; PIGMENT:AS-LIST*
  ;   [symbol]
  ; 
@@ -66,8 +58,6 @@ return (r g b a)
 #### PIGMENT:AS-VAL
 
 ```
-as values, pre-multiplied
-
  ; PIGMENT:AS-VAL
  ;   [symbol]
  ; 
@@ -84,8 +74,6 @@ as values, pre-multiplied
 #### PIGMENT:AS-VAL\*
 
 ```
-as values
-
  ; PIGMENT:AS-VAL*
  ;   [symbol]
  ; 
@@ -102,8 +90,6 @@ as values
 #### PIGMENT:BLACK
 
 ```
-black
-
  ; PIGMENT:BLACK
  ;   [symbol]
  ; 
@@ -118,8 +104,6 @@ black
 #### PIGMENT:BLUE
 
 ```
-blue
-
  ; PIGMENT:BLUE
  ;   [symbol]
  ; 
@@ -134,13 +118,11 @@ blue
 #### PIGMENT:CMYK
 
 ```
-create pigment from (c m y k a). a is optional.
-
  ; PIGMENT:CMYK
  ;   [symbol]
  ; 
  ; CMYK names a compiled function:
- ;   Lambda-list: (CMY/X-0 CMY/Y-1 CMY/Z-2 K &OPTIONAL (A 1.0))
+ ;   Lambda-list: (CMY/X-21 CMY/Y-22 CMY/Z-23 K &OPTIONAL (A 1.0))
  ;   Derived type: (FUNCTION
  ;                  (SINGLE-FLOAT SINGLE-FLOAT SINGLE-FLOAT SINGLE-FLOAT
  ;                   &OPTIONAL SINGLE-FLOAT)
@@ -153,8 +135,6 @@ create pigment from (c m y k a). a is optional.
 #### PIGMENT:COPY
 
 ```
-copy a pigment
-
  ; PIGMENT:COPY
  ;   [symbol]
  ; 
@@ -170,8 +150,6 @@ copy a pigment
 #### PIGMENT:CYAN
 
 ```
-cyan with s, v, a
-
  ; PIGMENT:CYAN
  ;   [symbol]
  ; 
@@ -186,8 +164,6 @@ cyan with s, v, a
 #### PIGMENT:DARK
 
 ```
-0.2 gray
-
  ; PIGMENT:DARK
  ;   [symbol]
  ; 
@@ -202,8 +178,6 @@ cyan with s, v, a
 #### PIGMENT:GRAY
 
 ```
-v gray
-
  ; PIGMENT:GRAY
  ;   [symbol]
  ; 
@@ -218,8 +192,6 @@ v gray
 #### PIGMENT:GREEN
 
 ```
-green
-
  ; PIGMENT:GREEN
  ;   [symbol]
  ; 
@@ -234,8 +206,6 @@ green
 #### PIGMENT:HSV
 
 ```
-create pigment from (h s v a). a is optional.
-
  ; PIGMENT:HSV
  ;   [symbol]
  ; 
@@ -253,8 +223,6 @@ create pigment from (h s v a). a is optional.
 #### PIGMENT:MAGENTA
 
 ```
-magenta with s, v, a
-
  ; PIGMENT:MAGENTA
  ;   [symbol]
  ; 
@@ -269,9 +237,6 @@ magenta with s, v, a
 #### PIGMENT:MAKE
 
 ```
-make a pigment instance (r g b a). all values should range be [0 1].
-stored internally with pre-multiplied alpha.
-
  ; PIGMENT:MAKE
  ;   [symbol]
  ; 
@@ -290,8 +255,6 @@ stored internally with pre-multiplied alpha.
 #### PIGMENT:MDARK
 
 ```
-0.3 gray
-
  ; PIGMENT:MDARK
  ;   [symbol]
  ; 
@@ -306,8 +269,6 @@ stored internally with pre-multiplied alpha.
 #### PIGMENT:RED
 
 ```
-red
-
  ; PIGMENT:RED
  ;   [symbol]
  ; 
@@ -322,8 +283,6 @@ red
 #### PIGMENT:RGB
 
 ```
-same as make.
-
  ; PIGMENT:RGB
  ;   [symbol]
  ; 
@@ -341,9 +300,6 @@ same as make.
 #### PIGMENT:SCALE
 
 ```
-scale by s. scales with alpha value.
-note: this trival scale of pre-multiplied values.
-
  ; PIGMENT:SCALE
  ;   [symbol]
  ; 
@@ -360,8 +316,6 @@ note: this trival scale of pre-multiplied values.
 #### PIGMENT:SCALE!
 
 ```
-scale by s in place.
-
  ; PIGMENT:SCALE!
  ;   [symbol]
  ; 
@@ -377,8 +331,6 @@ scale by s in place.
 #### PIGMENT:TRANSPARENT
 
 ```
-transparent.
-
  ; PIGMENT:TRANSPARENT
  ;   [symbol]
  ; 
@@ -394,8 +346,6 @@ transparent.
 #### PIGMENT:VDARK
 
 ```
-0.1
-
  ; PIGMENT:VDARK
  ;   [symbol]
  ; 
@@ -410,8 +360,6 @@ transparent.
 #### PIGMENT:WHITE
 
 ```
-white
-
  ; PIGMENT:WHITE
  ;   [symbol]
  ; 
@@ -426,8 +374,6 @@ white
 #### PIGMENT:WITH
 
 ```
-pre-multiplied (values ra ga ba a). ex: (with (pigment r g b a) (list r g b a)).
-
  ; PIGMENT:WITH
  ;   [symbol]
  ; 
@@ -441,8 +387,6 @@ pre-multiplied (values ra ga ba a). ex: (with (pigment r g b a) (list r g b a)).
 #### PIGMENT:WITH\*
 
 ```
-(values r g b a). ex: (with (pigment r g b a) (list r g b a)).
-
  ; PIGMENT:WITH*
  ;   [symbol]
  ; 
@@ -456,8 +400,6 @@ pre-multiplied (values ra ga ba a). ex: (with (pigment r g b a) (list r g b a)).
 #### PIGMENT:YELLOW
 
 ```
-yellow with s, v, a
-
  ; PIGMENT:YELLOW
  ;   [symbol]
  ; 

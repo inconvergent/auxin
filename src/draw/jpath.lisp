@@ -37,9 +37,9 @@
   (veq:xlet ((f2!z (veq:f2val 0f0))
              (f2!i (veq:f2$ io))
              (f2!o (veq:f2$ io 1)))
-    (veq:f$~ (2) (o+- p o i) (o+- p z i) (o-- p o i) (o-+ p o z)
-                 (o-+ p o i) (o++ p z i) (o++ p o i) (o++ p o z)
-                 (veq:f2 p))))
+    (veq:f$~ (18) (o+- p o i) (o+- p z i) (o-- p o i) (o-+ p o z)
+                  (o-+ p o i) (o++ p z i) (o++ p o i) (o++ p o z)
+                  (veq:f2 p))))
 
 (veq:fvdef path->joints (path w* &key closed
                                  &aux (w (* 0.5f0 w*))
