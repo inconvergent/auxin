@@ -4,10 +4,12 @@
 
 (setf prove:*enable-colors* nil)
 
-(defvar *files* `(#P"test/rnd.lisp" #P"test/math.lisp"
-                  #P"test/hset.lisp" #P"test/pigment.lisp"
-                  #P"test/bzspl.lisp" #P"test/graph.lisp"
-                  #P"test/ortho.lisp"))
+(defparameter *files*
+  (mapcar (lambda (p) (asdf:system-relative-pathname "auxin/tests" p))
+          '(#P"test/rnd.lisp" #P"test/math.lisp"
+            #P"test/hset.lisp" #P"test/pigment.lisp"
+            #P"test/bzspl.lisp" #P"test/graph.lisp"
+            #P"test/ortho.lisp")))
 
 (defun run-tests ()
   (loop with fails = 0
@@ -17,5 +19,5 @@
                    (incf fails))
            (format t "~&done: ~a~%" (auxin:mkstr f))
         finally (return (unless (< fails 1)
-                          (sb-ext:quit :unix-status 7)))))
+                          (uiop:quit 7)))))
 

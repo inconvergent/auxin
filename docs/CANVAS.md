@@ -31,7 +31,7 @@
  ; 
  ; MAKE names a compiled function:
  ;   Lambda-list: (&KEY (SIZE 1000))
- ;   Derived type: (FUNCTION (&KEY (:SIZE T))
+ ;   Derived type: (FUNCTION (&KEY (:SIZE (MOD 30001)))
  ;                  (VALUES CANVAS:CANVAS &OPTIONAL))
  ;   Documentation:
  ;     make square PNG canvas instance of size to.

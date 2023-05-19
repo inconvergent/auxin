@@ -2,7 +2,7 @@
 
 (asdf:defsystem #:auxin
   :description "Auxiliary Utilities for Generative Art"
-  :version "0.1.0"
+  :version "0.1.1"
   :author "anders hoff/inconvergent"
   :licence "MIT"
   :in-order-to ((asdf:test-op (asdf:test-op #:auxin/tests)))
@@ -40,7 +40,8 @@
 
 
 (asdf:defsystem #:auxin/tests
-  :depends-on (#:auxin #:prove)
+  :depends-on (#:auxin #:prove #:asdf #:uiop)
+  :version "0.1.1"
   :perform (asdf:test-op (o s) (uiop:symbol-call ':auxin-tests '#:run-tests))
   :pathname "test/"
   :serial t

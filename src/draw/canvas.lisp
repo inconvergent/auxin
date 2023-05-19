@@ -66,7 +66,7 @@
     #'indfx))
 
 (defun make (&key (size 1000))
-  (declare #.*opt*)
+  (declare #.*opt* (small-ind size))
   "make square PNG canvas instance of size to."
   (make-canvas
     :size size :vals (veq:f3$zero (* size size)) :indfx (-get-indfx size)))
