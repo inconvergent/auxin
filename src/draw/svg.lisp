@@ -46,12 +46,18 @@
        (cl-svg::add-element ,scene ,element)
        ,element)))
 
-; (defun -hex (c) (if (equal (type-of c) 'pigment:rgba) (pigment:to-hex c) c))
-(defun -hex (c) c)
-(defun -vb (w h) (format nil "0 0 ~,3f ~,3f" w h))
-(defun -select-arg (l) (find-if #'identity l))
-(defun -select-fill (f) (if f f "none"))
+(defun -select-color (s)
+  (case s (:k "black") (:c "cyan") (:m "magenta") (:y "yellow") (:r "red")
+          (:g "green") (:b "blue") (:w "white") (nil "black") (t (auxin:mkstr s))))
 
+(defun -vb (w h) (format nil "0 0 ~,3f ~,3f" w h))
+(defun -select-fill (f) (-select-color (or f "none")))
+(defun -select-stroke (wsvg s) (-select-color (or s (wsvg-stroke wsvg))))
+(defun -select-so (wsvg so) (or so (wsvg-stroke-opacity wsvg)))
+(defun -select-fo (wsvg fo) (or fo (wsvg-fill-opacity wsvg)))
+(defun -select-sw (wsvg sw) (or sw (wsvg-stroke-width wsvg)))
+(defun -select-rep-scale (wsvg rs) (or rs (wsvg-rep-scale wsvg)))
+(defun -select-line-join (wsvg lj) (or lj (wsvg-line-join wsvg)))
 
 (defstruct wsvg
   (layout nil :type symbol :read-only t)
@@ -65,35 +71,21 @@
   (line-join "bevel" :type string :read-only nil)
   (scene nil :read-only nil))
 
-(defun -select-so (wsvg so) (if so so (wsvg-stroke-opacity wsvg)))
-(defun -select-fo (wsvg fo) (if fo fo (wsvg-fill-opacity wsvg)))
-(defun -select-sw (wsvg sw) (if sw sw (wsvg-stroke-width wsvg)))
-(defun -select-stroke (wsvg s) (if s s (wsvg-stroke wsvg)))
-(defun -select-rep-scale (wsvg rs) (if rs rs (wsvg-rep-scale wsvg)))
-(defun -select-line-join (wsvg lj) (if lj lj (wsvg-line-join wsvg)))
-
-(defun -get-scene (layout)
+(defun -get-scene (layout &aux (ls (-vb *long* *short*)) (sl (-vb *short* *long*)))
   (case layout
-    (:a4-landscape (cl-svg:make-svg-toplevel *svg* :height "210mm" :width "297mm"
-                     :view-box (-vb *long* *short*)))
-    (:a4-portrait (cl-svg:make-svg-toplevel *svg* :height "297mm" :width "210mm"
-                     :view-box (-vb *short* *long*)))
-    (:a3-landscape (cl-svg:make-svg-toplevel *svg* :height "297mm" :width "420mm"
-                     :view-box (-vb *long* *short*)))
-    (:a3-portrait (cl-svg:make-svg-toplevel *svg* :height "420mm" :width "297mm"
-                     :view-box (-vb *short* *long*)))
-    (:a2-landscape (cl-svg:make-svg-toplevel *svg* :height "420mm" :width "594mm"
-                     :view-box (-vb *long* *short*)))
-    (:a2-portrait (cl-svg:make-svg-toplevel *svg* :height "594mm" :width "420mm"
-                     :view-box (-vb *short* *long*)))
+    (:a4-landscape (cl-svg:make-svg-toplevel *svg* :height "210mm" :width "297mm" :view-box ls))
+    (:a4-portrait (cl-svg:make-svg-toplevel *svg* :height "297mm" :width "210mm" :view-box sl))
+    (:a3-landscape (cl-svg:make-svg-toplevel *svg* :height "297mm" :width "420mm" :view-box ls))
+    (:a3-portrait (cl-svg:make-svg-toplevel *svg* :height "420mm" :width "297mm" :view-box sl))
+    (:a2-landscape (cl-svg:make-svg-toplevel *svg* :height "420mm" :width "594mm" :view-box ls))
+    (:a2-portrait (cl-svg:make-svg-toplevel *svg* :height "594mm" :width "420mm" :view-box sl))
     (otherwise (error "invalid layout. use: :a4-portrait, :a4-landscape,
 :a3-landscape, :a3-portrait, a2-landscape or a2-portrait; or use
 (make* :height h :width w)"))))
 
-
 (defun update (wsvg &key stroke sw rs fo so)
   (declare (wsvg wsvg))
-  (when stroke (setf (wsvg-stroke wsvg) (the string stroke)))
+  (when stroke (setf (wsvg-stroke wsvg) stroke))
   (when sw (setf (wsvg-stroke-width wsvg) (the veq:ff sw)))
   (when rs (setf (wsvg-rep-scale wsvg) (the veq:ff rs)))
   (when fo (setf (wsvg-fill-opacity wsvg) (the veq:ff fo)))
@@ -113,11 +105,11 @@
   (dsb (width height) (cdr (assoc layout *layouts*))
     (make-wsvg :layout layout
                    :height height :width width
-                   :stroke (-hex (if stroke stroke "black"))
-                   :fill-opacity (-select-arg (list fill-opacity fo))
-                   :rep-scale (-select-arg (list rep-scale rs 0.5f0))
-                   :stroke-opacity (-select-arg (list stroke-opacity so))
-                   :stroke-width (-select-arg (list stroke-width sw 1.1f0))
+                   :stroke (or stroke "black")
+                   :fill-opacity (or fill-opacity fo)
+                   :rep-scale (or rep-scale rs 0.5f0)
+                   :stroke-opacity (or stroke-opacity so)
+                   :stroke-width (or stroke-width sw 1.1f0)
                    :scene (-get-scene layout))))
 
 
@@ -129,11 +121,11 @@
 remaining arguments are identical to wsvg:make."
   (make-wsvg :layout :custom
                  :height height :width width
-                 :stroke (-hex (if stroke stroke "black"))
-                 :fill-opacity (-select-arg (list fill-opacity fo))
-                 :rep-scale (-select-arg (list rep-scale rs 0.5f0))
-                 :stroke-opacity (-select-arg (list stroke-opacity so))
-                 :stroke-width (-select-arg (list stroke-width sw 1.1f0))
+                 :stroke (or stroke "black")
+                 :fill-opacity (or fill-opacity fo)
+                 :rep-scale (or rep-scale rs 0.5f0)
+                 :stroke-opacity (or stroke-opacity so)
+                 :stroke-width (or stroke-width sw 1.1f0)
                  :scene (cl-svg:make-svg-toplevel *svg*
                           :height height :width width)))
 
@@ -180,9 +172,9 @@ remaining arguments are identical to wsvg:make."
   (draw% (wsvg-scene wsvg)
     (:path :d (loop with pth = (cl-svg:make-path)
                     for (ct c) in components
-                    do (case ct (:path (loop for p in c
-                                             do (-accumulate-path pth p)))
-                         (:bzspl (list)))
+                    do (ecase ct (:path (loop for p in c
+                                              do (-accumulate-path pth p)))
+                                 (:bzspl (list)))
                     finally (return pth)))
     :fill (-select-fill fill)
     :fill-opacity (-select-fo wsvg fo)
@@ -193,6 +185,7 @@ remaining arguments are identical to wsvg:make."
 (defun ensure-list (pts)
   (typecase pts (list pts)
                 (veq:fvec (veq:2$to-list pts))
+                (vector (coerce pts 'list))
                 (t (error "incorrect path: ~a~%" pts))))
 
 
@@ -302,11 +295,11 @@ a jpath is a wide line emulation useful for drawing wide lines in plotter drawin
 - rs: set fill repetiton scale. you must set either rs or ns.
 - width: width of emulated path."
   (when (and ns rs) (error "jpath error: either rs or ns must be nil"))
-  (let ((rep (if ns ns (ceiling (* (-select-rep-scale wsvg rs) (veq:ff width))))))
+  (let ((rep (or ns (ceiling (* (-select-rep-scale wsvg rs) (veq:ff width))))))
     (when (< rep 2) (return-from jpath (path wsvg pts :stroke stroke
                                              :sw sw :so so :closed closed)))
     (let ((jp (jpath:jpath pts (veq:ff width) :rep rep :closed closed :limits limits)))
-      (if closed (loop for path in jp
+      (if closed (loop for path across jp
                        do (path wsvg path :closed t :stroke stroke
                                 :sw sw :so so))
                  (path wsvg jp :stroke stroke :sw sw :so so)))))
@@ -363,8 +356,8 @@ a jpath is a wide line emulation useful for drawing wide lines in plotter drawin
   (let* ((rad (veq:ff rad*))
          (inner (max 0.1f0 (if outer-rad rad 0.1f0)))
          (outer (if outer-rad outer-rad rad))
-         (n (if ns ns (ceiling (* (abs (- outer inner))
-                                  (-select-rep-scale wsvg rs))))))
+         (n (or ns (ceiling (* (abs (- outer inner))
+                               (-select-rep-scale wsvg rs))))))
     (loop for r of-type veq:ff in (math:linspace n inner outer)
           do (circ wsvg r :xy xy :sw sw :stroke stroke :so so))))
 

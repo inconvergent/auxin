@@ -148,5 +148,5 @@ nil. sharp or chamfered points correspond to two lines"
                                                          (flip? ori s)))
                                     res)))))
       (if closed (closed-path) (open-path))
-      (veq:f$_ (to-list res)))))
+      res)))
 

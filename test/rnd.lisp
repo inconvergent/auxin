@@ -53,9 +53,9 @@
 
     (let ((fx (rnd:2walker-acc 0.5 0.2 0.5 0.3))
           (fx2 (rnd:2walker 0.2 0.4)))
-      (is (veq:lst (funcall fx 0.2))
+      (is (veq:lst (f@fx 0.2))
           (veq:lst 1.0439396 0.53469574 0.5439396 0.33469573))
-      (is (veq:lst (funcall fx2 0.3))
+      (is (veq:lst (f@fx2 0.3))
           (veq:lst 0.05380459 0.17687196)))
 
     (locally ; i dont know why rnd::3on-sphere-slow fails here, but

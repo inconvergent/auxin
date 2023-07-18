@@ -12,8 +12,8 @@ RUN sbcl --noinform --load /opt/quicklisp.lisp\
          --eval '(sb-ext:quit)'
 
 RUN mkdir -p quicklisp
-# &&\
-    # ln -s /opt/quicklisp/setup.lisp quicklisp/setup.lisp
+RUN echo '(load "/opt/quicklisp/setup.lisp")' > /root/.sbclrc
+
 RUN mkdir -p /opt/data
 RUN apt-get -qq remove curl -y &&\
     apt-get -qq autoremove -y &&\

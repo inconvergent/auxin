@@ -44,7 +44,7 @@ view plane offset (xy) and scaling (s).
 
     (veq:f3let ((v (veq:f3norm (f3.@- (veq:f3from up vpn (- (veq:f3dot up vpn))))))
                 (u (veq:f3rot v vpn veq:fpi5)))
-      (veq:~ u v (veq:f3scale u s) (veq:f3scale v s)))))
+      (veq:~ u v (f3!@*. u s) (f3!@*. v s)))))
 
 
 (veq:fvdef -look (cam look)
@@ -77,8 +77,8 @@ view plane offset (xy) and scaling (s).
 (veq:fvdef make-rayfx (proj)
   (declare #.*opt* (ortho proj))
   "cast a ray in direction -vpn from pt"
-  (veq:f3let ((dir (veq:f3scale (f3.@- (@vpn proj))
-                                (ortho-raylen proj))))
+  (veq:f3let ((dir (f3!@*. (f3.@- (@vpn proj))
+                           (ortho-raylen proj))))
     (lambda ((:va 3 pt))
       (declare #.*opt* (veq:ff pt))
       (veq:~ pt (f3!@+ pt dir)))))

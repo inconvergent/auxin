@@ -158,7 +158,7 @@ generated using the box-muller transform."
 ; https://bl.ocks.org/mbostock/1893974/c5a39633db9c8b1f12c73b069e002c388d4cb9bf
 ; TODO: make n the max number instead of the new sample number
 ; (defun max-distance-sample (n fx &key (sample-num 50) (dstfx #'vec:dst2)
-;                                       (res (weir-utils:make-adjustable-vector)))
+;                                       (res (auxin:make-adjustable-vector)))
 ;   (declare (fixnum n sample-num) (function fx dstfx) (array res))
 ;   "
 ;   randomly sample a total of n items using (funcall fx sample-num), selecting
@@ -173,7 +173,7 @@ generated using the box-muller transform."
 ;                                     minimizing (funcall dstfx v c))))
 ;     (loop with wanted-length of-type fixnum = (+ n (length res))
 ;           until (>= (length res) wanted-length)
-;           do (weir-utils:vextend
+;           do (auxin:vextend
 ;                (-get-cand (sort (loop for c in (funcall fx sample-num)
 ;                                       collect (list (-closest res c) c))
 ;                           #'> :key #'first))

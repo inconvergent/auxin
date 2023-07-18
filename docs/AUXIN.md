@@ -20,8 +20,19 @@
  ;   [symbol]
  ; 
  ; *OPT* names a special variable:
- ;   Declared type: CONS
- ;   Value: (OPTIMIZE (SAFETY 1) (SPEED 3) DEBUG SPACE)
+ ;   Value: (OPTIMIZE (SAFETY 1) (SPEED 3) (DEBUG 1) (SPACE 2))
+```
+
+#### AUXIN:\*SRNDOPT\*
+
+```
+:missing:todo:
+
+ ; AUXIN:*SRNDOPT*
+ ;   [symbol]
+ ; 
+ ; *SRNDOPT* names a special variable:
+ ;   Value: (OPTIMIZE SPEED (SAFETY 0) (DEBUG 1))
 ```
 
 #### AUXIN:ABBREV
@@ -278,6 +289,20 @@
 
  ; AUXIN:IT
  ;   [symbol]
+```
+
+#### AUXIN:KV
+
+```
+:missing:todo:
+
+ ; AUXIN:KV
+ ;   [symbol]
+ ; 
+ ; KV names a compiled function:
+ ;   Lambda-list: (&REST ARGS)
+ ;   Derived type: (FUNCTION * (VALUES SYMBOL &OPTIONAL))
+ ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
 #### AUXIN:LAST\*

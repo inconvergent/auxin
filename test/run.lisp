@@ -4,11 +4,13 @@
 
 (setf prove:*enable-colors* nil)
 
+(defmacro is-arr (&rest rest) `(is ,@rest :test #'equalp))
+
 (defparameter *files*
   (mapcar (lambda (p) (asdf:system-relative-pathname "auxin/tests" p))
           '(#P"test/rnd.lisp" #P"test/math.lisp"
             #P"test/hset.lisp" #P"test/pigment.lisp"
-            #P"test/bzspl.lisp" #P"test/graph.lisp"
+            #P"test/paths.lisp" #P"test/graph.lisp"
             #P"test/ortho.lisp")))
 
 (defun run-tests ()

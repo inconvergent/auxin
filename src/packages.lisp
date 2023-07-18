@@ -2,8 +2,7 @@
 (defpackage #:auxin
   (:use #:common-lisp)
   (:export
-   #:*eps*
-   #:*opt*
+   #:*eps* #:*opt* #:*srndopt*
    #:abbrev
    #:aif
    #:animate
@@ -19,19 +18,24 @@
    #:ensure-vector
    #:ev
    #:filter-by-predicate
+   #:gi #:me #:ki
    #:group
    #:i?
    #:internal-path-string
    #:it
+   #:kv
    #:last*
    #:lst>n
    #:lvextend
+   #:iter-timer
    #:mac
    #:make-adjustable-vector
    #:make-animation
    #:mkstr
+   #:mmss
    #:mvb
    #:mvc
+   #:now
    #:numshow
    #:print-every
    #:psymb
@@ -58,6 +62,7 @@
    #:vector-last
    #:vextend
    #:vl
+   #:wheel
    #:with-fast-stack
    #:with-struct))
 
@@ -150,6 +155,14 @@
     #:to-vector
     #:vextend))
 
+(defpackage #:srnd
+  (:use #:common-lisp)
+  (:export #:2in-circ #:2on-circ
+           #:3in-sphere #:3on-sphere
+           #:rnd #:rnd* #:rndrng
+           #:make #:srnd)
+  (:import-from #:auxin #:*srndopt*))
+
 (defpackage #:state
   (:use #:common-lisp)
   (:export #:awith #:it #:lget #:lset #:make #:sget #:to-list #:with))
@@ -215,6 +228,12 @@
   (:export #:adaptive-pos #:len #:make #:pos #:pos* #:rndpos)
   (:import-from #:auxin #:*opt* #:make-adjustable-vector #:to-list
                 #:with-struct))
+
+(defpackage #:pth
+  (:use #:common-lisp)
+  (:export #:@dim #:@n #:@ns #:pth #:@closed #:@len #:make #:@pts
+           #:prt #:pos #:lpos)
+  (:import-from #:auxin #:*opt* #:with-struct))
 
 (defpackage #:simplify
   (:use #:common-lisp)

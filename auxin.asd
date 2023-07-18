@@ -1,8 +1,7 @@
 
-
 (asdf:defsystem #:auxin
   :description "Auxiliary Utilities for Generative Art"
-  :version "0.1.1"
+  :version "0.1.3"
   :author "anders hoff/inconvergent"
   :licence "MIT"
   :in-order-to ((asdf:test-op (asdf:test-op #:auxin/tests)))
@@ -19,6 +18,7 @@
                (:file "state" :depends-on ("utils"))
                (:file "hset" :depends-on ("utils"))
                (:file "math" :depends-on ("utils"))
+               (:file "rnd/srnd" :depends-on ("utils"))
                (:file "rnd/macros" :depends-on ("utils"))
                (:file "rnd/rnd" :depends-on ("rnd/macros"))
                (:file "rnd/2rnd" :depends-on ("rnd/rnd"))
@@ -26,9 +26,11 @@
                (:file "rnd/walkers" :depends-on ("rnd/2rnd" "rnd/3rnd"))
                (:file "fn" :depends-on ("rnd/rnd"))
                (:file "gridfont/main" :depends-on ("utils"))
+               (:file "draw/path" :depends-on ("rnd/rnd"))
                (:file "draw/bzspl" :depends-on ("rnd/rnd"))
                (:file "draw/pigment" :depends-on ("utils"))
                (:file "draw/ortho" :depends-on ("utils"))
+               ; TODO: unify simplify-path and path?
                (:file "draw/simplify-path" :depends-on ("utils"))
                (:file "draw/jpath" :depends-on ("utils"))
                (:file "draw/svg" :depends-on ("draw/simplify-path" "draw/jpath"))
@@ -38,10 +40,9 @@
                (:file "graph/mst-cycle" :depends-on ("graph/main"))
                (:file "draw/canvas" :depends-on ("utils"))))
 
-
 (asdf:defsystem #:auxin/tests
   :depends-on (#:auxin #:prove #:asdf #:uiop)
-  :version "0.1.1"
+  :version "0.1.3"
   :perform (asdf:test-op (o s) (uiop:symbol-call ':auxin-tests '#:run-tests))
   :pathname "test/"
   :serial t

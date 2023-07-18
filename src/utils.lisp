@@ -116,6 +116,7 @@
 
 ; from on lisp by pg
 (defun symb (&rest args) (values (intern (apply #'mkstr args))))
+(defun kv (&rest args) (values (intern (apply #'mkstr args) "KEYWORD")))
 
 ;https://gist.github.com/lispm/6ed292af4118077b140df5d1012ca646
 (defun psymb (package &rest args) (values (intern (apply #'mkstr args) package)))
@@ -300,4 +301,57 @@
                             (when (<= ,,(the small-ind (- n safe-z)) ,',ind)
                                   (error "stack overflow in: ~a" ',',sym)))))
          ,@body))))
+
+(defun wheel (s)
+  (declare (veq:ff s))
+  (cond ((< s #.(/ 1.1 10.0)) " ")
+        ((< s #.(/ 2.1 10.0)) "◦")
+        ((< s #.(/ 3.1 10.0)) "○")
+        ((< s #.(/ 4.1 10.0)) "◔")
+        ((< s #.(/ 5.1 10.0)) "◑")
+        ((< s #.(/ 6.1 10.0)) "◕")
+        ((< s #.(/ 8.1 10.0)) "❉")
+        ((< s #.(/ 7.1 10.0)) "◉")
+        ((< s #.(/ 9.1 10.0)) "✱")
+        (t                    "●")))
+
+
+(veq:fvdef iter-timer (tot &key (int 1) (s t)
+                                (infofx (lambda (&rest rest)
+                                          (declare (ignorable rest)) "")))
+  (declare #.*opt* (veq:pn tot int) (function infofx))
+  (veq:xlet ((t0 (auxin:now)) (p!i 0) (f!last 0f0))
+    (labels ((timer (&aux (progr (auxin:now t0)) (r (veq:ff (veq:ff (/ i (veq:ff tot))))))
+               (cond ((and (> i 0) (zerop (mod i int)))
+                      (progn
+                        (format s "~a ~04,2f № ~4@<~d~> Δ~07,2f ∇~07,2f 𝛿~05,2f  ☰ ~a~%"
+                                (auxin:wheel r) r i
+                                (auxin:mmss progr 2)
+                                (auxin:mmss (- (* tot (/ progr i)) progr) 2)
+                                (abs (- last progr)) (f@infofx i progr))
+                        (finish-output)
+                        (setf last progr))))
+               (incf i)
+               (values i progr)))
+      #'timer)))
+
+(defmacro gi (v) `(* (veq:ff ,v) #.(/ 1f9)))
+(defmacro me (v) `(* (veq:ff ,v) #.(/ 1f6)))
+(defmacro ki (v) `(* (veq:ff ,v) #.(/ 1f3)))
+
+(declaim (inline now))
+(defun now (&optional (t0 0.0))
+  (declare (optimize speed) (veq:ff t0))
+  (abs (- (* (veq:ff (get-internal-real-time))
+             #.(veq:ff (/ internal-time-units-per-second)))
+          t0)))
+
+(defun mmss (i &optional (dec 2))
+  (declare (veq:ff i))
+  (let ((h (mod i #.(* 60 60)))
+        (s (mod (floor i) 60))
+        (m (floor (/ i 60)))
+        (ms (format nil (format nil "~~0,~df" dec)
+                        (mod (nth-value 1 (truncate i)) 1.0))))
+  (format nil "~03d:~2,'0d~a" m s ms)))
 
