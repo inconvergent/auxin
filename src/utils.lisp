@@ -281,25 +281,28 @@
 
 (defmacro with-fast-stack ((sym &key (type 'fixnum) (n 1000) (v 0) (safe-z 100))
                                 &rest body)
+  (declare (symbol sym) (veq:pn n safe-z))
   (auxin:awg (mem ind)
     `(let ((,ind ,safe-z)
            (,mem (make-array ,(+ n (* 2 safe-z))
                    :element-type ',type :initial-element ,v)))
        (declare (type (simple-array ,type) ,mem) (small-ind ,ind))
-       (macrolet ((,(auxin:symb 'push- sym) (val)
+       (macrolet ((,(auxin:symb 'push- sym) (val) ; add this element to the stack
                     `(progn (setf (aref ,',mem ,',ind) ,val)
                             (setf ,',ind (the small-ind (1+ ,',ind)))))
-                  (,(auxin:symb 'pop- sym) ()
+                  (,(auxin:symb 'pop- sym) () ; pop the next element
                     `(progn (setf ,',ind (the small-ind (1- ,',ind)))
                             (aref ,',mem ,',ind)))
-                  (,(auxin:symb 'nil- sym) ()
+                  (,(auxin:symb 'ind- sym) () ',ind) ; current stack index
+                  (,(auxin:symb 'peek- sym) () `(aref ,',mem (1- ,',ind))) ; next element in stack
+                  (,(auxin:symb 'nil- sym) () ; reset stack index to safe-z (zero)
                     `(progn (setf ,',ind (the small-ind ,,safe-z))))
-                  (,(auxin:symb 'con- sym) () `(< (the small-ind ,,safe-z) ,',ind))
-                  (,(auxin:symb 'stack- sym) ()
-                    `(progn (when (<= ,',ind (the small-ind ,,safe-z))
-                                  (error "stack underflow in: ~a" ',',sym))
-                            (when (<= ,,(the small-ind (- n safe-z)) ,',ind)
-                                  (error "stack overflow in: ~a" ',',sym)))))
+                  (,(auxin:symb 'con- sym) () `(< (the small-ind ,,safe-z) ,',ind)) ; is the stack empty?
+                  (,(auxin:symb 'stack- sym) () ; check state
+                    `(progn (when (< ,',ind (the small-ind ,,safe-z))
+                                  (error "stack underflow in: ~a. ind: ~a" ',',sym ,',ind))
+                            (when (< ,,(the small-ind (- n safe-z)) ,',ind)
+                                  (error "stack overflow in: ~a. ind: ~a" ',',sym ,',ind)))))
          ,@body))))
 
 (defun wheel (s)
