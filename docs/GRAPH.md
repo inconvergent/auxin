@@ -7,7 +7,7 @@
  ; ADD names a compiled function:
  ;   Lambda-list: (GRPH A B)
  ;   Derived type: (FUNCTION
- ;                  (GRAPH::GRAPH (UNSIGNED-BYTE 31) (UNSIGNED-BYTE 31))
+ ;                  (GRAPH::GRAPH (UNSIGNED-BYTE 32) (UNSIGNED-BYTE 32))
  ;                  (VALUES BOOLEAN &OPTIONAL))
  ;   Documentation:
  ;     add edge ab. returns t if edge did not exist.
@@ -69,7 +69,7 @@
  ; DEL names a compiled function:
  ;   Lambda-list: (GRPH A B)
  ;   Derived type: (FUNCTION
- ;                  (GRAPH::GRAPH (UNSIGNED-BYTE 31) (UNSIGNED-BYTE 31))
+ ;                  (GRAPH::GRAPH (UNSIGNED-BYTE 32) (UNSIGNED-BYTE 32))
  ;                  (VALUES BOOLEAN &OPTIONAL))
  ;   Documentation:
  ;     del edge ab. returns t if edge existed.
@@ -182,7 +182,7 @@
  ; 
  ; GET-INCIDENT-EDGES names a compiled function:
  ;   Lambda-list: (GRPH V)
- ;   Derived type: (FUNCTION (GRAPH::GRAPH (UNSIGNED-BYTE 31))
+ ;   Derived type: (FUNCTION (GRAPH::GRAPH (UNSIGNED-BYTE 32))
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     get all incident edges of v.
@@ -197,7 +197,7 @@
  ; 
  ; GET-INCIDENT-VERTS names a compiled function:
  ;   Lambda-list: (GRPH V)
- ;   Derived type: (FUNCTION (GRAPH::GRAPH (UNSIGNED-BYTE 31)) *)
+ ;   Derived type: (FUNCTION (GRAPH::GRAPH (UNSIGNED-BYTE 32)) *)
  ;   Documentation:
  ;     get all incident vertices of v.
  ;   Source file: /data/x/auxin/src/graph/main.lisp
@@ -232,7 +232,7 @@
  ; GET-NUM-EDGES names a compiled function:
  ;   Lambda-list: (GRPH)
  ;   Derived type: (FUNCTION (GRAPH::GRAPH)
- ;                  (VALUES (RATIONAL 0 2147483647/2) &OPTIONAL))
+ ;                  (VALUES (RATIONAL 0 4294967295/2) &OPTIONAL))
  ;   Documentation:
  ;     return total number of edges in graph.
  ;   Source file: /data/x/auxin/src/graph/main.lisp
@@ -361,7 +361,7 @@
  ; MEM names a compiled function:
  ;   Lambda-list: (GRPH A B)
  ;   Derived type: (FUNCTION
- ;                  (GRAPH::GRAPH (UNSIGNED-BYTE 31) (UNSIGNED-BYTE 31))
+ ;                  (GRAPH::GRAPH (UNSIGNED-BYTE 32) (UNSIGNED-BYTE 32))
  ;                  (VALUES BOOLEAN &OPTIONAL))
  ;   Documentation:
  ;     check if edge ab exists.
@@ -393,7 +393,7 @@
  ; 
  ; VMEM names a compiled function:
  ;   Lambda-list: (GRPH V)
- ;   Derived type: (FUNCTION (GRAPH::GRAPH (UNSIGNED-BYTE 31))
+ ;   Derived type: (FUNCTION (GRAPH::GRAPH (UNSIGNED-BYTE 32))
  ;                  (VALUES BOOLEAN &OPTIONAL))
  ;   Documentation:
  ;     check if v has at least one connected edge.

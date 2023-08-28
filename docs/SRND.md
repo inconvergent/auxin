@@ -14,6 +14,19 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
+#### SRND:2IN-CIRC+
+
+```
+:missing:todo:
+
+ ; SRND:2IN-CIRC+
+ ;   [symbol]
+ ; 
+ ; 2IN-CIRC+ names a macro:
+ ;   Lambda-list: (RS S &REST REST)
+ ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
+```
+
 #### SRND:2ON-CIRC
 
 ```
@@ -27,6 +40,19 @@
  ;   Documentation:
  ;     get random point on circle with rad r from state rs. centered at origin.
  ;   Inline proclamation: INLINE (inline expansion available)
+ ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
+```
+
+#### SRND:2ON-CIRC+
+
+```
+:missing:todo:
+
+ ; SRND:2ON-CIRC+
+ ;   [symbol]
+ ; 
+ ; 2ON-CIRC+ names a macro:
+ ;   Lambda-list: (RS S &REST REST)
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
@@ -47,6 +73,19 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
+#### SRND:3IN-SPHERE+
+
+```
+:missing:todo:
+
+ ; SRND:3IN-SPHERE+
+ ;   [symbol]
+ ; 
+ ; 3IN-SPHERE+ names a macro:
+ ;   Lambda-list: (RS S &REST REST)
+ ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
+```
+
 #### SRND:3ON-SPHERE
 
 ```
@@ -61,6 +100,19 @@
  ;   Documentation:
  ;     get random point on sphere with rad r from state rs. centered at origin.
  ;   Inline proclamation: INLINE (inline expansion available)
+ ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
+```
+
+#### SRND:3ON-SPHERE+
+
+```
+:missing:todo:
+
+ ; SRND:3ON-SPHERE+
+ ;   [symbol]
+ ; 
+ ; 3ON-SPHERE+ names a macro:
+ ;   Lambda-list: (RS S &REST REST)
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 

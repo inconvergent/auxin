@@ -320,19 +320,20 @@
 
 
 (veq:fvdef iter-timer (tot &key (int 1) (s t)
+                                (prefx (lambda (&rest rest) ""))
                                 (infofx (lambda (&rest rest)
                                           (declare (ignorable rest)) "")))
   (declare #.*opt* (veq:pn tot int) (function infofx))
   (veq:xlet ((t0 (auxin:now)) (p!i 0) (f!last 0f0))
-    (labels ((timer (&aux (progr (auxin:now t0)) (r (veq:ff (veq:ff (/ i (veq:ff tot))))))
+    (labels ((timer (&optional silent &aux (progr (auxin:now t0)) (r (veq:ff (veq:ff (/ i (veq:ff tot))))))
                (cond ((and (> i 0) (zerop (mod i int)))
                       (progn
-                        (format s "~a ~04,2f № ~4@<~d~> Δ~07,2f ∇~07,2f 𝛿~05,2f  ☰ ~a~%"
-                                (auxin:wheel r) r i
-                                (auxin:mmss progr 2)
-                                (auxin:mmss (- (* tot (/ progr i)) progr) 2)
-                                (abs (- last progr)) (f@infofx i progr))
-                        (finish-output)
+                        (unless silent
+                          (format s "~a~a ~04,2f № ~4@<~d~> Δ~07,2f ∇~07,2f 𝛿~05,2f  ☰ ~a~%"
+                                  (f@prefx) (auxin:wheel r) r i (auxin:mmss progr 2)
+                                  (auxin:mmss (- (* tot (/ progr i)) progr) 2)
+                                  (abs (- last progr)) (f@infofx i progr))
+                          (finish-output))
                         (setf last progr))))
                (incf i)
                (values i progr)))

@@ -23,7 +23,7 @@
  ; @DIM names a compiled function:
  ;   Lambda-list: (PTH)
  ;   Derived type: (FUNCTION (PTH:PTH)
- ;                  (VALUES (UNSIGNED-BYTE 31) &OPTIONAL))
+ ;                  (VALUES (UNSIGNED-BYTE 32) &OPTIONAL))
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
@@ -52,7 +52,7 @@
  ; @N names a compiled function:
  ;   Lambda-list: (PTH)
  ;   Derived type: (FUNCTION (PTH:PTH)
- ;                  (VALUES (UNSIGNED-BYTE 31) &OPTIONAL))
+ ;                  (VALUES (UNSIGNED-BYTE 32) &OPTIONAL))
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
@@ -67,7 +67,7 @@
  ; @NS names a compiled function:
  ;   Lambda-list: (PTH)
  ;   Derived type: (FUNCTION (PTH:PTH)
- ;                  (VALUES (UNSIGNED-BYTE 31) &OPTIONAL))
+ ;                  (VALUES (UNSIGNED-BYTE 32) &OPTIONAL))
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
@@ -110,7 +110,7 @@
  ;   Lambda-list: (PTS &KEY (DIM 2) CLOSED)
  ;   Derived type: (FUNCTION
  ;                  ((SIMPLE-ARRAY SINGLE-FLOAT) &KEY
- ;                   (:DIM (UNSIGNED-BYTE 31)) (:CLOSED BOOLEAN))
+ ;                   (:DIM (UNSIGNED-BYTE 32)) (:CLOSED BOOLEAN))
  ;                  (VALUES PTH:PTH &OPTIONAL))
  ;   Documentation:
  ;     initiate a pth from pts
@@ -126,7 +126,7 @@
  ; POS names a compiled function:
  ;   Lambda-list: (PTH &OPTIONAL (A 0.0))
  ;   Derived type: (FUNCTION (PTH:PTH &OPTIONAL SINGLE-FLOAT)
- ;                  (VALUES (SIMPLE-ARRAY SINGLE-FLOAT) (UNSIGNED-BYTE 31)
+ ;                  (VALUES (SIMPLE-ARRAY SINGLE-FLOAT) (UNSIGNED-BYTE 32)
  ;                          SINGLE-FLOAT &OPTIONAL))
  ;   Documentation:
  ;     get the coordinate of the linear interpolation along pth where 0.0 <= a <= 1.0.

@@ -157,10 +157,9 @@
 
 (defpackage #:srnd
   (:use #:common-lisp)
-  (:export #:2in-circ #:2on-circ
-           #:3in-sphere #:3on-sphere
-           #:rnd #:rnd* #:rndrng
-           #:make #:srnd)
+  (:export #:2in-circ #:2on-circ #:2in-circ+ #:2on-circ+
+           #:3in-sphere #:3on-sphere #:3in-sphere+ #:3on-sphere+
+           #:rnd #:rnd* #:rndrng #:make #:srnd)
   (:import-from #:auxin #:*srndopt*))
 
 (defpackage #:state

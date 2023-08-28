@@ -436,7 +436,7 @@
  ; 
  ; BERNOULLI names a compiled function:
  ;   Lambda-list: (N P)
- ;   Derived type: (FUNCTION ((UNSIGNED-BYTE 31) SINGLE-FLOAT)
+ ;   Derived type: (FUNCTION ((UNSIGNED-BYTE 32) SINGLE-FLOAT)
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     n random numbers from bernoulli distribution with mean p.
@@ -505,7 +505,7 @@
  ; 
  ; NRND names a compiled function:
  ;   Lambda-list: (N &OPTIONAL (X 1.0))
- ;   Derived type: (FUNCTION ((UNSIGNED-BYTE 31) &OPTIONAL SINGLE-FLOAT)
+ ;   Derived type: (FUNCTION ((UNSIGNED-BYTE 32) &OPTIONAL SINGLE-FLOAT)
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     n random floates below x.
@@ -521,7 +521,7 @@
  ; 
  ; NRND* names a compiled function:
  ;   Lambda-list: (N &OPTIONAL (X 1.0))
- ;   Derived type: (FUNCTION ((UNSIGNED-BYTE 31) &OPTIONAL SINGLE-FLOAT)
+ ;   Derived type: (FUNCTION ((UNSIGNED-BYTE 32) &OPTIONAL SINGLE-FLOAT)
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     n random floats in range (x -x).
@@ -537,7 +537,7 @@
  ; 
  ; NRND-FROM names a compiled function:
  ;   Lambda-list: (N A)
- ;   Derived type: (FUNCTION ((UNSIGNED-BYTE 31) VECTOR)
+ ;   Derived type: (FUNCTION ((UNSIGNED-BYTE 32) VECTOR)
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     n random elements from a.
@@ -552,7 +552,7 @@
  ; 
  ; NRND-FROM* names a compiled function:
  ;   Lambda-list: (N A)
- ;   Derived type: (FUNCTION ((UNSIGNED-BYTE 31) VECTOR)
+ ;   Derived type: (FUNCTION ((UNSIGNED-BYTE 32) VECTOR)
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     n random distinct elements from a. assumes no dupes in a.
@@ -567,7 +567,7 @@
  ; 
  ; NRNDI names a compiled function:
  ;   Lambda-list: (N A)
- ;   Derived type: (FUNCTION ((UNSIGNED-BYTE 31) (UNSIGNED-BYTE 31))
+ ;   Derived type: (FUNCTION ((UNSIGNED-BYTE 32) (UNSIGNED-BYTE 32))
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     n random fixnums in range: (0 a].
@@ -584,7 +584,7 @@
  ; NRNDRNG names a compiled function:
  ;   Lambda-list: (N A B)
  ;   Derived type: (FUNCTION
- ;                  ((UNSIGNED-BYTE 31) SINGLE-FLOAT SINGLE-FLOAT)
+ ;                  ((UNSIGNED-BYTE 32) SINGLE-FLOAT SINGLE-FLOAT)
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     n random floats in range (a b).
@@ -600,7 +600,7 @@
  ; 
  ; NRNDRNGI names a compiled function:
  ;   Lambda-list: (N A B)
- ;   Derived type: (FUNCTION ((UNSIGNED-BYTE 31) FIXNUM FIXNUM)
+ ;   Derived type: (FUNCTION ((UNSIGNED-BYTE 32) FIXNUM FIXNUM)
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     n fixnums in range [a b).
@@ -770,7 +770,7 @@
  ; RNDSPACE names a compiled function:
  ;   Lambda-list: (N A B &KEY ORDER &AUX (D (- B A)))
  ;   Derived type: (FUNCTION
- ;                  ((UNSIGNED-BYTE 31) SINGLE-FLOAT SINGLE-FLOAT &KEY
+ ;                  ((UNSIGNED-BYTE 32) SINGLE-FLOAT SINGLE-FLOAT &KEY
  ;                   (:ORDER T))
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
@@ -787,7 +787,7 @@
  ; RNDSPACEI names a compiled function:
  ;   Lambda-list: (N A B &KEY ORDER &AUX (D (- B A)))
  ;   Derived type: (FUNCTION
- ;                  ((UNSIGNED-BYTE 31) FIXNUM FIXNUM &KEY (:ORDER T))
+ ;                  ((UNSIGNED-BYTE 32) FIXNUM FIXNUM &KEY (:ORDER T))
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     n random fixnums in range [a b). use order to sort result.

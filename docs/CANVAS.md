@@ -62,7 +62,7 @@
  ; SET-GRAY-PIX names a compiled function:
  ;   Lambda-list: (CANV I J C)
  ;   Derived type: (FUNCTION
- ;                  (T (UNSIGNED-BYTE 31) (UNSIGNED-BYTE 31) SINGLE-FLOAT)
+ ;                  (T (UNSIGNED-BYTE 32) (UNSIGNED-BYTE 32) SINGLE-FLOAT)
  ;                  (VALUES NULL &OPTIONAL))
  ;   Documentation:
  ;     set (i j) to value c where 0.0 =< c =< 1.0.
@@ -79,7 +79,7 @@
  ; SET-PIX names a compiled function:
  ;   Lambda-list: (CANV I J R G B)
  ;   Derived type: (FUNCTION
- ;                  (T (UNSIGNED-BYTE 31) (UNSIGNED-BYTE 31) SINGLE-FLOAT
+ ;                  (T (UNSIGNED-BYTE 32) (UNSIGNED-BYTE 32) SINGLE-FLOAT
  ;                   SINGLE-FLOAT SINGLE-FLOAT)
  ;                  (VALUES NULL &OPTIONAL))
  ;   Documentation:

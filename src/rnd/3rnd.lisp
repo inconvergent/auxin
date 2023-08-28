@@ -36,8 +36,7 @@
 (veq:fvdef 3on-sphere-slow (&optional (r 1f0))
   (declare #.*opt* (veq:ff r))
   "random point on sphere with rad r. centered at origin. slower than 3on-sphere."
-  (labels ((-norm () (let ((u (rnd veq:fpii)))
-                       (declare (veq:ff u))
+  (labels ((-norm () (veq:xlet ((f!u (rnd veq:fpii)))
                        (f2!@.* (sqrt (abs (* 2f0 (log (rnd)))))
                                (cos u) (sin u)))))
      (veq:xlet ((f2!ab (-norm)) (c (-norm)))
@@ -47,9 +46,9 @@
 (veq:fvdef 3on-sphere (&optional (r 1f0))
   (declare (optimize speed (safety 0)) (veq:ff r))
   "random point on sphere with rad r. centered at origin."
-  (veq:fvlet ((th (* veq:fpii (rnd:rnd)))
-              (la (- (the veq:ff (acos (- (* 2.0 (rnd:rnd)) 1f0))) veq:fpi5))
-              (co (* r (cos la))))
+  (veq:xlet ((f!th (* veq:fpii (rnd:rnd)))
+             (f!la (- (the veq:ff (acos (- (* 2.0 (rnd:rnd)) 1f0))) veq:fpi5))
+             (f!co (* r (cos la))))
     (values (* co (cos th)) (* co (sin th)) (* r (sin la)))))
 
 
@@ -57,7 +56,7 @@
 (veq:fvdef 3in-sphere (&optional (r 1f0))
   (declare (optimize speed (safety 0)) (veq:ff r))
   "random point in sphere with rad r. centered at origin."
-  (veq:f3let ((cand (veq:f3val 0f0)))
+  (veq:xlet ((f3!cand (veq:f3val 0f0)))
     (loop while t do (setf (veq:f3 cand) (veq:f3rep (rnd*)))
                      (when (< (veq:f3len2 cand) 1f0)
                        (return-from 3in-sphere (f3!@*. cand r))))))

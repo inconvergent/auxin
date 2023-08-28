@@ -20,7 +20,8 @@
  ;   [symbol]
  ; 
  ; *OPT* names a special variable:
- ;   Value: (OPTIMIZE (SAFETY 1) (SPEED 3) (DEBUG 1) (SPACE 2))
+ ;   Value: (OPTIMIZE (SAFETY 1) (SPEED 3) (DEBUG 1) (SPACE 2)
+ ;           (COMPILATION-SPEED 0))
 ```
 
 #### AUXIN:\*SRNDOPT\*
@@ -239,6 +240,19 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
+#### AUXIN:GI
+
+```
+:missing:todo:
+
+ ; AUXIN:GI
+ ;   [symbol]
+ ; 
+ ; GI names a macro:
+ ;   Lambda-list: (V)
+ ;   Source file: /data/x/auxin/src/utils.lisp
+```
+
 #### AUXIN:GROUP
 
 ```
@@ -291,6 +305,38 @@
  ;   [symbol]
 ```
 
+#### AUXIN:ITER-TIMER
+
+```
+:missing:todo:
+
+ ; AUXIN:ITER-TIMER
+ ;   [symbol]
+ ; 
+ ; ITER-TIMER names a compiled function:
+ ;   Lambda-list: (TOT &KEY (INT 1) (S T) (PREFX (LAMBDA (&REST REST) ))
+ ;                 (INFOFX
+ ;                  (LAMBDA (&REST REST) (DECLARE (IGNORABLE REST)) )))
+ ;   Derived type: (FUNCTION
+ ;                  ((UNSIGNED-BYTE 32) &KEY (:INT (UNSIGNED-BYTE 32))
+ ;                   (:S T) (:PREFX T) (:INFOFX FUNCTION))
+ ;                  (VALUES FUNCTION &OPTIONAL))
+ ;   Source file: /data/x/auxin/src/utils.lisp
+```
+
+#### AUXIN:KI
+
+```
+:missing:todo:
+
+ ; AUXIN:KI
+ ;   [symbol]
+ ; 
+ ; KI names a macro:
+ ;   Lambda-list: (V)
+ ;   Source file: /data/x/auxin/src/utils.lisp
+```
+
 #### AUXIN:KV
 
 ```
@@ -328,7 +374,7 @@
  ; 
  ; LST>N names a compiled function:
  ;   Lambda-list: (L N)
- ;   Derived type: (FUNCTION (LIST (UNSIGNED-BYTE 31))
+ ;   Derived type: (FUNCTION (LIST (UNSIGNED-BYTE 32))
  ;                  (VALUES BOOLEAN &OPTIONAL))
  ;   Documentation:
  ;     is list, l, longer than n?
@@ -387,6 +433,19 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
+#### AUXIN:ME
+
+```
+:missing:todo:
+
+ ; AUXIN:ME
+ ;   [symbol]
+ ; 
+ ; ME names a macro:
+ ;   Lambda-list: (V)
+ ;   Source file: /data/x/auxin/src/utils.lisp
+```
+
 #### AUXIN:MKSTR
 
 ```
@@ -398,6 +457,21 @@
  ; MKSTR names a compiled function:
  ;   Lambda-list: (&REST ARGS)
  ;   Derived type: (FUNCTION * (VALUES SIMPLE-STRING &OPTIONAL))
+ ;   Source file: /data/x/auxin/src/utils.lisp
+```
+
+#### AUXIN:MMSS
+
+```
+:missing:todo:
+
+ ; AUXIN:MMSS
+ ;   [symbol]
+ ; 
+ ; MMSS names a compiled function:
+ ;   Lambda-list: (I &OPTIONAL (DEC 2))
+ ;   Derived type: (FUNCTION (SINGLE-FLOAT &OPTIONAL T)
+ ;                  (VALUES SIMPLE-STRING &OPTIONAL))
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
@@ -424,6 +498,22 @@
  ; 
  ; MVC names a macro:
  ;   Lambda-list: (&REST ARGS)
+ ;   Source file: /data/x/auxin/src/utils.lisp
+```
+
+#### AUXIN:NOW
+
+```
+:missing:todo:
+
+ ; AUXIN:NOW
+ ;   [symbol]
+ ; 
+ ; NOW names a compiled function:
+ ;   Lambda-list: (&OPTIONAL (T0 0.0))
+ ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT)
+ ;                  (VALUES (SINGLE-FLOAT 0.0) &OPTIONAL))
+ ;   Inline proclamation: INLINE (inline expansion available)
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
@@ -783,6 +873,21 @@
  ; 
  ; VL names a macro:
  ;   Lambda-list: (&REST ARGS)
+ ;   Source file: /data/x/auxin/src/utils.lisp
+```
+
+#### AUXIN:WHEEL
+
+```
+:missing:todo:
+
+ ; AUXIN:WHEEL
+ ;   [symbol]
+ ; 
+ ; WHEEL names a compiled function:
+ ;   Lambda-list: (S)
+ ;   Derived type: (FUNCTION (SINGLE-FLOAT)
+ ;                  (VALUES (SIMPLE-ARRAY CHARACTER (1)) &OPTIONAL))
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 

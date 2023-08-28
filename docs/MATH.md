@@ -160,7 +160,7 @@
  ; LINSPACE names a compiled function:
  ;   Lambda-list: (N A B &KEY (END T))
  ;   Derived type: (FUNCTION
- ;                  ((UNSIGNED-BYTE 31) SINGLE-FLOAT SINGLE-FLOAT &KEY
+ ;                  ((UNSIGNED-BYTE 32) SINGLE-FLOAT SINGLE-FLOAT &KEY
  ;                   (:END BOOLEAN))
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
@@ -176,7 +176,7 @@
  ; 
  ; LIST>THAN names a compiled function:
  ;   Lambda-list: (L N)
- ;   Derived type: (FUNCTION (LIST (UNSIGNED-BYTE 31))
+ ;   Derived type: (FUNCTION (LIST (UNSIGNED-BYTE 32))
  ;                  (VALUES BOOLEAN &OPTIONAL))
  ;   Documentation:
  ;     list is longer than n?

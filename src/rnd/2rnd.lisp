@@ -45,10 +45,9 @@
 (veq:fvdef* 2in-circ (&optional (r 1f0))
   (declare #.*opt* (veq:ff r))
   "random point in circle with rad r. centered at origin."
-  (let ((a (rnd)) (b (rnd)))
-    (declare (veq:ff a b))
+  (veq:xlet ((f!a (rnd)) (f!b (rnd)))
     (if (< a b) (setf a (* veq:fpii (/ a b)) b (* b r))
-                (let ((d a)) (setf a (* veq:fpii (/ b a)) b (* d r))))
+                (veq:xlet ((f!d a)) (setf a (* veq:fpii (/ b a)) b (* d r))))
     (values (* (cos a) b) (* (sin a) b))))
 
 (veq:fvdef* 2nin-circ (n &optional (r 1f0))
