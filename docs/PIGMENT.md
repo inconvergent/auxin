@@ -95,7 +95,8 @@
  ; 
  ; BLACK names a compiled function:
  ;   Lambda-list: (&OPTIONAL (A 1.0))
- ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
+ ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT)
+ ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     black
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
@@ -109,7 +110,8 @@
  ; 
  ; BLUE names a compiled function:
  ;   Lambda-list: (&OPTIONAL (A 1.0))
- ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
+ ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT)
+ ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     blue
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
@@ -126,7 +128,7 @@
  ;   Derived type: (FUNCTION
  ;                  (SINGLE-FLOAT SINGLE-FLOAT SINGLE-FLOAT SINGLE-FLOAT
  ;                   &OPTIONAL SINGLE-FLOAT)
- ;                  *)
+ ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     create pigment from (c m y k a). a is optional.
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
@@ -169,7 +171,8 @@
  ; 
  ; DARK names a compiled function:
  ;   Lambda-list: (&OPTIONAL (A 1.0))
- ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
+ ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT)
+ ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     0.2 gray
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
@@ -183,7 +186,8 @@
  ; 
  ; GRAY names a compiled function:
  ;   Lambda-list: (&OPTIONAL (V 0.5) (A 1.0))
- ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT SINGLE-FLOAT) *)
+ ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT SINGLE-FLOAT)
+ ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     v gray
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
@@ -197,7 +201,8 @@
  ; 
  ; GREEN names a compiled function:
  ;   Lambda-list: (&OPTIONAL (A 1.0))
- ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
+ ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT)
+ ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     green
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
@@ -214,7 +219,7 @@
  ;   Derived type: (FUNCTION
  ;                  (SINGLE-FLOAT SINGLE-FLOAT SINGLE-FLOAT &OPTIONAL
  ;                   SINGLE-FLOAT)
- ;                  *)
+ ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     create pigment from (h s v a). a is optional.
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
@@ -260,7 +265,8 @@
  ; 
  ; MDARK names a compiled function:
  ;   Lambda-list: (&OPTIONAL (A 1.0))
- ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
+ ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT)
+ ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     0.3 gray
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
@@ -274,7 +280,8 @@
  ; 
  ; RED names a compiled function:
  ;   Lambda-list: (&OPTIONAL (A 1.0))
- ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
+ ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT)
+ ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     red
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
@@ -291,7 +298,7 @@
  ;   Derived type: (FUNCTION
  ;                  (SINGLE-FLOAT SINGLE-FLOAT SINGLE-FLOAT &OPTIONAL
  ;                   SINGLE-FLOAT)
- ;                  *)
+ ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     same as make.
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
@@ -351,7 +358,8 @@
  ; 
  ; VDARK names a compiled function:
  ;   Lambda-list: (&OPTIONAL (A 1.0))
- ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
+ ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT)
+ ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     0.1
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
@@ -365,7 +373,8 @@
  ; 
  ; WHITE names a compiled function:
  ;   Lambda-list: (&OPTIONAL (A 1.0))
- ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
+ ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT)
+ ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     white
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
