@@ -90,6 +90,7 @@
 (defpackage #:rnd
   (:use #:common-lisp)
   (:export
+    #:2ndistsample
     #:2in-circ
     #:2in-rect
     #:2in-square

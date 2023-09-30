@@ -197,11 +197,7 @@
  ; 
  ; GET-INCIDENT-VERTS names a compiled function:
  ;   Lambda-list: (GRPH V)
- ;   Derived type: (FUNCTION (GRAPH::GRAPH (UNSIGNED-BYTE 32))
- ;                  (VALUES
- ;                   (OR LIST (SIMPLE-ARRAY * (*))
- ;                       SB-KERNEL:EXTENDED-SEQUENCE)
- ;                   &OPTIONAL))
+ ;   Derived type: (FUNCTION (GRAPH::GRAPH (UNSIGNED-BYTE 32)) *)
  ;   Documentation:
  ;     get all incident vertices of v.
  ;   Source file: /data/x/auxin/src/graph/main.lisp

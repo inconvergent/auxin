@@ -20,7 +20,8 @@
  ;   [symbol]
  ; 
  ; *OPT* names a special variable:
- ;   Value: (OPTIMIZE SAFETY (SPEED 0) DEBUG (SPACE 1))
+ ;   Value: (OPTIMIZE (SAFETY 1) (SPEED 3) (DEBUG 1) (SPACE 2)
+ ;           (COMPILATION-SPEED 0))
 ```
 
 #### AUXIN:\*SRNDOPT\*

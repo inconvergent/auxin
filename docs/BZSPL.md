@@ -84,8 +84,7 @@
  ; RNDPOS names a compiled function:
  ;   Lambda-list: (B N &KEY ORDER)
  ;   Derived type: (FUNCTION
- ;                  (BZSPL::BZSPL (UNSIGNED-BYTE 32) &KEY (:ORDER T))
- ;                  (VALUES (SIMPLE-ARRAY SINGLE-FLOAT (*)) &OPTIONAL))
+ ;                  (BZSPL::BZSPL (UNSIGNED-BYTE 32) &KEY (:ORDER T)) *)
  ;   Source file: /data/x/auxin/src/draw/bzspl.lisp
 ```
 

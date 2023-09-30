@@ -46,6 +46,27 @@
  ;   Source file: /data/x/auxin/src/rnd/2rnd.lisp
 ```
 
+#### RND:2NDISTSAMPLE
+
+```
+ ; RND:2NDISTSAMPLE
+ ;   [symbol]
+ ; 
+ ; 2NDISTSAMPLE names a compiled function:
+ ;   Lambda-list: (WANT FX &KEY (RES (MAKE-ADJUSTABLE-VECTOR))
+ ;                 (SAMPLE-NUM 50) (DSTFX (FUNCTION -F2DST2))
+ ;                 (MIN-DST -1.0) (MAX-TRIES WANT))
+ ;   Derived type: (FUNCTION
+ ;                  (T FUNCTION &KEY (:RES ARRAY) (:SAMPLE-NUM FIXNUM)
+ ;                   (:DSTFX FUNCTION) (:MIN-DST T) (:MAX-TRIES T))
+ ;                  (VALUES VECTOR &OPTIONAL))
+ ;   Documentation:
+ ;     add want additional samples to res from batches of (f@fx sample-num),
+ ;        always selecting the element furthest from existing elemets.
+ ;          example: (rnd:max-distance-sample 100 (lambda (n) (rnd:nin-circ n 400f0)))
+ ;   Source file: /data/x/auxin/src/rnd/2rnd.lisp
+```
+
 #### RND:2NIN-CIRC
 
 ```

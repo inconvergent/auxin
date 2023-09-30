@@ -55,3 +55,28 @@
   "n random points in circle with rad r. centered at origin."
   (f2!@$+! (veq:f2$zero n) (?@ (2in-circ r))))
 
+
+; TODO: this is pretty inefficient. in terms of time and RAM
+; some version of mitchell's best candidate algorithm
+(veq:fvdef 2ndistsample (want fx &key (res (auxin:make-adjustable-vector))
+                                      (sample-num 50) (dstfx #'veq::-f2dst2)
+                                      (min-dst -1f0) (max-tries want))
+  (declare (fixnum n sample-num) (function fx dstfx) (array res))
+  "add want additional samples to res from batches of (f@fx sample-num),
+   always selecting the element furthest from existing elemets.
+     example: (rnd:max-distance-sample 100 (lambda (n) (rnd:nin-circ n 400f0)))"
+  (labels ((arrmin ((:va 2 x) &aux (l (length res)))
+             (if (> l 0) (loop for i from 0 repeat l
+                               minimizing (f@dstfx (veq:f2$ (aref res i)) x))
+                         999999999f0)))
+    (loop with wanted-length of-type fixnum = (+ want (length res))
+          repeat max-tries until (>= (length res) wanted-length)
+          do (veq:xlet ((p!ind 0) (cands (f@fx sample-num))
+                        (dd (f21%@$ cands (((:va 2 x)) (veq:ff (m@arrmin x)))))
+                        (f!dst (veq:f$ dd ind)))
+               (fx@$ dd ((i d) (when (and (<= min-dst d) (<= dst d))
+                                     (setf ind i dst d))))
+               (when (<= min-dst dst)
+                     (auxin:vextend (veq:f2$point (veq:f2$ cands ind)) res)))))
+  res)
+
