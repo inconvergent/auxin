@@ -1,37 +1,27 @@
 
 (in-package #:auxin)
 
+(declaim (inline lst>n last* vector-last vector-first))
 
 (deftype small-ind (&optional (size 30000)) `(integer 0 ,size))
 
-(defun v? (&optional (silent t))
-  (let ((v (slot-value (asdf:find-system 'auxin) 'asdf:version)))
-    (unless silent (format t "~%veq version: ~a~%" v))
-    v))
-(defun d? (f) (describe f))
-(defun i? (f) (inspect f))
-
+(defun v? (&optional (silent t) &aux (v (slot-value (asdf:find-system 'auxin) 'asdf:version)))
+  (unless silent (format t "~%veq version: ~a~%" v))
+  v)
+(defun d? (f) (describe f)) (defun i? (f) (inspect f))
 
 ;http://cl-cookbook.sourceforge.net/os.html
 (defun cmd-args ()
-  (or #+SBCL sb-ext:*posix-argv*
-      #+LISPWORKS system:*line-arguments-list*
-      #+CMU extensions:*command-line-words*
-      nil))
-
+  (or #+SBCL sb-ext:*posix-argv* #+LISPWORKS system:*line-arguments-list*
+      #+CMU extensions:*command-line-words* nil))
 
 ;https://www.rosettacode.org/wiki/Program_termination#Common_Lisp
 (defun terminate (status)
   (format t "~%terminated with status: ~a~%" status)
-  #+sbcl (sb-ext:quit :unix-status status)
-  #+ccl (ccl:quit status)
-  #+clisp (ext:quit status)
-  #+cmu (unix:unix-exit status)
-  #+abcl (ext:quit:status status)
-  #+allegro (excl:exit status :quiet t)
-  #+gcl (common-lisp-user::bye status)
-  #+ecl (ext:quit status))
-
+  #+sbcl (sb-ext:quit :unix-status status) #+ccl (ccl:quit status)
+  #+clisp (ext:quit status) #+cmu (unix:unix-exit status)
+  #+abcl (ext:quit:status status) #+allegro (excl:exit status :quiet t)
+  #+gcl (common-lisp-user::bye status) #+ecl (ext:quit status))
 
 ;https://github.com/inconvergent/weir/pull/1/commits/4a1df51914800c78cb34e8194222185ebde12388
 (defmacro define-struct-load-form (struct-name)
@@ -39,8 +29,6 @@
   `(defmethod make-load-form ((obj ,struct-name) &optional env)
      (make-load-form-saving-slots obj :environment env)))
 
-
-; modified from on lisp by pg
 (defun group (source n)
   (if (zerop n) (error "group: zero length"))
   (labels ((rec (source acc)
@@ -50,25 +38,15 @@
                    (nreverse (cons source acc))))))
     (if source (rec source nil) nil)))
 
-
-; from on lisp by pg
 (defun mkstr (&rest args)
-  (with-output-to-string (s)
-    (dolist (a args) (princ a s))))
-
-; from on lisp by pg
+  (with-output-to-string (s) (dolist (a args) (princ a s))))
 (defun reread (&rest args) (values (read-from-string (apply #'mkstr args))))
 
-
-(declaim (inline lst>n))
+(defun last* (a) (first (last a)))
 (defun lst>n (l n)
   (declare (list l) (veq:pn n))
   "is list, l, longer than n?"
   (consp (nthcdr n l)))
-
-(declaim (inline last*))
-(defun last* (a) (first (last a)))
-
 
 (defun tree-find (tree fx)
   (declare (optimize speed) (function fx))
@@ -95,32 +73,20 @@
         else collect x into no
         finally (return (values yes no))))
 
-
-;from on lisp by pg
 (defmacro aif (test-form then-form &optional else-form)
   `(let ((it ,test-form))
      (if it ,then-form ,else-form)))
 
-
-;from on lisp by pg
 (defmacro abbrev (short long)
   `(defmacro ,short (&rest args)
      `(,',long ,@args)))
-
-(abbrev mvc multiple-value-call)
-(abbrev mvb multiple-value-bind)
+(abbrev mvc multiple-value-call) (abbrev mvb multiple-value-bind)
 (abbrev dsb destructuring-bind)
-(abbrev awg alexandria:with-gensyms)
-(abbrev awf alexandria:flatten)
 
-
-; from on lisp by pg
 (defun symb (&rest args) (values (intern (apply #'mkstr args))))
-(defun kv (&rest args) (values (intern (apply #'mkstr args) "KEYWORD")))
-
 ;https://gist.github.com/lispm/6ed292af4118077b140df5d1012ca646
 (defun psymb (package &rest args) (values (intern (apply #'mkstr args) package)))
-
+(defun kv (&rest args) (values (intern (apply #'mkstr args) "KEYWORD")))
 
 ;https://gist.github.com/lispm/6ed292af4118077b140df5d1012ca646
 (defmacro with-struct ((name . fields) struct &body body)
@@ -134,24 +100,26 @@
 (defun -gensyms (name n)
   (declare (symbol name) (fixnum n))
   (loop with name = (string-upcase (string name))
-        repeat n
-        for x across "XYZWUVPQR"
+        for x across "XYZWUVPQR" repeat n
         collect (gensym (format nil "~a-~a-" name x))))
-
 
 (defmacro make-animation ((ani) &body body)
   `(push (lambda () (progn ,@body)) ,ani))
 (defmacro animate (ani)
-  (auxin:awg (a)
-    `(setf ,ani (remove-if-not (lambda (,a) (funcall ,a)) ,ani))))
+  (awg (a) `(setf ,ani (remove-if-not (lambda (,a) (funcall ,a)) ,ani))))
 
+(defmacro psh (a l)
+  (declare (symbol l))
+  "push a to l, return a. a is evaluated only once."
+  (awg (a*) `(let ((,a* ,a)) (push ,a* ,l) ,a*)))
 
 (defun split (s c)
   (declare (string s))
   "split s at c"
-  (veq::split-string (typecase c (string (char c 0)) (character c)
-                    (t (error "split must be string or char, got ~a" c)))
-                  s))
+  (veq::split-string (typecase c
+                        (string (char c 0)) (character c)
+                        (t (error "split must be string or char, got ~a" c)))
+                     s))
 
 (defun -docs-sanitize (d)
   (let ((sp (veq::split-string #\~ d)))
@@ -160,39 +128,28 @@
                                   (veq::mkstr s #\~ #\~)) (butlast sp))
                    (last sp)))))
 
-
-(defun append-postfix (fn postfix)
-  (declare (string fn))
-  (format nil "~a~a" fn postfix))
-
 (defun append-number (fn i)
   (declare (string fn) (fixnum i))
   (format nil "~a-~8,'0d" fn i))
 
-
-; dirty solution from:
 ; https://stackoverflow.com/questions/20963313/how-do-i-trim-leading-and-trailing-whitespace-in-common-lisp
-; TODO: improve this
-(defun trim (s)
+(defun trim (s) ; TODO: improve this
   (declare (string s))
   (string-trim '(#\Space #\Newline #\Backspace #\Tab
                  #\Linefeed #\Page #\Return #\Rubout)
                s))
 
 (defun ensure-filename (fn &optional (postfix "") (silent nil))
-  (let ((fn* (append-postfix (if fn fn "tmp") postfix)))
+  (let ((fn* (mkstr (if fn fn "tmp") postfix)))
     (declare (string fn*))
     (format (not silent) "~&file: ~a~%" fn*)
     fn*))
-
 
 (defun print-every (i &optional (n 1))
   (declare (fixnum i n))
   (when (zerop (mod i n)) (format t "~&itt: ~a~&" i)))
 
-
 (defun string-list-concat (l) (declare (list l)) (format nil "~{~a~}" l))
-
 
 (defun numshow (a &key (ten 6) (prec 6))
   (declare (number a))
@@ -201,7 +158,6 @@
         (format nil show a)
         (format nil "~,1e" a))))
 
-
 (abbrev vextend vector-push-extend)
 (defun lvextend (x v)
   (declare (sequence x) (vector v))
@@ -209,17 +165,11 @@
   (typecase x (cons (loop for o in x do (vextend o v)))
               (t (loop for o across x do (vextend o v)))))
 
-
-(declaim (inline vector-last))
 (defun vector-last (a) (declare (vector a)) (aref a (1- (length a))))
-(declaim (inline vector-first))
 (defun vector-first (a) (declare (vector a)) (aref a 0))
-(abbrev vl vector-last)
-(abbrev tl to-list)
-(abbrev tv to-vector)
-(abbrev ev ensure-vector)
+(abbrev vl vector-last) (abbrev tl to-list)
+(abbrev tv to-vector)   (abbrev ev ensure-vector)
 (abbrev tav to-adjustable-vector)
-
 
 (defun make-adjustable-vector (&key init (type t) (size 128))
   (if init (make-array (length init)
@@ -228,44 +178,34 @@
            (make-array size
              :fill-pointer 0 :element-type type :adjustable t)))
 
+(defun to-list (a) (declare (sequence a)) (coerce a 'list))
 (defun to-vector (init &key (type t))
   (declare (list init))
   (make-array (length init)
     :initial-contents init :adjustable nil :element-type type))
-
 (defun ensure-vector (o &key (type t))
   (declare (sequence o))
   (typecase o (cons (to-vector o :type type))
               (vector o)
               (t (error "unable to coerce to vector: ~a" o))))
-
 (defun to-adjustable-vector (init &key (type t))
   (declare (sequence init))
-  (make-array (length init)
-              :fill-pointer t :initial-contents init
-              :element-type type :adjustable t))
-
-
-(defun to-list (a) (declare (sequence a)) (coerce a 'list))
+  (make-array (length init) :fill-pointer t :initial-contents init
+                            :element-type type :adjustable t))
 
 (defun undup (e)
   (declare (optimize speed))
-  (delete-duplicates (alexandria:flatten e)))
+  (delete-duplicates (awf e)))
 
-(defun internal-path-string (path)
+(defun internal-path-string (path &optional (pkg :auxin))
   (declare (string path))
-  (namestring (asdf:system-relative-pathname :auxin path)))
+  (namestring (asdf:system-relative-pathname pkg path)))
 
-
-; TODO: this is probably not very general
-(defun show-ht (ht)
+(defun show-ht (ht) ; TODO: this is probably not very general
   (typecase ht
-    (hash-table
-      (when (< (hash-table-count ht) 1) (format t "~& { empty~%"))
-      (loop for k being the hash-keys of ht
-            using (hash-value v)
-            for i from 0
-            do (format t "~& { ~d: ~a: ~@{~a~^ ~}~&" i k v)))
+    (hash-table (when (< (hash-table-count ht) 1) (format t "~& { empty~%"))
+                (loop for k being the hash-keys of ht using (hash-value v)
+                      for i from 0 do (format t "~& { ~d: ~a: ~@{~a~^ ~}~&" i k v)))
     (t (warn "~& { nil")))
   ht)
 
@@ -275,76 +215,45 @@
     ,@(loop for ind in rest
             collect (typecase ind (number `(list (aref ,a ,ind)))
                                   (symbol `(list (aref ,a ,ind)))
-                                  (cons (case (length ind)
+                                  (cons (ecase (length ind)
                                           (1 `(list (aref ,a ,@ind)))
                                           (2 `(subseq ,a ,@ind))))))))
 
 (defmacro with-fast-stack ((sym &key (type 'fixnum) (n 1000) (v 0) (safe-z 100))
                                 &rest body)
   (declare (symbol sym) (veq:pn n safe-z))
-  (auxin:awg (mem ind)
+  (awg (mem ind)
     `(let ((,ind ,safe-z)
            (,mem (make-array ,(+ n (* 2 safe-z))
                    :element-type ',type :initial-element ,v)))
        (declare (type (simple-array ,type) ,mem) (small-ind ,ind))
-       (macrolet ((,(auxin:symb 'push- sym) (val) ; add this element to the stack
+       (macrolet ((,(symb 'push- sym) (val) ; add this element to the stack
                     `(progn (setf (aref ,',mem ,',ind) ,val)
                             (setf ,',ind (the small-ind (1+ ,',ind)))))
-                  (,(auxin:symb 'pop- sym) () ; pop the next element
+                  (,(symb 'pop- sym) () ; pop the next element
                     `(progn (setf ,',ind (the small-ind (1- ,',ind)))
                             (aref ,',mem ,',ind)))
-                  (,(auxin:symb 'ind- sym) () ',ind) ; current stack index
-                  (,(auxin:symb 'peek- sym) () `(aref ,',mem (1- ,',ind))) ; next element in stack
-                  (,(auxin:symb 'nil- sym) () ; reset stack index to safe-z (zero)
+                  (,(symb 'ind- sym) () ',ind) ; current stack index
+                  (,(symb 'peek- sym) () `(aref ,',mem (1- ,',ind))) ; next element in stack
+                  (,(symb 'nil- sym) () ; reset stack index to safe-z (zero)
                     `(progn (setf ,',ind (the small-ind ,,safe-z))))
-                  (,(auxin:symb 'con- sym) () `(< (the small-ind ,,safe-z) ,',ind)) ; is the stack empty?
-                  (,(auxin:symb 'stack- sym) () ; check state
+                  (,(symb 'con- sym) () `(< (the small-ind ,,safe-z) ,',ind)) ; is the stack empty?
+                  (,(symb 'stack- sym) () ; check state
                     `(progn (when (< ,',ind (the small-ind ,,safe-z))
                                   (error "stack underflow in: ~a. ind: ~a" ',',sym ,',ind))
                             (when (< ,,(the small-ind (- n safe-z)) ,',ind)
                                   (error "stack overflow in: ~a. ind: ~a" ',',sym ,',ind)))))
          ,@body))))
 
-(defun wheel (s)
-  (declare (veq:ff s))
-  (cond ((< s #.(/ 1.1 10.0)) " ") ((< s #.(/ 2.1 10.0)) "◦")
-        ((< s #.(/ 3.1 10.0)) "○") ((< s #.(/ 4.1 10.0)) "◔")
-        ((< s #.(/ 5.1 10.0)) "◑") ((< s #.(/ 6.1 10.0)) "◕")
-        ((< s #.(/ 7.1 10.0)) "❉") ((< s #.(/ 8.1 10.0)) "✱")
-        ((< s #.(/ 9.1 10.0)) "◉") (t                    "●")))
-
-
-(veq:fvdef iter-timer (tot &key (int 1) (s t)
-                                (prefx (lambda (&rest rest) ""))
-                                (infofx (lambda (&rest rest)
-                                          (declare (ignorable rest)) "")))
-  (declare #.*opt* (veq:pn tot int) (function infofx))
-  (veq:xlet ((t0 (auxin:now)) (p!i 0) (f!last 0f0))
-    (labels ((timer (&optional silent &aux (progr (auxin:now t0)) (r (veq:ff (veq:ff (/ i (veq:ff tot))))))
-               (cond ((and (> i 0) (zerop (mod i int)))
-                      (progn
-                        (unless silent
-                          (format s "~a~a ~04,2f № ~4@<~d~> Δ~07,2f ∇~07,2f 𝛿~05,2f  ☰ ~a~%"
-                                  (f@prefx) (auxin:wheel r) r i (auxin:mmss progr 2)
-                                  (auxin:mmss (- (* tot (/ progr i)) progr) 2)
-                                  (abs (- last progr)) (f@infofx i progr))
-                          (finish-output))
-                        (setf last progr))))
-               (incf i)
-               (values i progr)))
-      #'timer)))
-
 (defmacro gi (v) `(* (veq:ff ,v) #.(/ 1f9)))
 (defmacro me (v) `(* (veq:ff ,v) #.(/ 1f6)))
 (defmacro ki (v) `(* (veq:ff ,v) #.(/ 1f3)))
 
-(declaim (inline now))
 (defun now (&optional (t0 0.0))
   (declare (optimize speed) (veq:ff t0))
   (abs (- (* (veq:ff (get-internal-real-time))
              #.(veq:ff (/ internal-time-units-per-second)))
           t0)))
-
 (defun mmss (i &optional (dec 2))
   (declare (veq:ff i))
   (let ((h (mod i #.(* 60 60)))
@@ -354,3 +263,30 @@
                         (mod (nth-value 1 (truncate i)) 1.0))))
   (format nil "~03d:~2,'0d~a" m s ms)))
 
+(defun wheel (s)
+  (declare (veq:ff s))
+  (cond ((< s #.(/ 1.1 10.0)) " ") ((< s #.(/ 2.1 10.0)) "◦")
+        ((< s #.(/ 3.1 10.0)) "○") ((< s #.(/ 4.1 10.0)) "◔")
+        ((< s #.(/ 5.1 10.0)) "◑") ((< s #.(/ 6.1 10.0)) "◕")
+        ((< s #.(/ 7.1 10.0)) "❉") ((< s #.(/ 8.1 10.0)) "✱")
+        ((< s #.(/ 9.1 10.0)) "◉") (t                    "●")))
+
+(veq:fvdef iter-timer (tot &key (int 1) (s t)
+                                (prefx (lambda (&rest rest) ""))
+                                (infofx (lambda (&rest rest)
+                                          (declare (ignorable rest)) "")))
+  (declare #.*opt* (veq:pn tot int) (function infofx))
+  (veq:xlet ((t0 (now)) (p!i 0) (f!last 0f0))
+    (labels ((timer (&optional silent &aux (progr (now t0)) (r (veq:ff (veq:ff (/ i (veq:ff tot))))))
+               (cond ((and (> i 0) (zerop (mod i int)))
+                      (progn
+                        (unless silent
+                          (format s "~a~a ~04,2f № ~4@<~d~> Δ~07,2f ∇~07,2f 𝛿~05,2f  ☰ ~a~%"
+                                  (f@prefx) (wheel r) r i (mmss progr 2)
+                                  (mmss (- (* tot (/ progr i)) progr) 2)
+                                  (abs (- last progr)) (f@infofx i progr))
+                          (finish-output))
+                        (setf last progr))))
+               (incf i)
+               (values i progr)))
+      #'timer)))

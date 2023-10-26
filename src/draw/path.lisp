@@ -143,3 +143,12 @@ if pth is closed and b < a it will move through (pos 0)"
               (t (error "PTH: must have a<b, or closed path with b<a.
 got a: ~a, b: ~a, closed: ~a" a b closed))))))
 
+(veq:fvdef stipple (p &optional (s 2f0) (g s) &aux (l (+ s g))) ; TODO: flip ?
+  (declare (veq:ff s g l))
+  "stipple pth/fvec p with lines of length s and gaps of leng g"
+  (loop with pth = (etypecase p (veq:fvec (make p)) (pth p))
+        with len = (@len pth)
+        for x = (rnd:rnd g) then (+ x l)
+        for xx = (min len (+ x s))
+        while (< x len) collect (lpos pth (/ x len) (/ xx len))))
+

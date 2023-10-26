@@ -1,18 +1,10 @@
 This code is released under the MIT license(see below). Unless otherwise noted.
 
-Most prominent exceptions are:
+With these exceptions:
 
-1. The images.
+1. The images. They belong to me.
 
-1. Some utilities from On Lisp by Paul Graham. They are bound by this notice:
-
----
-This code is copyright 1993 by Paul Graham, but anyone who wants
-to use the code in any nonprofit activity, or distribute free
-verbatim copies (including this notice), is encouraged to do so.
----
-
-2. Some modified code by Victor Anyakin in (in src/auxiliary/dat.lisp):
+2. Some modified code by Victor Anyakin in (in src/dat.lisp):
 
 ---
 Copyright (c) 2013-2018 Victor Anyakin <anyakinvictor@yahoo.com>

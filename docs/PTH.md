@@ -186,3 +186,18 @@
  ;       Initform: 0.0
 ```
 
+#### PTH:STIPPLE
+
+```
+ ; PTH:STIPPLE
+ ;   [symbol]
+ ; 
+ ; STIPPLE names a compiled function:
+ ;   Lambda-list: (P &OPTIONAL (S 2.0) (G S) &AUX (L (+ S G)))
+ ;   Derived type: (FUNCTION (T &OPTIONAL SINGLE-FLOAT SINGLE-FLOAT)
+ ;                  (VALUES LIST &OPTIONAL))
+ ;   Documentation:
+ ;     stipple pth/fvec p with lines of length s and gaps of leng g
+ ;   Source file: /data/x/auxin/src/draw/path.lisp
+```
+

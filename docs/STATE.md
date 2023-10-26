@@ -7,8 +7,7 @@
  ; AWITH names a macro:
  ;   Lambda-list: ((ST K &KEY DEFAULT) &BODY BODY)
  ;   Documentation:
- ;     access state[key] as state:it,
- ;        the final form of body is assigned back to state[key]
+ ;     access state[key] as state:it. final form of body is assigned to state[key]
  ;   Source file: /data/x/auxin/src/state.lisp
 ```
 

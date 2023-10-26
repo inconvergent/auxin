@@ -2,14 +2,8 @@
 (in-package :jpath)
 
 (defmacro ht () `(make-hash-table :test #'equal))
-
-(declaim (veq:ff *pi3* *pi2* *pi23*) (list *limits*))
-(defvar *pi3* #.(/ veq:fpi 3f0))
-(defvar *pi2* #.(/ veq:fpi 2f0))
-(defvar *pi23* #.(* 2f0 (/ veq:fpi 3f0)))
-(defvar *limits* `(#.(/ veq:fpi 2.99f0)
-                   #.(/ veq:fpi 3.99f0)
-                   #.(/ veq:fpi 7.99f0)))
+(defmacro make-limits (a b c) `(list ,(* a veq:fpi) ,(* b veq:fpi) ,(* c veq:fpi)))
+(defvar *limits* (make-limits 0.495 0.245 0.1295))
 
 (declaim (inline ori))
 (veq:fvdef ori (a)
@@ -59,14 +53,14 @@
 
      (make-start ((:va 2 p b))
        (veq:xlet ((f2!out (f2!@*. (veq:f2norm (f2!@- b p)) w))
-                  (io (veq:f2$line (veq:f2rot out *pi2*) out)))
-         (-make-joint :w w :mode :start :alpha *pi2*
+                  (io (veq:f2$line (veq:f2rot out veq:fpi5) out)))
+         (-make-joint :w w :mode :start :alpha veq:fpi5
                       :in-out io :grid (-make-joint-grid p io))))
 
      (make-end (i (:va 2 a p))
        (veq:xlet ((f2!in (f2!@*. (veq:f2norm (f2!@- p a)) w))
-                  (io (veq:f2$line in (veq:f2rot in (- *pi2*)))))
-         (-make-joint :w w :i i :mode :end :alpha (- *pi2*)
+                  (io (veq:f2$line in (veq:f2rot in (- veq:fpi5)))))
+         (-make-joint :w w :i i :mode :end :alpha (- veq:fpi5)
                       :in-out io :grid (-make-joint-grid p io))))
 
      (ci (i) (veq:f2$ path (mod i n)))

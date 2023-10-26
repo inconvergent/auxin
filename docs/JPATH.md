@@ -15,6 +15,19 @@
  ;   Source file: /data/x/auxin/src/draw/jpath.lisp
 ```
 
+#### JPATH:MAKE-LIMITS
+
+```
+:missing:todo:
+
+ ; JPATH:MAKE-LIMITS
+ ;   [symbol]
+ ; 
+ ; MAKE-LIMITS names a macro:
+ ;   Lambda-list: (A B C)
+ ;   Source file: /data/x/auxin/src/draw/jpath.lisp
+```
+
 #### JPATH:PATH->DIAGONALS
 
 ```

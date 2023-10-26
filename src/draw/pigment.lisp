@@ -6,14 +6,14 @@
 
 (defmacro with ((c r g b a) &body body)
   "pre-multiplied (values ra ga ba a). ex: (with (pigment r g b a) (list r g b a))."
-  (auxin:awg (c*)
+  (awg (c*)
     `(let* ((,c* ,c) (,r (rgba-r ,c*)) (,g (rgba-g ,c*))
                      (,b (rgba-b ,c*)) (,a (rgba-a ,c*)))
       (declare (veq:ff ,r ,g ,b ,a))
       (progn ,@body))))
 (defmacro with* ((c r g b a) &body body)
   "(values r g b a). ex: (with (pigment r g b a) (list r g b a))."
-  (auxin:awg (c*)
+  (awg (c*)
     `(let* ((,c* ,c) (,a (rgba-a ,c*)) (,r (/ (rgba-r ,c*) ,a))
                      (,g (/ (rgba-g ,c*) ,a)) (,b (/ (rgba-b ,c*) ,a)))
       (declare (veq:ff ,r ,g ,b ,a))

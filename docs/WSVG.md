@@ -149,11 +149,11 @@
  ; 
  ; JPATH names a compiled function:
  ;   Lambda-list: (WSVG PTS &KEY (WIDTH 1.0) CLOSED STROKE SW SO RS NS
- ;                 (LIMITS *LIMITS*))
+ ;                 (SIMLIM 0.02) (LIMITS *LIMITS*))
  ;   Derived type: (FUNCTION
  ;                  (WSVG::WSVG SEQUENCE &KEY (:WIDTH T) (:CLOSED T)
  ;                   (:STROKE T) (:SW T) (:SO T) (:RS T) (:NS T)
- ;                   (:LIMITS T))
+ ;                   (:SIMLIM T) (:LIMITS T))
  ;                  *)
  ;   Documentation:
  ;     draw jpath from 2d vector array (veq:fvec) or list of lists.
@@ -205,9 +205,7 @@
  ;                   (:STROKE-OPACITY T) (:SO T) (:RS T) (:FO T) (:SW T))
  ;                  (VALUES WSVG::WSVG &OPTIONAL))
  ;   Documentation:
- ;     make wsvg instance for drawing svgs.
- ;     - height: default 1000.0
- ;     - width: default 1000.0
+ ;     make wsvg instance for drawing svgs with width/height.
  ;     remaining arguments are identical to wsvg:make.
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
@@ -260,7 +258,7 @@
  ;   Lambda-list: (WSVG FN)
  ;   Derived type: (FUNCTION (WSVG::WSVG T) *)
  ;   Documentation:
- ;     save wsvg as fn
+ ;     save as fn.svg
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 

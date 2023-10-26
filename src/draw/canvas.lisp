@@ -4,7 +4,7 @@
 
 (defmacro -do-op ((canv size vals indfx) &body body)
   (declare (symbol canv size vals indfx))
-  (alexandria:with-gensyms (sname)
+  (awg (sname)
     `(let* ((,sname ,canv)
             (,size (canvas-size ,sname))
             (,vals (canvas-vals ,sname))
@@ -15,7 +15,7 @@
 
 (defmacro -square-loop ((x y n) &body body)
   (declare (symbol x y n))
-  (alexandria:with-gensyms (nname)
+  (awg (nname)
     `(let ((,nname ,n))
       (loop for ,y of-type small-ind from 0 below ,nname
             do (loop for ,x of-type small-ind from 0 below ,nname

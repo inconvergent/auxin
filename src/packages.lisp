@@ -1,9 +1,11 @@
 
 (defpackage #:auxin
   (:use #:common-lisp)
+  (:import-from #:veq #:awf #:awg)
   (:export
    #:*eps* #:*opt* #:*srndopt*
    #:abbrev
+   #:awg #:awf
    #:aif
    #:animate
    #:append-number
@@ -11,6 +13,7 @@
    #:awf
    #:awg
    #:cmd-args
+   #:psh
    #:d?
    #:define-struct-load-form
    #:dsb
@@ -177,51 +180,13 @@
            #:green #:yellow #:red #:blue #:magenta
            #:transparent
            #:hsv #:cmyk #:as-hex #:as-hsv #:as-list)
-  (:import-from #:auxin #:*opt* #:ensure-vector))
+  (:import-from #:auxin #:*opt* #:ensure-vector #:awg))
 
 (defpackage #:hset
   (:use #:common-lisp)
   (:export #:add #:add* #:copy #:del #:del* #:inter #:make #:mem
            #:mem* #:num #:symdiff #:uni #:to-list)
   (:import-from #:auxin #:*opt*))
-
-(defpackage #:graph
-  (:use #:common-lisp)
-  (:export
-    #:add
-    #:copy
-    #:cycle->edge-set
-    #:cycle-basis->edge-sets
-    #:del
-    #:del-simple-filaments
-    #:edge-set->graph
-    #:edge-set->path
-    #:edge-set-symdiff
-    #:edge-sets->cycle-basis
-    #:get-cycle-basis
-    #:get-edges
-    #:get-incident-edges
-    #:get-incident-verts
-    #:get-min-spanning-tree
-    #:get-num-edges
-    #:get-num-verts
-    #:get-segments
-    #:get-spanning-tree
-    #:get-verts
-    #:make
-    #:mem
-    #:path->edge-set
-    #:vmem
-    #:walk-graph
-    #:with-graph-edges
-    #:with-graph-verts)
-  (:import-from #:auxin
-    #:*opt*
-    #:make-adjustable-vector
-    #:to-list #:to-vector
-    #:vector-last
-    #:vextend
-    #:with-struct))
 
 (defpackage #:bzspl
   (:use #:common-lisp)
@@ -231,7 +196,7 @@
 
 (defpackage #:pth
   (:use #:common-lisp)
-  (:export #:@dim #:@n #:@ns #:pth #:@closed #:@len #:make #:@pts
+  (:export #:@dim #:@n #:@ns #:pth #:@closed #:@len #:make #:@pts #:stipple
            #:prt #:pos #:lpos)
   (:import-from #:auxin #:*opt* #:with-struct))
 
@@ -248,7 +213,7 @@
 
 (defpackage #:jpath
   (:use #:common-lisp)
-  (:export #:jpath #:path->joints #:path->diagonals)
+  (:export #:jpath #:path->joints #:path->diagonals #:make-limits)
   (:import-from #:auxin #:*opt* #:ensure-vector #:make-adjustable-vector
                 #:to-adjustable-vector #:to-list #:to-vector #:vextend))
 
@@ -273,5 +238,5 @@
 (defpackage #:canvas
   (:use #:common-lisp)
   (:export #:canvas #:make #:save #:set-gray-pix #:set-pix)
-  (:import-from #:auxin #:*opt* small-ind))
+  (:import-from #:auxin #:*opt* #:small-ind #:awg))
 

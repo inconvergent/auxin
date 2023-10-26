@@ -61,7 +61,7 @@
 (veq:fvdef 2ndistsample (want fx &key (res (auxin:make-adjustable-vector))
                                       (sample-num 50) (dstfx #'veq::-f2dst2)
                                       (min-dst -1f0) (max-tries want))
-  (declare (fixnum n sample-num) (function fx dstfx) (array res))
+  (declare (fixnum sample-num) (function fx dstfx) (array res))
   "add want additional samples to res from batches of (f@fx sample-num),
    always selecting the element furthest from existing elemets.
      example: (rnd:max-distance-sample 100 (lambda (n) (rnd:nin-circ n 400f0)))"

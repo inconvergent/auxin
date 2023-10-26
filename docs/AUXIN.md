@@ -97,11 +97,6 @@
 
  ; AUXIN:APPEND-POSTFIX
  ;   [symbol]
- ; 
- ; APPEND-POSTFIX names a compiled function:
- ;   Lambda-list: (FN POSTFIX)
- ;   Derived type: (FUNCTION (STRING T) (VALUES SIMPLE-STRING &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
 #### AUXIN:AWF
@@ -109,12 +104,12 @@
 ```
 :missing:todo:
 
- ; AUXIN:AWF
+ ; VEQ::AWF
  ;   [symbol]
  ; 
  ; AWF names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /data/x/veq/src/generic-utils.lisp
 ```
 
 #### AUXIN:AWG
@@ -122,12 +117,12 @@
 ```
 :missing:todo:
 
- ; AUXIN:AWG
+ ; VEQ::AWG
  ;   [symbol]
  ; 
  ; AWG names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /data/x/veq/src/generic-utils.lisp
 ```
 
 #### AUXIN:CMD-ARGS
@@ -290,8 +285,8 @@
  ;   [symbol]
  ; 
  ; INTERNAL-PATH-STRING names a compiled function:
- ;   Lambda-list: (PATH)
- ;   Derived type: (FUNCTION (STRING)
+ ;   Lambda-list: (PATH &OPTIONAL (PKG AUXIN))
+ ;   Derived type: (FUNCTION (STRING &OPTIONAL T)
  ;                  (VALUES (OR SIMPLE-STRING NULL) &OPTIONAL))
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
@@ -513,7 +508,6 @@
  ;   Lambda-list: (&OPTIONAL (T0 0.0))
  ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT)
  ;                  (VALUES (SINGLE-FLOAT 0.0) &OPTIONAL))
- ;   Inline proclamation: INLINE (inline expansion available)
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
@@ -544,6 +538,19 @@
  ;   Lambda-list: (I &OPTIONAL (N 1))
  ;   Derived type: (FUNCTION (FIXNUM &OPTIONAL FIXNUM)
  ;                  (VALUES NULL &OPTIONAL))
+ ;   Source file: /data/x/auxin/src/utils.lisp
+```
+
+#### AUXIN:PSH
+
+```
+ ; AUXIN:PSH
+ ;   [symbol]
+ ; 
+ ; PSH names a macro:
+ ;   Lambda-list: (A L)
+ ;   Documentation:
+ ;     push a to l, return a. a is evaluated only once.
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
@@ -815,7 +822,10 @@
  ;   [symbol]
  ; 
  ; V? names a compiled function:
- ;   Lambda-list: (&OPTIONAL (SILENT T))
+ ;   Lambda-list: (&OPTIONAL (SILENT T) &AUX
+ ;                 (V
+ ;                  (SLOT-VALUE (FIND-SYSTEM (QUOTE AUXIN))
+ ;                              (QUOTE VERSION))))
  ;   Derived type: (FUNCTION (&OPTIONAL T) (VALUES T &OPTIONAL))
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
