@@ -1,13 +1,13 @@
 
 (asdf:defsystem #:auxin
   :description "Auxiliary Utilities for Generative Art"
-  :version "1.0.0"
+  :version "1.0.1"
   :author "anders hoff/inconvergent"
   :licence "MIT"
   :in-order-to ((asdf:test-op (asdf:test-op #:auxin/tests)))
   :pathname "src/"
   :serial nil
-  :depends-on (#:veq #:lparallel #:cl-json #:cl-svg #:zpng)
+  :depends-on (#:veq #:lparallel #:cl-svg #:zpng)
   :components ((:file "packages")
                (:file "init" :depends-on ("packages"))
                (:file "config" :depends-on ("init"))
@@ -37,7 +37,7 @@
 
 (asdf:defsystem #:auxin/tests
   :depends-on (#:auxin #:prove #:asdf #:uiop)
-  :version "1.0.0"
+  :version "1.0.1"
   :perform (asdf:test-op (o s) (uiop:symbol-call ':auxin-tests '#:run-tests))
   :pathname "test/"
   :serial t

@@ -1,4 +1,3 @@
-
 (in-package :dat)
 
 ;; this code is adapted from:
@@ -29,9 +28,7 @@
 ;; (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 ;; SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-
 (declaim (inline %read-char-until %finish-read-line-into-sequence))
-
 
 (defun %read-char-until (stream recursivep store)
   (declare #.*opt* (function store))
@@ -45,13 +42,10 @@
                                 (values eof-value start nil))
                 (values buffer start (eql ch #\Newline))))
 
-
 (defgeneric read-line-into-sequence (sequence input-stream
                                      &key eof-error-p eof-value recursivep
                                           start end)
-  (:documentation "
-
-Reads characters from the INPUT-STREAM until a #\\Newline is found, and
+  (:documentation "Reads characters from the INPUT-STREAM until a #\\Newline is found, and
 store the characters read into the SEQUENCE, from START, up to below
 END.  If END is reached before the #\\Newline character is read, then
 reading stops there and the third result value is NIL.  The #\Newline
@@ -88,9 +82,7 @@ RECURSIVE-P:    a generalized boolean. The default is NIL.  If
                 function used by the Lisp reader.
 
 START, END:     bounding index designators of SEQUENCE.
-                The defaults for START and END are 0 and NIL, respectively.
-
-")
+                The defaults for START and END are 0 and NIL, respectively.")
 
   (:method ((buffer vector) (stream stream) &key (eof-error-p t) (eof-value nil)
                                                  (recursivep nil) (start 0)
@@ -154,12 +146,9 @@ START, END:     bounding index designators of SEQUENCE.
 ; adapted from original above code by Victor Anyakin
 (defun do-lines-as-buffer (fn fx &key (buffer-width 80))
   (declare #.*opt* (function fx) (fixnum buffer-width))
-  "
-  fx will receive a stream (named in). use it like this:
+  "fx will receive a stream (named in). use it like this:
     (loop for x = (read in nil nil)
-          while x
-          do something)
-  "
+          while x do something)"
   (let ((*read-default-float-format* 'single-float)
         (buffer (make-array buffer-width
                             :element-type 'character
@@ -183,7 +172,6 @@ START, END:     bounding index designators of SEQUENCE.
   (declare #.*opt* (number v))
   (typecase v (single-float v) (t (coerce v 'single-float))))
 
-
 ; suggested by lispm in
 ;  https://gist.github.com/inconvergent/8b6ccfbde4fca7844c1962082ef07a7e
 (declaim (inline floats-string-to-list))
@@ -200,7 +188,6 @@ START, END:     bounding index designators of SEQUENCE.
                          (read-from-string s nil nil :start pos))
           while v collect (-maybe-float v) of-type single-float)))
 
-
 (defun do-lines-as-floats (fn fx &key (buffer-width 80))
   (declare #.*opt* (function fx) (fixnum buffer-width))
   (let ((buffer (make-array buffer-width :element-type 'character
@@ -212,7 +199,6 @@ START, END:     bounding index designators of SEQUENCE.
             while val do (when newl
                            (funcall fx (floats-string-to-list val pos)))))))
 
-
 (defun do-lines (fn fx &key (buffer-width 80))
   (declare #.*opt* (function fx) (fixnum buffer-width))
   (let ((buffer (make-array buffer-width :element-type 'character
@@ -223,22 +209,21 @@ START, END:     bounding index designators of SEQUENCE.
                                          :eof-error-p nil))
             while val do (when newl (funcall fx (subseq val 0 pos)))))))
 
-
 ;; ----------------------------------------------------------------------
 
-(defun export-data (o fn &optional (postfix ".dat"))
-  (with-open-file (fstream (ensure-filename fn postfix)
+(defun export-data (o fn &optional (postfix ".dat") pretty)
+  (with-open-file (fstream (ensure-filename fn postfix t)
                            :direction :output :if-exists :supersede)
     (declare (stream fstream))
-    (let ((*print-pretty* nil)) (print o fstream))))
+    (let ((*print-pretty* pretty)) (print o fstream))))
 
 (defun import-data (fn &optional (postfix ".dat"))
-  (with-open-file (fstream (ensure-filename fn postfix) :direction :input)
+  (with-open-file (fstream (ensure-filename fn postfix t) :direction :input)
     (declare (stream fstream))
     (read fstream)))
 
 (defun import-all-data (fn &optional (postfix ".dat"))
-  (with-open-file (fstream (ensure-filename fn postfix) :direction :input)
+  (with-open-file (fstream (ensure-filename fn postfix t) :direction :input)
     (declare (stream fstream))
     (loop for o = (read fstream nil)
           while o collect o)))

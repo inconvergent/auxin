@@ -1,8 +1,6 @@
 #### GRIDFONT:MAKE
 
 ```
-:missing:todo:
-
  ; GRIDFONT:MAKE
  ;   [symbol]
  ; 
@@ -12,6 +10,9 @@
  ;   Derived type: (FUNCTION
  ;                  (&KEY (:FN T) (:SCALE T) (:NL T) (:SP T) (:XY T))
  ;                  (VALUES GRIDFONT::GRIDFONT &OPTIONAL))
+ ;   Documentation:
+ ;     make gridfont instance from fn.dat.
+ ;     NOTE: this loads a dat file. convert using /var/gridfont-make-dat.lisp
  ;   Source file: /data/x/auxin/src/gridfont/main.lisp
 ```
 

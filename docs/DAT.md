@@ -9,12 +9,9 @@
  ;   Derived type: (FUNCTION (T FUNCTION &KEY (:BUFFER-WIDTH FIXNUM))
  ;                  (VALUES NULL &OPTIONAL))
  ;   Documentation:
- ;     
- ;       fx will receive a stream (named in). use it like this:
+ ;     fx will receive a stream (named in). use it like this:
  ;         (loop for x = (read in nil nil)
- ;               while x
- ;               do something)
- ; 
+ ;               while x do something)
  ;   Source file: /data/x/auxin/src/dat.lisp
 ```
 
@@ -27,8 +24,8 @@
  ;   [symbol]
  ; 
  ; EXPORT-DATA names a compiled function:
- ;   Lambda-list: (O FN &OPTIONAL (POSTFIX .dat))
- ;   Derived type: (FUNCTION (T T &OPTIONAL T) (VALUES T &OPTIONAL))
+ ;   Lambda-list: (O FN &OPTIONAL (POSTFIX .dat) PRETTY)
+ ;   Derived type: (FUNCTION (T T &OPTIONAL T T) (VALUES T &OPTIONAL))
  ;   Source file: /data/x/auxin/src/dat.lisp
 ```
 

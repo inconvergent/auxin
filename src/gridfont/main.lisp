@@ -1,7 +1,4 @@
-
 (in-package :gridfont)
-
-; json docs https://common-lisp.net/project/cl-json/cl-json.html
 
 (defun -jsn-get (jsn k) (cdr (assoc k jsn)))
 
@@ -16,15 +13,15 @@
 
 (defun make (&key (fn (internal-path-string "src/gridfont/smooth"))
                   (scale 2f0) (nl 15f0) (sp 2f0) (xy (list 0f0 0f0)))
-  (with-open-file (fstream (ensure-filename fn ".json" t) :direction :input)
-    (loop with res = (make-hash-table :test #'equal)
-          with jsn = (json:decode-json fstream) ; jsn is an alist
-          with symbols = (-jsn-get jsn :symbols)
-          for (k . v) in symbols
-          do (setf (gethash (symbol-name k) res) v)
-          finally (return (-make-gridfont
-                            :symbols res :scale scale :sp sp :xy xy :nl nl
-                            :left (first xy))))))
+  "make gridfont instance from fn.dat.
+NOTE: this loads a dat file. convert using /var/gridfont-make-dat.lisp"
+  (loop with res = (make-hash-table :test #'equal)
+        with jsn = (dat:import-data fn) ; jsn is an alist
+        with symbols = (-jsn-get jsn :symbols)
+        for (k . v) in symbols
+        do (setf (gethash k res) v)
+        finally (return (-make-gridfont :symbols res :scale scale :sp sp :xy xy :nl nl
+                                        :left (first xy)))))
 
 (veq:fvdef -detect-closed (paths)
   (declare (list paths))
@@ -33,7 +30,6 @@
              (< (veq:f2dst (veq:f2$ p) (veq:f2$last p)) tol)))
     (loop for p of-type veq:fvec in paths
           collect (list p (-closed p)))))
-
 
 (defun update (gf &key xy scale sp nl)
   (declare (gridfont gf))
@@ -44,20 +40,17 @@
   (when sp (setf (gridfont-sp gf) sp))
   (when nl (setf (gridfont-nl nl) sp)))
 
-
 (defun nl (gf &key (left (gridfont-left gf)))
   (declare (gridfont gf) (veq:ff left))
   "write a newline"
   (setf (gridfont-prev gf) nil)
   (with-struct (gridfont- nl scale) gf
-    (setf (gridfont-xy gf)
-          (list left (+ (second (gridfont-xy gf))
-                        (* nl scale))))))
-
+    (setf (gridfont-xy gf) (list left (+ (second (gridfont-xy gf))
+                                         (* nl scale))))))
 
 (defun -get-meta (symbols c &aux (c* (string c)))
   (multiple-value-bind (meta exists)
-    (gethash (funcall json:*json-identifier-name-to-lisp* c*) symbols)
+    (gethash (auxin:kv (string-upcase (auxin:mkstr c))) symbols)
     (unless exists (error "symbol does not exist: ~a (representation: ~a)" c c*))
     meta))
 
@@ -72,8 +65,7 @@
                                                collect (-pos p s))))
                         x)))
 
-; TODO: return (values paths width height)
-(defun wc (gf c &key xy)
+(defun wc (gf c &key xy) ; TODO: return (values paths width height)
   (declare (gridfont gf))
   "write single character, c"
   (when xy (setf (gridfont-xy gf) xy))
@@ -87,7 +79,6 @@
         (setf (gridfont-xy gf) (list (+ x (* scale (+ w sp))) y)
               (gridfont-prev gf) (string c)))
       res)))
-
 
 (defun get-phrase-box (gf str)
   (declare (gridfont gf) (string str))
