@@ -1,17 +1,13 @@
-
 (in-package :math)
-
 
 (defun last* (l) (declare #.*opt* (list l)) (first (last l)))
 
 (defun close-path (p)
-  (declare #.*opt* (list p))
-  "append first element of p to end of p."
+  (declare #.*opt* (list p)) "append first element of p to end of p."
   (append p (subseq p 0 1)))
 
 (defun close-path* (p)
-  (declare #.*opt* (list p))
-  "append last element of p to front of p."
+  (declare #.*opt* (list p)) "append last element of p to front of p."
   (cons (last* p) p))
 
 
@@ -20,20 +16,16 @@
   `(the list (loop repeat (the veq:pn ,n) collect (progn ,@body))))
 
 (defun range (a &optional (b nil))
-  (declare #.*opt* (fixnum a))
-  "fixnums from 0 to a, or a to b."
+  (declare #.*opt* (fixnum a)) "fixnums from 0 to a, or a to b."
   (if (not b) (loop for x of-type fixnum from 0 below a collect x)
               (loop for x of-type fixnum from a below (the fixnum b)
                     collect x)))
 
-; this is kind of silly
-(defun lpos (ll &key (fx #'first))
-  (declare #.*opt* (list ll) (function fx))
-  "apply fx to every element in ll. "
+(defun lpos (ll &key (fx #'first)) ; this is kind of silly
+  (declare #.*opt* (list ll) (function fx)) "apply fx to every element in ll. "
   (mapcar fx ll))
 
-; TODO pretty sure there is a better way to do this
-(defun ll-transpose (l)
+(defun ll-transpose (l) ; TODO pretty sure there is a better way to do this
   (declare #.*opt* (list l))
   "transpose list of lists.
 assumes all initial lists in l have the same length."
@@ -43,22 +35,17 @@ assumes all initial lists in l have the same length."
                                                    collect (list))))))
 
 (defun list>than (l n)
-  (declare #.*opt* (list l) (veq:pn n))
-  "list is longer than n?"
+  (declare #.*opt* (list l) (veq:pn n)) "list is longer than n?"
   (consp (nthcdr n l)))
 
-
 (defun linspace (n a b &key (end t))
-  (declare #.*opt* (veq:pn n) (veq:ff a b) (boolean end))
-  "n veq:ffs from a to b."
+  (declare #.*opt* (veq:pn n) (veq:ff a b) (boolean end)) "n veq:ffs from a to b."
   (if (> n 1)
     (loop with ban of-type veq:ff = (/ (- b a) (if end (1- n) n))
           for i of-type fixnum from 0 below n
           collect (+ a (* (coerce i 'veq:ff) ban)) of-type veq:ff)
     (list a)))
 
-
-; INT LIST MATH
 
 (defmacro lop (name type &body body)
   `(defun ,name (aa bb)
@@ -68,27 +55,18 @@ assumes all initial lists in l have the same length."
            collect (the ,type (,@body (the ,type a) (the ,type b)))
              of-type ,type)))
 
-(lop add fixnum +)
-(lop sub fixnum -)
-(lop mult fixnum *)
+(lop add fixnum +) (lop sub fixnum -) (lop mult fixnum *)
 
 (defun mod2 (i)
-  (declare #.*opt* (fixnum i))
-  "(mod i 2) for fixnums."
+  (declare #.*opt* (fixnum i)) "(mod i 2) for fixnums."
   (mod i 2))
 (defun imod (i inc m)
-  (declare #.*opt* (fixnum i inc m))
-  "(mod (+ i inc) m) for fixnums"
+  (declare #.*opt* (fixnum i inc m)) "(mod (+ i inc) m) for fixnums"
   (the fixnum (mod (the fixnum (+ i inc)) m)))
 
-
-; OTHER
-
 (defun copy-sort (a fx &key (key #'identity))
-  (declare #.*opt* (sequence a))
-  "sort a without side effects to a. not very efficent."
+  (declare #.*opt* (sequence a)) "sort a without side effects to a. not very efficent."
   (sort (copy-seq a) fx :key key))
-
 
 (defun range-search (ranges f &aux (n (1- (length ranges)))
                                    (ranges* (ensure-vector ranges)))
@@ -121,24 +99,20 @@ inside the range you are looking for."
 
 (defun argmax (ll &optional (key #'identity))
   (declare (list ll) (function key))
-  "returns (values iv v).
-where iv is the index of v and v is the highest value in ll."
+  "returns (values index val) for the largest val in ll"
   (loop with iv = 0
         with v = (funcall key (first ll))
-        for l in (cdr ll)
-        and i from 1
+        for l in (cdr ll) and i from 1
         if (> (funcall key l) v)
         do (setf v (funcall key l) iv i)
         finally (return (values iv v))))
 
 (defun argmin (ll &optional (key #'identity))
   (declare (list ll) (function key))
-  "returns (values iv v).
-where iv is the index of v and v is the smallest value in ll."
+  "returns (values index val) for the smallest val in ll."
   (loop with iv = 0
         with v = (funcall key (first ll))
-        for l in (cdr ll)
-        and i from 1
+        for l in (cdr ll) and i from 1
         if (< (funcall key l) v)
         do (setf v (funcall key l) iv i)
         finally (return (values iv v))))

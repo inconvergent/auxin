@@ -123,11 +123,39 @@
  ;   [symbol]
  ; 
  ; MAKE names a compiled function:
- ;   Lambda-list: (RS*)
+ ;   Lambda-list: (RS)
  ;   Derived type: (FUNCTION (FIXNUM) (VALUES SRND:SRND &OPTIONAL))
  ;   Documentation:
- ;     make stateful rnd generator state, rs
+ ;     make stateful rnd generator
  ;   Inline proclamation: INLINE (inline expansion available)
+ ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
+```
+
+#### SRND:PROB
+
+```
+ ; SRND:PROB
+ ;   [symbol]
+ ; 
+ ; PROB names a macro:
+ ;   Lambda-list: (RS P A &OPTIONAL B)
+ ;   Documentation:
+ ;     evaluate first form in body with probability p. second form (optional) is
+ ;     executed with probability 1-p. ex: (prob 0.1 (print :a) (print :b))
+ ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
+```
+
+#### SRND:RCOND
+
+```
+ ; SRND:RCOND
+ ;   [symbol]
+ ; 
+ ; RCOND names a macro:
+ ;   Lambda-list: (RS &REST CLAUSES)
+ ;   Documentation:
+ ;     executes the forms in clauses according to the probability of the weighted sum
+ ;     ex: (rcond (0.1 (print :a)) (0.3 (print :b)) ...)
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
@@ -178,7 +206,7 @@
  ; 
  ; SRND names a compiled function:
  ;   Lambda-list: (RS)
- ;   Derived type: (FUNCTION (FIXNUM) (VALUES SRND:SRND &OPTIONAL))
+ ;   Derived type: (FUNCTION (T) (VALUES SRND:SRND &OPTIONAL))
  ;   Documentation:
  ;     see make
  ;   Inline proclamation: INLINE (inline expansion available)

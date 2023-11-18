@@ -1,11 +1,8 @@
-
 (in-package :rnd)
 
-
 (defmacro prob (p a &optional b)
-  "evaluate first form in body with probability p.
-second form (optional) is executed with probability 1-p.
-ex: (prob 0.1 (print :a) (print :b)) ; returns :a or :b"
+  "evaluate first form in body with probability p. second form (optional) is
+executed with probability 1-p. ex: (prob 0.1 (print :a) (print :b))"
   `(if (< (rnd) (the veq:ff ,p)) ,a ,b))
 
 (defmacro prob* (p &body body)
@@ -17,12 +14,9 @@ ex: (prob 0.1 (print :a) (print :b)) ; returns :b"
   "excecutes either a or b, with a probablility of 0.5. b is optional."
   `(prob 0.5f0 ,a ,b))
 
-
-; TODO: sum to 1?
-(defmacro rcond (&rest clauses)
+(defmacro rcond (&rest clauses) ; TODO: sum to 1?
   "executes the forms in clauses according to the probability of the weighted sum
-ex: (rcond (0.1 (print :a)) (0.3 (print :b)) ...)
-will print :a 1 times out of 4."
+ex: (rcond (0.1 (print :a)) (0.3 (print :b)) ...)"
   (auxin:awg (val)
     (let* ((tot 0f0)
            (clauses (loop for (p . body) in clauses
@@ -32,7 +26,6 @@ will print :a 1 times out of 4."
       `(let ((,val (rnd ,tot)))
          (declare (veq:ff ,val))
          (cond ,@clauses)))))
-
 (defmacro rep (a &optional b &body body)
   "repeat body at most a times, or between a and b times."
   `(loop repeat ,(if (and a b) `(rndrngi ,a ,b) `(rndi ,a))

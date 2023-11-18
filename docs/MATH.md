@@ -23,8 +23,7 @@
  ;   Derived type: (FUNCTION (LIST &OPTIONAL FUNCTION)
  ;                  (VALUES UNSIGNED-BYTE T &OPTIONAL))
  ;   Documentation:
- ;     returns (values iv v).
- ;     where iv is the index of v and v is the highest value in ll.
+ ;     returns (values index val) for the largest val in ll
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
@@ -39,8 +38,7 @@
  ;   Derived type: (FUNCTION (LIST &OPTIONAL FUNCTION)
  ;                  (VALUES UNSIGNED-BYTE T &OPTIONAL))
  ;   Documentation:
- ;     returns (values iv v).
- ;     where iv is the index of v and v is the smallest value in ll.
+ ;     returns (values index val) for the smallest val in ll.
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 

@@ -1,18 +1,37 @@
 
 (in-package :srnd)
 
-(declaim (inline -srnd make srnd do-rnd
-                 1rnd rrnd 1rad rrad
-                 3in-sphere 3on-sphere
-                 2in-circ 2on-circ))
+(declaim (inline -srnd make srnd do-rnd 1rnd rrnd 1rad rrad
+                 3in-sphere 3on-sphere 2in-circ 2on-circ))
+
+(defmacro prob (rs p a &optional b)
+  "evaluate first form in body with probability p. second form (optional) is
+executed with probability 1-p. ex: (prob 0.1 (print :a) (print :b))"
+  `(if (< (rnd ,rs) (the veq:ff ,p)) ,a ,b))
+
+(defmacro rcond (rs &rest clauses) ; TODO: sum to 1?
+  "executes the forms in clauses according to the probability of the weighted sum
+ex: (rcond (0.1 (print :a)) (0.3 (print :b)) ...)"
+  (auxin:awg (val)
+    (let* ((tot 0f0)
+           (clauses (loop for (p . body) in clauses
+                          do (incf tot (veq:ff p))
+                          collect `((< ,val ,tot) ,@body))))
+      (declare (veq:ff tot) (list clauses))
+      `(let ((,val (rnd ,rs ,tot)))
+         (declare (veq:ff ,val))
+         (cond ,@clauses)))))
+; (defmacro rep (a &optional b &body body)
+;   "repeat body at most a times, or between a and b times."
+;   `(loop repeat ,(if (and a b) `(rndrngi ,a ,b) `(rndi ,a))
+;          do (progn ,@body)))
 
 (defstruct (srnd (:constructor -srnd (s)))
   (s 0 :type veq:pn :read-only nil))
-(defun make (rs*)
-  (declare #.*srndopt* (fixnum rs*))
-  "make stateful rnd generator state, rs"
-  (-srnd (mod (abs rs*) 2147483647)))
-(defun srnd (rs) (declare #.*srndopt* (fixnum rs)) "see make" (make rs))
+(defun make (rs)
+  (declare #.*srndopt* (fixnum rs)) "make stateful rnd generator"
+  (-srnd (mod (abs rs) 2147483647)))
+(defun srnd (rs) "see make" (make rs))
 
 (defun do-rnd (rs)
   (declare #.*srndopt* (srnd rs))
@@ -26,8 +45,7 @@
   (declare #.*srndopt* (srnd rs) (veq:ff r))
   (the veq:ff (the veq:ff (* (the veq:ff r) (1rnd rs)))))
 (defmacro rnd (rs &optional r)
-   (declare (symbol rs))
-  "get a random float [0.0 1.0] from state rs (scaled by r)"
+   (declare (symbol rs)) "get a random float [0.0 1.0] from state rs (scaled by r)"
    (if r `(rrnd ,rs ,r) `(1rnd ,rs)))
 
 (defun 1rad (rs)
@@ -37,13 +55,11 @@
    (declare #.*srndopt* (srnd rs) (veq:ff r))
    (* r (1rad rs)))
 (defmacro rnd* (rs &optional r)
-   (declare (symbol rs))
-   "get a random float in range [-r r] from state rs. r defaults to 1.0"
+   (declare (symbol rs)) "get a random float in range [-r r] from state rs. r defaults to 1.0"
    (if r `(rrad ,rs ,r) `(1rad ,rs)))
 
 (defmacro rndrng (rs a b &aux (a* (gensym)))
-  (declare (symbol rs))
-  "get a random number in range [a b] from state rs"
+  (declare (symbol rs)) "get a random number in range [a b] from state rs"
   (cond ((and (numberp a) (numberp b)) `(+ ,a (rnd ,rs ,(- b a))))
         ((numberp a) `(+ ,a (rnd ,rs (- ,b ,a))))
         (t `(let ((,a* ,a))
@@ -61,7 +77,7 @@
   (declare #.*srndopt* (srnd rs) (veq:ff r))
   "get random point on sphere with rad r from state rs. centered at origin."
   (veq:xlet ((f!th (rnd rs #.veq:fpii))
-             (f!la (- (the veq:ff (acos (- (rnd rs 2.0) 1f0))) veq:fpi5))
+             (f!la (- (the veq:ff (acos (- (rnd rs 2.0) 1f0))) #.veq:fpi5))
              (f!co (* r (cos la))))
     (values (* co (cos th)) (* co (sin th)) (* r (sin la)))))
 

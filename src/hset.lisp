@@ -1,10 +1,10 @@
 
 (in-package :hset)
 
-"
-fixnum set. this is a naive wrapper around hash-table. not sure how efficient
-it will be?
-"
+"fixnum set. this is a naive wrapper around hash-table. not sure how efficient
+it will be?"
+
+(declaim (inline add del mem))
 
 (defun copy (s &key (size 100) (inc 2f0))
   (declare #.*opt* (hash-table s) (fixnum size) (number inc))
@@ -22,28 +22,22 @@ it will be?
     (when init (add* s init))
     s))
 
-
-(declaim (inline add))
 (defun add (s e)
-  (declare #.*opt* (hash-table s) (fixnum e))
-  "add e to fixnum set."
+  (declare #.*opt* (hash-table s) (fixnum e)) "add e to fixnum set."
   (multiple-value-bind (val exists) (gethash e s)
     (declare (ignore val))
     (if exists nil (setf (gethash e s) t))))
 
 (defun add* (s ee)
-  (declare #.*opt* (hash-table s) (sequence ee))
-  "add sequence of fixnums to fixnum set."
+  (declare #.*opt* (hash-table s) (sequence ee)) "add sequence of fixnums to fixnum set."
   (typecase ee (cons (loop for e of-type fixnum in ee collect (add s e)))
                (simple-array (loop for e of-type fixnum
                                      across (the (simple-array fixnum) ee)
                                    collect (add s e)))
                (t (error "incorrect type in hset:add*: ~a~%" ee))))
 
-(declaim (inline del))
 (defun del (s e)
-  (declare #.*opt* (hash-table s) (fixnum e))
-  "del e from fixnum set."
+  (declare #.*opt* (hash-table s) (fixnum e)) "del e from fixnum set."
   (remhash e s))
 
 (defun del* (s ee)
@@ -55,10 +49,8 @@ it will be?
                                    collect (del s e)))
                (t (error "incorrect type in hset:del* ~a~%" ee))))
 
-(declaim (inline mem))
 (defun mem (s e)
-  (declare #.*opt* (hash-table s) (fixnum e))
-  "t if e is member of fixnum set s."
+  (declare #.*opt* (hash-table s) (fixnum e)) "t if e is member of fixnum set s."
   (multiple-value-bind (_ exists) (gethash e s)
     (declare (ignore _))
     exists))
@@ -73,17 +65,13 @@ it will be?
                (t (error "incorrect type in hset:mem* ~a~%" ee))))
 
 (defun num (s)
-  (declare #.*opt* (hash-table s))
-  "count elements in fixnum set."
+  (declare #.*opt* (hash-table s)) "count elements in fixnum set."
   (the fixnum (hash-table-count s)))
 
 (defun to-list (s)
   (declare #.*opt* (hash-table s))
   "get unordered list of elements in fixnum set."
   (loop for e of-type fixnum being the hash-keys of s collect e))
-
-
-; SET OPS (not well tested)
 
 (defun uni (a b)
   (declare #.*opt* (hash-table a b))

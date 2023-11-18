@@ -1,22 +1,19 @@
-
 (in-package #:auxin)
 
 (declaim (inline lst>n last* vector-last vector-first))
 
 (deftype small-ind (&optional (size 30000)) `(integer 0 ,size))
 
+(defun d? (f) (describe f)) (defun i? (f) (inspect f))
 (defun v? (&optional (silent t) &aux (v (slot-value (asdf:find-system 'auxin) 'asdf:version)))
   (unless silent (format t "~%veq version: ~a~%" v))
   v)
-(defun d? (f) (describe f)) (defun i? (f) (inspect f))
 
-;http://cl-cookbook.sourceforge.net/os.html
-(defun cmd-args ()
+(defun cmd-args () ;http://cl-cookbook.sourceforge.net/os.html
   (or #+SBCL sb-ext:*posix-argv* #+LISPWORKS system:*line-arguments-list*
       #+CMU extensions:*command-line-words* nil))
 
-;https://www.rosettacode.org/wiki/Program_termination#Common_Lisp
-(defun terminate (status)
+(defun terminate (status) ;https://www.rosettacode.org/wiki/Program_termination#Common_Lisp
   (format t "~%terminated with status: ~a~%" status)
   #+sbcl (sb-ext:quit :unix-status status) #+ccl (ccl:quit status)
   #+clisp (ext:quit status) #+cmu (unix:unix-exit status)
@@ -25,18 +22,9 @@
 
 ;https://github.com/inconvergent/weir/pull/1/commits/4a1df51914800c78cb34e8194222185ebde12388
 (defmacro define-struct-load-form (struct-name)
-  "Allow the structure named STRUCT-NAME to be dumped to FASL files."
+  "allow struct to be dumped to fasl files."
   `(defmethod make-load-form ((obj ,struct-name) &optional env)
      (make-load-form-saving-slots obj :environment env)))
-
-(defun group (source n)
-  (if (zerop n) (error "group: zero length"))
-  (labels ((rec (source acc)
-             (let ((rest (nthcdr n source)))
-               (if (consp rest)
-                   (rec rest (cons (subseq source 0 n) acc))
-                   (nreverse (cons source acc))))))
-    (if source (rec source nil) nil)))
 
 (defun mkstr (&rest args)
   (with-output-to-string (s) (dolist (a args) (princ a s))))
@@ -44,44 +32,8 @@
 
 (defun last* (a) (first (last a)))
 (defun lst>n (l n)
-  (declare (list l) (veq:pn n))
-  "is list, l, longer than n?"
+  (declare (list l) (veq:pn n)) "is list, l, longer than n?"
   (consp (nthcdr n l)))
-
-(defun tree-find (tree fx)
-  (declare (optimize speed) (function fx))
-  (cond ((funcall fx tree) (return-from tree-find tree))
-        ((atom tree) nil)
-        ((consp tree) (or (tree-find (car tree) fx)
-                          (tree-find (cdr tree) fx)))))
-
-(defun tree-find-all (root fx &optional (res (list)))
-  (declare (optimize speed) (function fx) (list res))
-  (cond ((funcall fx root) (return-from tree-find-all (cons root res)))
-        ((atom root) nil)
-        (t (let ((l (tree-find-all (car root) fx res))
-                 (r (tree-find-all (cdr root) fx res)))
-             (when l (setf res `(,@l ,@res)))
-             (when r (setf res `(,@r ,@res))))
-           res)))
-
-(defun filter-by-predicate (l fx)
-  (declare (list l) (function fx))
-  "split l into (values yes no) according to fx"
-  (loop for x in l
-        if (funcall fx x) collect x into yes
-        else collect x into no
-        finally (return (values yes no))))
-
-(defmacro aif (test-form then-form &optional else-form)
-  `(let ((it ,test-form))
-     (if it ,then-form ,else-form)))
-
-(defmacro abbrev (short long)
-  `(defmacro ,short (&rest args)
-     `(,',long ,@args)))
-(abbrev mvc multiple-value-call) (abbrev mvb multiple-value-bind)
-(abbrev dsb destructuring-bind)
 
 (defun symb (&rest args) (values (intern (apply #'mkstr args))))
 ;https://gist.github.com/lispm/6ed292af4118077b140df5d1012ca646
@@ -109,19 +61,14 @@
   (awg (a) `(setf ,ani (remove-if-not (lambda (,a) (funcall ,a)) ,ani))))
 
 (defmacro psh (a l)
-  (declare (symbol l))
-  "push a to l, return a. a is evaluated only once."
+  (declare (symbol l)) "push a to l, return a. a is evaluated only once."
   (awg (a*) `(let ((,a* ,a)) (push ,a* ,l) ,a*)))
 
 (defun split (s c)
-  (declare (string s))
-  "split s at c"
-  (veq::split-string (typecase c
-                        (string (char c 0)) (character c)
-                        (t (error "split must be string or char, got ~a" c)))
-                     s))
+  (declare (string s)) "split s at c"
+  (veq::split-string (etypecase c (string (char c 0)) (character c)) s))
 
-(defun -docs-sanitize (d)
+(defun -docs-sanitize (d) ; why is this here?
   (let ((sp (veq::split-string #\~ d)))
     (apply #'veq::mkstr
       (concatenate 'list (mapcar (lambda (s)
@@ -129,7 +76,7 @@
                    (last sp)))))
 
 (defun append-number (fn i)
-  (declare (string fn) (fixnum i))
+  (declare (string fn) (fixnum i)) "append number i to fn with zero padding."
   (format nil "~a-~8,'0d" fn i))
 
 ; https://stackoverflow.com/questions/20963313/how-do-i-trim-leading-and-trailing-whitespace-in-common-lisp
@@ -160,13 +107,13 @@
 
 (abbrev vextend vector-push-extend)
 (defun lvextend (x v)
-  (declare (sequence x) (vector v))
-  "extend v with all items in x."
+  (declare (sequence x) (vector v)) "extend v with all items in x."
   (typecase x (cons (loop for o in x do (vextend o v)))
               (t (loop for o across x do (vextend o v)))))
 
 (defun vector-last (a) (declare (vector a)) (aref a (1- (length a))))
 (defun vector-first (a) (declare (vector a)) (aref a 0))
+; move to veq?
 (abbrev vl vector-last) (abbrev tl to-list)
 (abbrev tv to-vector)   (abbrev ev ensure-vector)
 (abbrev tav to-adjustable-vector)
@@ -185,14 +132,11 @@
     :initial-contents init :adjustable nil :element-type type))
 (defun ensure-vector (o &key (type t))
   (declare (sequence o))
-  (typecase o (cons (to-vector o :type type))
-              (vector o)
-              (t (error "unable to coerce to vector: ~a" o))))
+  (etypecase o (cons (to-vector o :type type)) (vector o)))
 (defun to-adjustable-vector (init &key (type t))
   (declare (sequence init))
   (make-array (length init) :fill-pointer t :initial-contents init
                             :element-type type :adjustable t))
-
 (defun undup (e)
   (declare (optimize speed))
   (delete-duplicates (awf e)))
@@ -208,16 +152,6 @@
                       for i from 0 do (format t "~& { ~d: ~a: ~@{~a~^ ~}~&" i k v)))
     (t (warn "~& { nil")))
   ht)
-
-(defmacro reorder (a &rest rest)
-  (declare (symbol a))
-  `(concatenate 'vector
-    ,@(loop for ind in rest
-            collect (typecase ind (number `(list (aref ,a ,ind)))
-                                  (symbol `(list (aref ,a ,ind)))
-                                  (cons (ecase (length ind)
-                                          (1 `(list (aref ,a ,@ind)))
-                                          (2 `(subseq ,a ,@ind))))))))
 
 (defmacro with-fast-stack ((sym &key (type 'fixnum) (n 1000) (v 0) (safe-z 100))
                                 &rest body)
@@ -290,3 +224,4 @@
                (incf i)
                (values i progr)))
       #'timer)))
+

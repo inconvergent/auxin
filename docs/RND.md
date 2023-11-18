@@ -638,9 +638,8 @@
  ; PROB names a macro:
  ;   Lambda-list: (P A &OPTIONAL B)
  ;   Documentation:
- ;     evaluate first form in body with probability p.
- ;     second form (optional) is executed with probability 1-p.
- ;     ex: (prob 0.1 (print :a) (print :b)) ; returns :a or :b
+ ;     evaluate first form in body with probability p. second form (optional) is
+ ;     executed with probability 1-p. ex: (prob 0.1 (print :a) (print :b))
  ;   Source file: /data/x/auxin/src/rnd/macros.lisp
 ```
 
@@ -669,7 +668,6 @@
  ;   Documentation:
  ;     executes the forms in clauses according to the probability of the weighted sum
  ;     ex: (rcond (0.1 (print :a)) (0.3 (print :b)) ...)
- ;     will print :a 1 times out of 4.
  ;   Source file: /data/x/auxin/src/rnd/macros.lisp
 ```
 

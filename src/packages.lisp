@@ -1,73 +1,25 @@
 
 (defpackage #:auxin
   (:use #:common-lisp)
-  (:import-from #:veq #:awf #:awg)
+  (:import-from #:veq #:awf #:awg #:group #:ungroup #:aif #:abbrev #:mvc #:mvb #:dsb)
   (:export
-   #:*eps* #:*opt* #:*srndopt*
-   #:abbrev
-   #:awg #:awf
-   #:aif
-   #:animate
-   #:append-number
-   #:append-postfix
-   #:awf
-   #:awg
-   #:cmd-args
-   #:psh
-   #:d?
-   #:define-struct-load-form
-   #:dsb
-   #:ensure-filename
-   #:ensure-vector
-   #:ev
-   #:filter-by-predicate
+   #:d? #:i? #:v?
+   #:*eps* #:*opt* #:*srndopt* #:small-ind
+   #:cmd-args #:terminate #:internal-path-string #:define-struct-load-form
+   #:abbrev #:awg #:awf #:aif #:awf #:awg #:dsb #:mvb #:mvc
+   #:append-number #:ensure-filename
    #:gi #:me #:ki
-   #:group
-   #:i?
-   #:internal-path-string
-   #:it
-   #:kv
-   #:last*
-   #:lst>n
-   #:lvextend
-   #:iter-timer
-   #:mac
-   #:make-adjustable-vector
-   #:make-animation
-   #:mkstr
-   #:mmss
-   #:mvb
-   #:mvc
-   #:now
-   #:numshow
-   #:print-every
-   #:psymb
-   #:reorder
-   #:reread
+   #:kv #:tl #:tav #:tv #:vl #:it #:ev
+   #:make-animation #:animate #:mmss #:wheel #:iter-timer
+   #:mkstr #:psymb #:symb #:reread
+   #:now #:numshow #:print-every
    #:show-ht
-   #:small-ind
    #:split
    #:string-list-concat
-   #:symb
-   #:tav
-   #:template
-   #:terminate
-   #:tl
-   #:to-adjustable-vector
-   #:to-list
-   #:to-vector
-   #:tree-find
-   #:tree-find-all
-   #:tv
-   #:undup
-   #:v?
-   #:vector-first
-   #:vector-last
-   #:vextend
-   #:vl
-   #:wheel
-   #:with-fast-stack
-   #:with-struct))
+   #:lvextend #:make-adjustable-vector #:to-adjustable-vector #:ensure-vector
+   #:last* #:lst>n #:psh #:to-list #:to-vector #:vextend #:undup
+   #:vector-first #:vector-last
+   #:with-struct #:with-fast-stack))
 
 (defpackage #:fn (:use #:common-lisp) (:export #:fn #:seed))
 
@@ -93,77 +45,31 @@
 (defpackage #:rnd
   (:use #:common-lisp)
   (:export
-    #:2ndistsample
-    #:2in-circ
-    #:2in-rect
-    #:2in-square
-    #:2nin-circ
-    #:2nin-rect
-    #:2nin-square
-    #:2non-circ
-    #:2non-line
-    #:2non-line*
-    #:2on-circ
-    #:2on-line
-    #:2on-line*
-    #:2walker
-    #:2walker-acc
-    #:3in-box
-    #:3in-cube
-    #:3in-sphere
-    #:3nin-box
-    #:3nin-cube
-    #:3nin-sphere
-    #:3non-line
-    #:3non-line*
-    #:3non-sphere
-    #:3on-line
-    #:3on-line*
-    #:3on-sphere
-    #:3walker
-    #:3walker-acc
-    #:array-split
-    #:bernoulli
-    #:either
-    #:make-rnd-state
-    #:max-distance-sample
-    #:norm
-    #:nrnd
-    #:nrnd*
-    #:nrnd-from
-    #:nrnd-from*
-    #:nrndi
-    #:nrndrng
-    #:nrndrngi
-    #:prob
-    #:prob*
-    #:rcond
-    #:rep
-    #:rnd
-    #:rnd*
-    #:rndget
-    #:rndi
-    #:rndrng
-    #:rndrngi
-    #:rndspace
-    #:rndspacei
-    #:set-rnd-state
-    #:walker
-    #:walker-acc
-    #:shuffle)
-  (:import-from #:auxin
-    #:*opt*
-    #:mvb
-    #:ensure-vector
-    #:make-adjustable-vector
-    #:to-vector
-    #:vextend))
+    #:make-rnd-state #:set-rnd-state
+    #:2in-circ #:2in-rect #:2in-square #:2nin-circ
+    #:2nin-rect #:2nin-square #:2non-circ #:2non-line #:2non-line*
+    #:2on-circ #:2on-line #:2on-line*
+    #:2walker #:2walker-acc
+    #:3in-box #:3in-cube #:3in-sphere
+    #:3nin-box #:3nin-cube #:3nin-sphere
+    #:3non-line #:3non-line* #:3non-sphere
+    #:3on-line #:3on-line* #:3on-sphere
+    #:3walker #:3walker-acc
+    #:norm #:bernoulli #:2ndistsample #:max-distance-sample
+    #:nrnd #:nrnd* #:nrnd-from #:nrnd-from* #:nrndi #:nrndrng #:nrndrngi
+    #:prob #:prob* #:rcond #:either
+    #:rep #:rnd #:rnd* #:rndget #:shuffle
+    #:rndi #:rndrng #:rndrngi #:array-split
+    #:rndspace #:rndspacei
+    #:walker #:walker-acc)
+  (:import-from #:auxin #:*opt* #:mvb #:ensure-vector #:make-adjustable-vector
+                #:to-vector #:vextend))
 
 (defpackage #:srnd
   (:use #:common-lisp)
   (:export #:2in-circ #:2on-circ #:2in-circ+ #:2on-circ+
            #:3in-sphere #:3on-sphere #:3in-sphere+ #:3on-sphere+
-           #:rnd #:rnd* #:rndrng #:make #:srnd)
+           #:rnd #:rnd* #:rndrng #:make #:srnd #:prob #:rcond)
   (:import-from #:auxin #:*srndopt*))
 
 (defpackage #:state
@@ -234,6 +140,11 @@
            #:circ #:compound #:draw #:wcirc #:hatch #:jpath #:make #:make*
            #:path #:rect #:save #:square #:update #:wpath #:sign)
   (:import-from #:auxin #:dsb #:ensure-filename #:with-struct))
+
+(defpackage #:wsvg/qry
+  (:use #:common-lisp)
+  (:import-from #:veq #:dsb #:strip-arg-keys #:get-arg-key)
+  (:export #:selectors))
 
 (defpackage #:canvas
   (:use #:common-lisp)

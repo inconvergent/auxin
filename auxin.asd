@@ -1,13 +1,13 @@
 
 (asdf:defsystem #:auxin
   :description "Auxiliary Utilities for Generative Art"
-  :version "1.0.1"
+  :version "2.0.0"
   :author "anders hoff/inconvergent"
   :licence "MIT"
   :in-order-to ((asdf:test-op (asdf:test-op #:auxin/tests)))
   :pathname "src/"
   :serial nil
-  :depends-on (#:veq #:lparallel #:cl-svg #:zpng)
+  :depends-on (#:grph #:lparallel #:cl-svg #:zpng )
   :components ((:file "packages")
                (:file "init" :depends-on ("packages"))
                (:file "config" :depends-on ("init"))
@@ -33,11 +33,12 @@
                (:file "draw/simplify-path" :depends-on ("utils"))
                (:file "draw/jpath" :depends-on ("utils"))
                (:file "draw/svg" :depends-on ("draw/simplify-path" "draw/jpath"))
+               (:file "draw/svg-qry" :depends-on ("draw/svg"))
                (:file "draw/canvas" :depends-on ("utils"))))
 
 (asdf:defsystem #:auxin/tests
   :depends-on (#:auxin #:prove #:asdf #:uiop)
-  :version "1.0.1"
+  :version "2.0.0"
   :perform (asdf:test-op (o s) (uiop:symbol-call ':auxin-tests '#:run-tests))
   :pathname "test/"
   :serial t

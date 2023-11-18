@@ -10,7 +10,8 @@
                             (auxin:internal-path-string "src/packages") ".lisp")
         if (eq o 'defpackage)
         do (let* ((pkg (auxin:mkstr (car rest)))
-                 (fn (auxin:internal-path-string (auxin:mkstr "docs/" pkg ".md")))
+                 (fn (auxin:internal-path-string
+                       (mkstr "docs/" (veq::repl pkg "/" "-") ".md")))
                  (s (with-output-to-string (*standard-output*)
                       (ext-symbols? pkg :pretty))))
              (with-open-file (fstream fn :direction :output :if-exists :supersede)

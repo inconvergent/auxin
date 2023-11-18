@@ -29,6 +29,7 @@ ADD run-tests.sh quicklisp/local-projects/auxin/run-tests.sh
 RUN mkdir -p ~/quicklisp/ && ln -s  /opt/quicklisp/setup.lisp ~/quicklisp/setup.lisp
 
 RUN git clone https://github.com/inconvergent/cl-veq.git quicklisp/local-projects/veq
+RUN git clone https://github.com/inconvergent/cl-grph.git quicklisp/local-projects/grph
 
 WORKDIR /opt/quicklisp/local-projects/auxin
 

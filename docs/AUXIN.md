@@ -20,7 +20,7 @@
  ;   [symbol]
  ; 
  ; *OPT* names a special variable:
- ;   Value: (OPTIMIZE (SAFETY 1) (SPEED 3) (DEBUG 1) (SPACE 2)
+ ;   Value: (OPTIMIZE (SAFETY . #1=(1)) (SPEED 3) (DEBUG . #1#) (SPACE 2)
  ;           (COMPILATION-SPEED 0))
 ```
 
@@ -41,12 +41,12 @@
 ```
 :missing:todo:
 
- ; AUXIN:ABBREV
+ ; VEQ::ABBREV
  ;   [symbol]
  ; 
  ; ABBREV names a macro:
  ;   Lambda-list: (SHORT LONG)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /data/x/veq/src/generic-utils.lisp
 ```
 
 #### AUXIN:AIF
@@ -54,12 +54,12 @@
 ```
 :missing:todo:
 
- ; AUXIN:AIF
+ ; VEQ::AIF
  ;   [symbol]
  ; 
  ; AIF names a macro:
  ;   Lambda-list: (TEST-FORM THEN-FORM &OPTIONAL ELSE-FORM)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /data/x/veq/src/generic-utils.lisp
 ```
 
 #### AUXIN:ANIMATE
@@ -78,8 +78,6 @@
 #### AUXIN:APPEND-NUMBER
 
 ```
-:missing:todo:
-
  ; AUXIN:APPEND-NUMBER
  ;   [symbol]
  ; 
@@ -87,16 +85,9 @@
  ;   Lambda-list: (FN I)
  ;   Derived type: (FUNCTION (STRING FIXNUM)
  ;                  (VALUES SIMPLE-STRING &OPTIONAL))
+ ;   Documentation:
+ ;     append number i to fn with zero padding.
  ;   Source file: /data/x/auxin/src/utils.lisp
-```
-
-#### AUXIN:APPEND-POSTFIX
-
-```
-:missing:todo:
-
- ; AUXIN:APPEND-POSTFIX
- ;   [symbol]
 ```
 
 #### AUXIN:AWF
@@ -162,7 +153,7 @@
  ; DEFINE-STRUCT-LOAD-FORM names a macro:
  ;   Lambda-list: (STRUCT-NAME)
  ;   Documentation:
- ;     Allow the structure named STRUCT-NAME to be dumped to FASL files.
+ ;     allow struct to be dumped to fasl files.
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
@@ -171,12 +162,12 @@
 ```
 :missing:todo:
 
- ; AUXIN:DSB
+ ; VEQ:DSB
  ;   [symbol]
  ; 
  ; DSB names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /data/x/veq/src/generic-utils.lisp
 ```
 
 #### AUXIN:ENSURE-FILENAME
@@ -221,20 +212,6 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:FILTER-BY-PREDICATE
-
-```
- ; AUXIN:FILTER-BY-PREDICATE
- ;   [symbol]
- ; 
- ; FILTER-BY-PREDICATE names a compiled function:
- ;   Lambda-list: (L FX)
- ;   Derived type: (FUNCTION (LIST FUNCTION) (VALUES LIST LIST &OPTIONAL))
- ;   Documentation:
- ;     split l into (values yes no) according to fx
- ;   Source file: /data/x/auxin/src/utils.lisp
-```
-
 #### AUXIN:GI
 
 ```
@@ -245,20 +222,6 @@
  ; 
  ; GI names a macro:
  ;   Lambda-list: (V)
- ;   Source file: /data/x/auxin/src/utils.lisp
-```
-
-#### AUXIN:GROUP
-
-```
-:missing:todo:
-
- ; AUXIN:GROUP
- ;   [symbol]
- ; 
- ; GROUP names a compiled function:
- ;   Lambda-list: (SOURCE N)
- ;   Derived type: (FUNCTION (T T) (VALUES LIST &OPTIONAL))
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
@@ -391,15 +354,6 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:MAC
-
-```
-:missing:todo:
-
- ; AUXIN:MAC
- ;   [symbol]
-```
-
 #### AUXIN:MAKE-ADJUSTABLE-VECTOR
 
 ```
@@ -475,12 +429,12 @@
 ```
 :missing:todo:
 
- ; AUXIN:MVB
+ ; VEQ:MVB
  ;   [symbol]
  ; 
  ; MVB names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /data/x/veq/src/generic-utils.lisp
 ```
 
 #### AUXIN:MVC
@@ -488,12 +442,12 @@
 ```
 :missing:todo:
 
- ; AUXIN:MVC
+ ; VEQ:MVC
  ;   [symbol]
  ; 
  ; MVC names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /data/x/veq/src/generic-utils.lisp
 ```
 
 #### AUXIN:NOW
@@ -565,19 +519,6 @@
  ; PSYMB names a compiled function:
  ;   Lambda-list: (PACKAGE &REST ARGS)
  ;   Derived type: (FUNCTION (T &REST T) (VALUES SYMBOL &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
-```
-
-#### AUXIN:REORDER
-
-```
-:missing:todo:
-
- ; AUXIN:REORDER
- ;   [symbol]
- ; 
- ; REORDER names a macro:
- ;   Lambda-list: (A &REST REST)
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
@@ -677,15 +618,6 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:TEMPLATE
-
-```
-:missing:todo:
-
- ; AUXIN:TEMPLATE
- ;   [symbol]
-```
-
 #### AUXIN:TERMINATE
 
 ```
@@ -754,35 +686,6 @@
  ;   Lambda-list: (INIT &KEY (TYPE T))
  ;   Derived type: (FUNCTION (LIST &KEY (:TYPE T))
  ;                  (VALUES (SIMPLE-ARRAY * (*)) &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
-```
-
-#### AUXIN:TREE-FIND
-
-```
-:missing:todo:
-
- ; AUXIN:TREE-FIND
- ;   [symbol]
- ; 
- ; TREE-FIND names a compiled function:
- ;   Lambda-list: (TREE FX)
- ;   Derived type: (FUNCTION (T FUNCTION) (VALUES T &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
-```
-
-#### AUXIN:TREE-FIND-ALL
-
-```
-:missing:todo:
-
- ; AUXIN:TREE-FIND-ALL
- ;   [symbol]
- ; 
- ; TREE-FIND-ALL names a compiled function:
- ;   Lambda-list: (ROOT FX &OPTIONAL (RES (LIST)))
- ;   Derived type: (FUNCTION (T FUNCTION &OPTIONAL LIST)
- ;                  (VALUES LIST &OPTIONAL))
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
