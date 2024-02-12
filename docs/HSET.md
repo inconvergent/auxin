@@ -143,7 +143,7 @@
  ; NUM names a compiled function:
  ;   Lambda-list: (S)
  ;   Derived type: (FUNCTION (HASH-TABLE)
- ;                  (VALUES (MOD 4611686018427387901) &OPTIONAL))
+ ;                  (VALUES (UNSIGNED-BYTE 44) &OPTIONAL))
  ;   Documentation:
  ;     count elements in fixnum set.
  ;   Source file: /data/x/auxin/src/hset.lisp

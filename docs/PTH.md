@@ -85,6 +85,23 @@
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
+#### PTH:ARC
+
+```
+ ; PTH:ARC
+ ;   [symbol]
+ ; 
+ ; ARC names a compiled function:
+ ;   Lambda-list: (R A B &KEY (RS 1.0) CCW)
+ ;   Derived type: (FUNCTION
+ ;                  (SINGLE-FLOAT SINGLE-FLOAT SINGLE-FLOAT &KEY
+ ;                   (:RS SINGLE-FLOAT) (:CCW T))
+ ;                  (VALUES T &OPTIONAL))
+ ;   Documentation:
+ ;     arc from a to b with rad r
+ ;   Source file: /data/x/auxin/src/draw/path.lisp
+```
+
 #### PTH:LPOS
 
 ```
@@ -197,7 +214,7 @@
  ;   Derived type: (FUNCTION (T &OPTIONAL SINGLE-FLOAT SINGLE-FLOAT)
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
- ;     stipple pth/fvec p with lines of length s and gaps of leng g
+ ;     stipple pth/fvec p with lines of length s and gaps of length g
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 

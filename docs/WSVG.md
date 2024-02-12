@@ -210,6 +210,24 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
+#### WSVG:MM->U
+
+```
+:missing:todo:
+
+ ; WSVG:MM->U
+ ;   [symbol]
+ ; 
+ ; MM->U names a compiled function:
+ ;   Lambda-list: (MM)
+ ;   Derived type: (FUNCTION (T)
+ ;                  (VALUES
+ ;                   (OR FLOAT (COMPLEX SINGLE-FLOAT)
+ ;                       (COMPLEX DOUBLE-FLOAT))
+ ;                   &OPTIONAL))
+ ;   Source file: /data/x/auxin/src/draw/svg.lisp
+```
+
 #### WSVG:PATH
 
 ```
@@ -294,6 +312,24 @@
  ;                  *)
  ;   Documentation:
  ;     draw a square of size s at xy. defaults to origin.
+ ;   Source file: /data/x/auxin/src/draw/svg.lisp
+```
+
+#### WSVG:U->MM
+
+```
+:missing:todo:
+
+ ; WSVG:U->MM
+ ;   [symbol]
+ ; 
+ ; U->MM names a compiled function:
+ ;   Lambda-list: (U)
+ ;   Derived type: (FUNCTION (T)
+ ;                  (VALUES
+ ;                   (OR FLOAT (COMPLEX SINGLE-FLOAT)
+ ;                       (COMPLEX DOUBLE-FLOAT))
+ ;                   &OPTIONAL))
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 

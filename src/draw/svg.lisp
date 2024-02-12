@@ -11,6 +11,9 @@
 (defparameter *zero* (list 0 0))
 (defparameter *svg* 'cl-svg:svg-1.1-toplevel)
 
+(defun mm->u (mm) (* #.(/ 1000f0 297f0) mm))
+(defun u->mm (u)  (* #.(/ 297f0 1000f0) u))
+
 ; TODO: better line join configurability
 ; https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin
 

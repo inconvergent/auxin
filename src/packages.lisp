@@ -102,8 +102,9 @@
 
 (defpackage #:pth
   (:use #:common-lisp)
-  (:export #:@dim #:@n #:@ns #:pth #:@closed #:@len #:make #:@pts #:stipple
-           #:prt #:pos #:lpos)
+  (:export #:@dim #:@n #:@ns #:pth #:@closed #:@len #:make #:@pts
+           #:prt #:pos #:lpos
+           #:stipple #:arc)
   (:import-from #:auxin #:*opt* #:with-struct))
 
 (defpackage #:simplify
@@ -138,7 +139,8 @@
   (:use #:common-lisp)
   (:export #:*half-long* #:*half-short* #:*long* #:*short* #:bzspl #:carc
            #:circ #:compound #:draw #:wcirc #:hatch #:jpath #:make #:make*
-           #:path #:rect #:save #:square #:update #:wpath #:sign)
+           #:path #:rect #:save #:square #:update #:wpath #:sign
+           #:u->mm #:mm->u)
   (:import-from #:auxin #:dsb #:ensure-filename #:with-struct))
 
 (defpackage #:wsvg/qry

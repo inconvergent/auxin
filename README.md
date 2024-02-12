@@ -1,4 +1,4 @@
-# AUXIN-Auxiliary Utilities for Generative Art
+# AUXIN-Utilities for Generative Art
 
 **NOTE: This code is likely to change with little or no warning. You should not
 use this for anything remotely important. Make sure to clone the repo if you
@@ -6,17 +6,13 @@ need it to remain stable.**
 
 ## About
 
-This system is auxilary utilities i have found useful for working with
-generative algorithms it is primarily intended for use with my grph library
-(https://github.com/inconvergent/cl-grph) and my vector mathematics library
-(https://github.com/inconvergent/cl-veq). Auxin is a stripped down fork of
-weird (https://github.com/inconvergent/weird).
+Utilities for working with with generative algorithms.
 
 ![Elastic Web](img/web.png)
 
 ## Components
 
-Here are the main components: TODO
+Here are the main components: `TODO`
 
 1. Random numbers, some examples:
 
@@ -45,7 +41,7 @@ Here are the main components: TODO
 
 2. A tool for drawing `svg` files: `wsvg`. See [draw.lisp](/examples/draw.lisp).
 
-3. TODO add more description
+3. `TODO: more descriptions ...`
 
 In addition the library contains a number of useful tools for dealing with
 (predominantly) vector graphics.
@@ -57,41 +53,15 @@ In addition the library contains a number of useful tools for dealing with
 ![Boxes](img/boxes.png)
 
 
-## On Use and Contributions
-
-This code is written for my personal use, and parts of it is rather
-experimental. Also, it is likely to change at my whim. For this reason I don't
-recommend depending on this library for anything.
-
-I release it publicly in case people find it useful or interesting. It is not,
-however, intended as a collaboration/Open Source project. As such I am unlikely
-to accept PRs, reply to issues, or take requests.
-
-
 ## Installation and Dependencies
 
-`auxin` depends on [cl-veq](https://github.com/inconvergent/cl-veq), and
-it requires Quicklisp to install dependencies (which are listed in
-`auxin.asd`).
+To use `auxin` you have to have these three libraries available locally:
 
-To install and load `auxin`, do:
-```lisp
-(ql:quickload :auxin)
-```
-If this does not work, `auxin` may not be in a place Quicklisp or ASDF can see
-them. To fix this, either:
-```lisp
-(load "auxin.asd")
-```
-For a long term solution, add the following to `.sbclrc`:
-```lisp
-#+quicklisp
-(push "/path/to/dir/containing/auxin" ql:*local-project-directories*)
-```
-You will have to make sure `cl-veq` is also available in the same fashion for
-any of this to work.
+ - https://github.com/inconvergent/cl-veq
+ - https://github.com/inconvergent/cl-grph
+ - https://github.com/inconvergent/lqn
 
-### Tests
-
-Tests can be executed using: `(asdf:test-system :auxin)`.
+I recommend cloning them and installing them via Quicklisp. Here is how to use
+local projects in QL:
+http://blog.quicklisp.org/2018/01/the-quicklisp-local-projects-mechanism.html
 

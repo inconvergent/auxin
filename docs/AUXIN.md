@@ -627,8 +627,8 @@
  ;   [symbol]
  ; 
  ; TERMINATE names a compiled function:
- ;   Lambda-list: (STATUS)
- ;   Derived type: (FUNCTION (T) *)
+ ;   Lambda-list: (STATUS &OPTIONAL SILENT)
+ ;   Derived type: (FUNCTION (T &OPTIONAL T) *)
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 

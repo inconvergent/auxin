@@ -145,10 +145,23 @@ got a: ~a, b: ~a, closed: ~a" a b closed))))))
 
 (veq:fvdef stipple (p &optional (s 2f0) (g s) &aux (l (+ s g))) ; TODO: flip ?
   (declare (veq:ff s g l))
-  "stipple pth/fvec p with lines of length s and gaps of leng g"
+  "stipple pth/fvec p with lines of length s and gaps of length g"
   (loop with pth = (etypecase p (veq:fvec (make p)) (pth p))
         with len = (@len pth)
         for x = (rnd:rnd g) then (+ x l)
         for xx = (min len (+ x s))
         while (< x len) collect (lpos pth (/ x len) (/ xx len))))
+
+(veq:fvdef arc (r a b &key (rs 1f0) ccw)
+  (declare (veq:ff r a b rs))
+  "arc from a to b with rad r"
+  (veq:xlet ((p (make (veq:f$line a b) :dim 1))
+             (p!n (ceiling (* r rs (@len p))))
+             (f!dir (if ccw -1f0 1f0))
+             (res (veq:f2$zero n)))
+    (veq:f$fxlspace (n 0f0 1f0)
+      (lambda (i s)
+        (setf (veq:2$ res i)
+              (f2!@*. (veq:fcos-sin (* dir (veq:f$ (pos p s)))) r))))
+    res))
 

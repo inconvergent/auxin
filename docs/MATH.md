@@ -111,7 +111,7 @@
  ; INTEGER-SEARCH names a compiled function:
  ;   Lambda-list: (AA V &AUX (N (LENGTH AA)))
  ;   Derived type: (FUNCTION (VECTOR FIXNUM)
- ;                  (VALUES (OR NULL (MOD 4611686018427387901)) &OPTIONAL))
+ ;                  (VALUES (OR (MOD 17592186044415) NULL) &OPTIONAL))
  ;   Documentation:
  ;     binary integer search. assumes presorted list of integers
  ;   Source file: /data/x/auxin/src/math.lisp
@@ -275,8 +275,7 @@
  ; RANGE-SEARCH names a compiled function:
  ;   Lambda-list: (RANGES F &AUX (N (1- (LENGTH RANGES)))
  ;                 (RANGES* (ENSURE-VECTOR RANGES)))
- ;   Derived type: (FUNCTION (T T)
- ;                  (VALUES (MOD 4611686018427387901) &OPTIONAL))
+ ;   Derived type: (FUNCTION (T T) (VALUES (MOD 17592186044415) &OPTIONAL))
  ;   Documentation:
  ;     binary range search.  range must be sorted in ascending order. f is a value
  ;     inside the range you are looking for.
