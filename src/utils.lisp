@@ -89,7 +89,7 @@
 (defun ensure-filename (fn &optional (postfix "") (silent nil))
   (let ((fn* (mkstr (if fn fn "tmp") postfix)))
     (declare (string fn*))
-    (format (not silent) "~&file: ~a~%" fn*)
+    (format (not silent) "~&file: ~a~&" fn*)
     fn*))
 
 (defun print-every (i &optional (n 1))

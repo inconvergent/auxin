@@ -153,3 +153,9 @@
   (:export #:canvas #:make #:save #:set-gray-pix #:set-pix)
   (:import-from #:auxin #:*opt* #:small-ind #:awg))
 
+(defpackage #:kdtree
+  (:use #:common-lisp)
+  (:import-from #:veq #:mvb)
+  (:export #:make #:2rad #:2nn)
+  (:import-from #:auxin #:*opt* #:with-struct))
+

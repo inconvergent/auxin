@@ -59,7 +59,7 @@
                                  (rec (cdr body) ctx))))))
     (rec body)))
 
-(defmacro selectors ((g v wsvg) &body body)
+(defmacro selectors ((g v wsvg &key (sym (gensym "$"))) &body body)
   (declare (symbol g v wsvg))
   "use grph datalog selectors to draw directly from grph:grph g, and xgrph:pos v
 (selectors (g v wsvg)
@@ -86,6 +86,6 @@
               for l in (stipple pth ss sg)
               do (apply #'wsvg:path ,wsvg l keys*))))
      (progn ,@(compile-selectors body
-                `((:gsym . ,g) (:vsym . ,v) (:$sym . ,(gensym "$"))
+                `((:gsym . ,g) (:vsym . ,v) (:$sym . ,sym)
                   (:closed-sym . ,(gensym "CLOSED")))))))
 

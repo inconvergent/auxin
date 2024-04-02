@@ -1,7 +1,7 @@
 
 (asdf:defsystem #:auxin
   :description "Auxiliary Utilities for Generative Art"
-  :version "2.1.0"
+  :version "2.2.0"
   :author "anders hoff/inconvergent"
   :licence "MIT"
   :in-order-to ((asdf:test-op (asdf:test-op #:auxin/tests)))
@@ -34,11 +34,12 @@
                (:file "draw/jpath" :depends-on ("utils"))
                (:file "draw/svg" :depends-on ("draw/simplify-path" "draw/jpath"))
                (:file "draw/svg-qry" :depends-on ("draw/svg"))
-               (:file "draw/canvas" :depends-on ("utils"))))
+               (:file "draw/canvas" :depends-on ("utils"))
+               (:file "spatial/kdtree" :depends-on ("utils"))))
 
 (asdf:defsystem #:auxin/tests
   :depends-on (#:auxin #:prove #:asdf #:uiop)
-  :version "2.1.0"
+  :version "2.2.0"
   :perform (asdf:test-op (o s) (uiop:symbol-call ':auxin-tests '#:run-tests))
   :pathname "test/"
   :serial t

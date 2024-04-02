@@ -5,7 +5,7 @@
  ;   [symbol]
  ; 
  ; SELECTORS names a macro:
- ;   Lambda-list: ((G V WSVG) &BODY BODY)
+ ;   Lambda-list: ((G V WSVG &KEY (SYM (GENSYM $))) &BODY BODY)
  ;   Documentation:
  ;     use grph datalog selectors to draw directly from grph:grph g, and xgrph:pos v
  ;     (selectors (g v wsvg)
