@@ -53,7 +53,9 @@
               (incf tot w)))
     (loop with agg = 0f0
           for i from 0 repeat ns
-          for c = (/ (aref ws i) tot)
+          for c = (handler-case
+                    (/ (aref ws i) tot)
+                    (floating-point-invalid-operation () 0f0))
           do (incf agg c) (setf (aref ws i) agg))
     ; override last value to 1 in case floats do not sum to 1
     (setf (aref ws ns) 1f0)
