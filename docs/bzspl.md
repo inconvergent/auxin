@@ -1,7 +1,6 @@
-#### BZSPL:ADAPTIVE-POS
-
+## `ADAPTIVE-POS`
 ```
-:missing:todo:
+:missing:
 
  ; BZSPL:ADAPTIVE-POS
  ;   [symbol]
@@ -12,10 +11,9 @@
  ;   Source file: /data/x/auxin/src/draw/bzspl.lisp
 ```
 
-#### BZSPL:LEN
-
+## `LEN`
 ```
-:missing:todo:
+:missing:
 
  ; BZSPL:LEN
  ;   [symbol]
@@ -27,10 +25,9 @@
  ;   Source file: /data/x/auxin/src/draw/bzspl.lisp
 ```
 
-#### BZSPL:MAKE
-
+## `MAKE`
 ```
-:missing:todo:
+:missing:
 
  ; BZSPL:MAKE
  ;   [symbol]
@@ -43,10 +40,9 @@
  ;   Source file: /data/x/auxin/src/draw/bzspl.lisp
 ```
 
-#### BZSPL:POS
-
+## `POS`
 ```
-:missing:todo:
+:missing:
 
  ; BZSPL:POS
  ;   [symbol]
@@ -58,10 +54,9 @@
  ;   Source file: /data/x/auxin/src/draw/bzspl.lisp
 ```
 
-#### BZSPL:POS\*
-
+## `POS*`
 ```
-:missing:todo:
+:missing:
 
  ; BZSPL:POS*
  ;   [symbol]
@@ -73,10 +68,9 @@
  ;   Source file: /data/x/auxin/src/draw/bzspl.lisp
 ```
 
-#### BZSPL:RNDPOS
-
+## `RNDPOS`
 ```
-:missing:todo:
+:missing:
 
  ; BZSPL:RNDPOS
  ;   [symbol]

@@ -1,5 +1,4 @@
-#### FN:FN
-
+## `FN`
 ```
  ; FN:FN
  ;   [symbol]
@@ -12,10 +11,9 @@
  ;   Source file: /data/x/auxin/src/fn.lisp
 ```
 
-#### FN:SEED
-
+## `SEED`
 ```
-:missing:todo:
+:missing:
 
  ; FN:SEED
  ;   [symbol]

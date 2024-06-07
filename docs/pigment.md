@@ -1,5 +1,4 @@
-#### PIGMENT:AS-HEX
-
+## `AS-HEX`
 ```
  ; PIGMENT:AS-HEX
  ;   [symbol]
@@ -13,8 +12,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:AS-HSV
-
+## `AS-HSV`
 ```
  ; PIGMENT:AS-HSV
  ;   [symbol]
@@ -27,8 +25,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:AS-LIST
-
+## `AS-LIST`
 ```
  ; PIGMENT:AS-LIST
  ;   [symbol]
@@ -41,8 +38,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:AS-LIST\*
-
+## `AS-LIST*`
 ```
  ; PIGMENT:AS-LIST*
  ;   [symbol]
@@ -55,8 +51,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:AS-VAL
-
+## `AS-VAL`
 ```
  ; PIGMENT:AS-VAL
  ;   [symbol]
@@ -71,8 +66,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:AS-VAL\*
-
+## `AS-VAL*`
 ```
  ; PIGMENT:AS-VAL*
  ;   [symbol]
@@ -87,8 +81,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:BLACK
-
+## `BLACK`
 ```
  ; PIGMENT:BLACK
  ;   [symbol]
@@ -101,8 +94,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:BLUE
-
+## `BLUE`
 ```
  ; PIGMENT:BLUE
  ;   [symbol]
@@ -115,8 +107,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:CMYK
-
+## `CMYK`
 ```
  ; PIGMENT:CMYK
  ;   [symbol]
@@ -132,8 +123,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:COPY
-
+## `COPY`
 ```
  ; PIGMENT:COPY
  ;   [symbol]
@@ -147,8 +137,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:CYAN
-
+## `CYAN`
 ```
  ; PIGMENT:CYAN
  ;   [symbol]
@@ -161,8 +150,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:DARK
-
+## `DARK`
 ```
  ; PIGMENT:DARK
  ;   [symbol]
@@ -175,8 +163,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:GRAY
-
+## `GRAY`
 ```
  ; PIGMENT:GRAY
  ;   [symbol]
@@ -189,8 +176,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:GREEN
-
+## `GREEN`
 ```
  ; PIGMENT:GREEN
  ;   [symbol]
@@ -203,8 +189,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:HSV
-
+## `HSV`
 ```
  ; PIGMENT:HSV
  ;   [symbol]
@@ -220,8 +205,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:MAGENTA
-
+## `MAGENTA`
 ```
  ; PIGMENT:MAGENTA
  ;   [symbol]
@@ -234,8 +218,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:MAKE
-
+## `MAKE`
 ```
  ; PIGMENT:MAKE
  ;   [symbol]
@@ -252,8 +235,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:MDARK
-
+## `MDARK`
 ```
  ; PIGMENT:MDARK
  ;   [symbol]
@@ -266,8 +248,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:RED
-
+## `RED`
 ```
  ; PIGMENT:RED
  ;   [symbol]
@@ -280,8 +261,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:RGB
-
+## `RGB`
 ```
  ; PIGMENT:RGB
  ;   [symbol]
@@ -297,8 +277,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:SCALE
-
+## `SCALE`
 ```
  ; PIGMENT:SCALE
  ;   [symbol]
@@ -313,8 +292,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:SCALE!
-
+## `SCALE!`
 ```
  ; PIGMENT:SCALE!
  ;   [symbol]
@@ -328,8 +306,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:TRANSPARENT
-
+## `TRANSPARENT`
 ```
  ; PIGMENT:TRANSPARENT
  ;   [symbol]
@@ -343,8 +320,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:VDARK
-
+## `VDARK`
 ```
  ; PIGMENT:VDARK
  ;   [symbol]
@@ -357,8 +333,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:WHITE
-
+## `WHITE`
 ```
  ; PIGMENT:WHITE
  ;   [symbol]
@@ -371,8 +346,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:WITH
-
+## `WITH`
 ```
  ; PIGMENT:WITH
  ;   [symbol]
@@ -384,8 +358,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:WITH\*
-
+## `WITH*`
 ```
  ; PIGMENT:WITH*
  ;   [symbol]
@@ -397,8 +370,7 @@
  ;   Source file: /data/x/auxin/src/draw/pigment.lisp
 ```
 
-#### PIGMENT:YELLOW
-
+## `YELLOW`
 ```
  ; PIGMENT:YELLOW
  ;   [symbol]

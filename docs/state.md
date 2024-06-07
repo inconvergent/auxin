@@ -1,5 +1,4 @@
-#### STATE:AWITH
-
+## `AWITH`
 ```
  ; STATE:AWITH
  ;   [symbol]
@@ -11,17 +10,15 @@
  ;   Source file: /data/x/auxin/src/state.lisp
 ```
 
-#### STATE:IT
-
+## `IT`
 ```
-:missing:todo:
+:missing:
 
  ; STATE:IT
  ;   [symbol]
 ```
 
-#### STATE:LGET
-
+## `LGET`
 ```
  ; STATE:LGET
  ;   [symbol]
@@ -35,8 +32,7 @@
  ;   Source file: /data/x/auxin/src/state.lisp
 ```
 
-#### STATE:LSET
-
+## `LSET`
 ```
  ; STATE:LSET
  ;   [symbol]
@@ -49,10 +45,9 @@
  ;   Source file: /data/x/auxin/src/state.lisp
 ```
 
-#### STATE:MAKE
-
+## `MAKE`
 ```
-:missing:todo:
+:missing:
 
  ; STATE:MAKE
  ;   [symbol]
@@ -63,8 +58,7 @@
  ;   Source file: /data/x/auxin/src/state.lisp
 ```
 
-#### STATE:SGET
-
+## `SGET`
 ```
  ; STATE:SGET
  ;   [symbol]
@@ -80,8 +74,7 @@
  ; (SETF SGET) has setf-expansion: STATE::-SSET
 ```
 
-#### STATE:TO-LIST
-
+## `TO-LIST`
 ```
  ; STATE:TO-LIST
  ;   [symbol]
@@ -94,10 +87,9 @@
  ;   Source file: /data/x/auxin/src/state.lisp
 ```
 
-#### STATE:WITH
-
+## `WITH`
 ```
-:missing:todo:
+:missing:
 
  ; STATE:WITH
  ;   [symbol]

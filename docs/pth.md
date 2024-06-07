@@ -1,7 +1,6 @@
-#### PTH:@CLOSED
-
+## `@CLOSED`
 ```
-:missing:todo:
+:missing:
 
  ; PTH:@CLOSED
  ;   [symbol]
@@ -12,10 +11,9 @@
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
-#### PTH:@DIM
-
+## `@DIM`
 ```
-:missing:todo:
+:missing:
 
  ; PTH:@DIM
  ;   [symbol]
@@ -27,8 +25,7 @@
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
-#### PTH:@LEN
-
+## `@LEN`
 ```
  ; PTH:@LEN
  ;   [symbol]
@@ -41,10 +38,9 @@
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
-#### PTH:@N
-
+## `@N`
 ```
-:missing:todo:
+:missing:
 
  ; PTH:@N
  ;   [symbol]
@@ -56,10 +52,9 @@
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
-#### PTH:@NS
-
+## `@NS`
 ```
-:missing:todo:
+:missing:
 
  ; PTH:@NS
  ;   [symbol]
@@ -71,8 +66,7 @@
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
-#### PTH:@PTS
-
+## `@PTS`
 ```
  ; PTH:@PTS
  ;   [symbol]
@@ -85,8 +79,7 @@
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
-#### PTH:ARC
-
+## `ARC`
 ```
  ; PTH:ARC
  ;   [symbol]
@@ -102,8 +95,7 @@
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
-#### PTH:LPOS
-
+## `LPOS`
 ```
  ; PTH:LPOS
  ;   [symbol]
@@ -117,8 +109,7 @@
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
-#### PTH:MAKE
-
+## `MAKE`
 ```
  ; PTH:MAKE
  ;   [symbol]
@@ -134,8 +125,7 @@
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
-#### PTH:POS
-
+## `POS`
 ```
  ; PTH:POS
  ;   [symbol]
@@ -151,10 +141,9 @@
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
-#### PTH:PRT
-
+## `PRT`
 ```
-:missing:todo:
+:missing:
 
  ; PTH:PRT
  ;   [symbol]
@@ -166,10 +155,9 @@
  ;   Source file: /data/x/auxin/src/draw/path.lisp
 ```
 
-#### PTH:PTH
-
+## `PTH`
 ```
-:missing:todo:
+:missing:
 
  ; PTH:PTH
  ;   [symbol]
@@ -203,8 +191,7 @@
  ;       Initform: 0.0
 ```
 
-#### PTH:STIPPLE
-
+## `STIPPLE`
 ```
  ; PTH:STIPPLE
  ;   [symbol]

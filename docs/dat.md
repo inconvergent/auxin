@@ -1,5 +1,4 @@
-#### DAT:DO-LINES-AS-BUFFER
-
+## `DO-LINES-AS-BUFFER`
 ```
  ; DAT:DO-LINES-AS-BUFFER
  ;   [symbol]
@@ -15,10 +14,9 @@
  ;   Source file: /data/x/auxin/src/dat.lisp
 ```
 
-#### DAT:EXPORT-DATA
-
+## `EXPORT-DATA`
 ```
-:missing:todo:
+:missing:
 
  ; DAT:EXPORT-DATA
  ;   [symbol]
@@ -29,10 +27,9 @@
  ;   Source file: /data/x/auxin/src/dat.lisp
 ```
 
-#### DAT:IMPORT-ALL-DATA
-
+## `IMPORT-ALL-DATA`
 ```
-:missing:todo:
+:missing:
 
  ; DAT:IMPORT-ALL-DATA
  ;   [symbol]
@@ -43,10 +40,9 @@
  ;   Source file: /data/x/auxin/src/dat.lisp
 ```
 
-#### DAT:IMPORT-DATA
-
+## `IMPORT-DATA`
 ```
-:missing:todo:
+:missing:
 
  ; DAT:IMPORT-DATA
  ;   [symbol]

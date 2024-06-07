@@ -1,7 +1,6 @@
-#### WSVG:\*HALF-LONG\*
-
+## `*HALF-LONG*`
 ```
-:missing:todo:
+:missing:
 
  ; WSVG:*HALF-LONG*
  ;   [symbol]
@@ -11,10 +10,9 @@
  ;   Value: 707.1425
 ```
 
-#### WSVG:\*HALF-SHORT\*
-
+## `*HALF-SHORT*`
 ```
-:missing:todo:
+:missing:
 
  ; WSVG:*HALF-SHORT*
  ;   [symbol]
@@ -24,10 +22,9 @@
  ;   Value: 500.0
 ```
 
-#### WSVG:\*LONG\*
-
+## `*LONG*`
 ```
-:missing:todo:
+:missing:
 
  ; WSVG:*LONG*
  ;   [symbol]
@@ -37,10 +34,9 @@
  ;   Value: 1414.285
 ```
 
-#### WSVG:\*SHORT\*
-
+## `*SHORT*`
 ```
-:missing:todo:
+:missing:
 
  ; WSVG:*SHORT*
  ;   [symbol]
@@ -50,8 +46,7 @@
  ;   Value: 1000.0
 ```
 
-#### WSVG:BZSPL
-
+## `BZSPL`
 ```
  ; WSVG:BZSPL
  ;   [symbol]
@@ -71,17 +66,15 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:CARC
-
+## `CARC`
 ```
-:missing:todo:
+:missing:
 
  ; WSVG:CARC
  ;   [symbol]
 ```
 
-#### WSVG:CIRC
-
+## `CIRC`
 ```
  ; WSVG:CIRC
  ;   [symbol]
@@ -97,10 +90,9 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:COMPOUND
-
+## `COMPOUND`
 ```
-:missing:todo:
+:missing:
 
  ; WSVG:COMPOUND
  ;   [symbol]
@@ -114,8 +106,7 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:DRAW
-
+## `DRAW`
 ```
  ; WSVG:DRAW
  ;   [symbol]
@@ -132,17 +123,15 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:HATCH
-
+## `HATCH`
 ```
-:missing:todo:
+:missing:
 
  ; WSVG:HATCH
  ;   [symbol]
 ```
 
-#### WSVG:JPATH
-
+## `JPATH`
 ```
  ; WSVG:JPATH
  ;   [symbol]
@@ -164,8 +153,7 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:MAKE
-
+## `MAKE`
 ```
  ; WSVG:MAKE
  ;   [symbol]
@@ -190,8 +178,7 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:MAKE\*
-
+## `MAKE*`
 ```
  ; WSVG:MAKE*
  ;   [symbol]
@@ -210,10 +197,9 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:MM->U
-
+## `MM->U`
 ```
-:missing:todo:
+:missing:
 
  ; WSVG:MM->U
  ;   [symbol]
@@ -228,8 +214,7 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:PATH
-
+## `PATH`
 ```
  ; WSVG:PATH
  ;   [symbol]
@@ -249,8 +234,7 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:RECT
-
+## `RECT`
 ```
  ; WSVG:RECT
  ;   [symbol]
@@ -266,8 +250,7 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:SAVE
-
+## `SAVE`
 ```
  ; WSVG:SAVE
  ;   [symbol]
@@ -280,8 +263,7 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:SIGN
-
+## `SIGN`
 ```
  ; WSVG:SIGN
  ;   [symbol]
@@ -298,8 +280,7 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:SQUARE
-
+## `SQUARE`
 ```
  ; WSVG:SQUARE
  ;   [symbol]
@@ -315,10 +296,9 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:U->MM
-
+## `U->MM`
 ```
-:missing:todo:
+:missing:
 
  ; WSVG:U->MM
  ;   [symbol]
@@ -333,10 +313,9 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:UPDATE
-
+## `UPDATE`
 ```
-:missing:todo:
+:missing:
 
  ; WSVG:UPDATE
  ;   [symbol]
@@ -350,8 +329,7 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:WCIRC
-
+## `WCIRC`
 ```
  ; WSVG:WCIRC
  ;   [symbol]
@@ -367,10 +345,9 @@
  ;   Source file: /data/x/auxin/src/draw/svg.lisp
 ```
 
-#### WSVG:WPATH
-
+## `WPATH`
 ```
-:missing:todo:
+:missing:
 
  ; WSVG:WPATH
  ;   [symbol]

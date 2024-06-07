@@ -1,5 +1,4 @@
-#### RND:2IN-CIRC
-
+## `2IN-CIRC`
 ```
  ; RND:2IN-CIRC
  ;   [symbol]
@@ -14,8 +13,7 @@
  ;   Source file: /data/x/auxin/src/rnd/2rnd.lisp
 ```
 
-#### RND:2IN-RECT
-
+## `2IN-RECT`
 ```
  ; RND:2IN-RECT
  ;   [symbol]
@@ -30,8 +28,7 @@
  ;   Source file: /data/x/auxin/src/rnd/2rnd.lisp
 ```
 
-#### RND:2IN-SQUARE
-
+## `2IN-SQUARE`
 ```
  ; RND:2IN-SQUARE
  ;   [symbol]
@@ -46,8 +43,7 @@
  ;   Source file: /data/x/auxin/src/rnd/2rnd.lisp
 ```
 
-#### RND:2NDISTSAMPLE
-
+## `2NDISTSAMPLE`
 ```
  ; RND:2NDISTSAMPLE
  ;   [symbol]
@@ -67,8 +63,7 @@
  ;   Source file: /data/x/auxin/src/rnd/2rnd.lisp
 ```
 
-#### RND:2NIN-CIRC
-
+## `2NIN-CIRC`
 ```
  ; RND:2NIN-CIRC
  ;   [symbol]
@@ -83,8 +78,7 @@
  ;   Source file: /data/x/auxin/src/rnd/2rnd.lisp
 ```
 
-#### RND:2NIN-RECT
-
+## `2NIN-RECT`
 ```
  ; RND:2NIN-RECT
  ;   [symbol]
@@ -99,8 +93,7 @@
  ;   Source file: /data/x/auxin/src/rnd/2rnd.lisp
 ```
 
-#### RND:2NIN-SQUARE
-
+## `2NIN-SQUARE`
 ```
  ; RND:2NIN-SQUARE
  ;   [symbol]
@@ -115,8 +108,7 @@
  ;   Source file: /data/x/auxin/src/rnd/2rnd.lisp
 ```
 
-#### RND:2NON-CIRC
-
+## `2NON-CIRC`
 ```
  ; RND:2NON-CIRC
  ;   [symbol]
@@ -131,8 +123,7 @@
  ;   Source file: /data/x/auxin/src/rnd/2rnd.lisp
 ```
 
-#### RND:2NON-LINE
-
+## `2NON-LINE`
 ```
  ; RND:2NON-LINE
  ;   [symbol]
@@ -147,17 +138,15 @@
  ;   Source file: /data/x/auxin/src/rnd/2rnd.lisp
 ```
 
-#### RND:2NON-LINE\*
-
+## `2NON-LINE*`
 ```
-:missing:todo:
+:missing:
 
  ; RND:2NON-LINE*
  ;   [symbol]
 ```
 
-#### RND:2ON-CIRC
-
+## `2ON-CIRC`
 ```
  ; RND:2ON-CIRC
  ;   [symbol]
@@ -172,8 +161,7 @@
  ;   Source file: /data/x/auxin/src/rnd/2rnd.lisp
 ```
 
-#### RND:2ON-LINE
-
+## `2ON-LINE`
 ```
  ; RND:2ON-LINE
  ;   [symbol]
@@ -188,17 +176,15 @@
  ;   Source file: /data/x/auxin/src/rnd/2rnd.lisp
 ```
 
-#### RND:2ON-LINE\*
-
+## `2ON-LINE*`
 ```
-:missing:todo:
+:missing:
 
  ; RND:2ON-LINE*
  ;   [symbol]
 ```
 
-#### RND:2WALKER
-
+## `2WALKER`
 ```
  ; RND:2WALKER
  ;   [symbol]
@@ -213,8 +199,7 @@
  ;   Source file: /data/x/auxin/src/rnd/walkers.lisp
 ```
 
-#### RND:2WALKER-ACC
-
+## `2WALKER-ACC`
 ```
  ; RND:2WALKER-ACC
  ;   [symbol]
@@ -229,8 +214,7 @@
  ;   Source file: /data/x/auxin/src/rnd/walkers.lisp
 ```
 
-#### RND:3IN-BOX
-
+## `3IN-BOX`
 ```
  ; RND:3IN-BOX
  ;   [symbol]
@@ -245,8 +229,7 @@
  ;   Source file: /data/x/auxin/src/rnd/3rnd.lisp
 ```
 
-#### RND:3IN-CUBE
-
+## `3IN-CUBE`
 ```
  ; RND:3IN-CUBE
  ;   [symbol]
@@ -261,8 +244,7 @@
  ;   Source file: /data/x/auxin/src/rnd/3rnd.lisp
 ```
 
-#### RND:3IN-SPHERE
-
+## `3IN-SPHERE`
 ```
  ; RND:3IN-SPHERE
  ;   [symbol]
@@ -278,8 +260,7 @@
  ;   Source file: /data/x/auxin/src/rnd/3rnd.lisp
 ```
 
-#### RND:3NIN-BOX
-
+## `3NIN-BOX`
 ```
  ; RND:3NIN-BOX
  ;   [symbol]
@@ -294,8 +275,7 @@
  ;   Source file: /data/x/auxin/src/rnd/3rnd.lisp
 ```
 
-#### RND:3NIN-CUBE
-
+## `3NIN-CUBE`
 ```
  ; RND:3NIN-CUBE
  ;   [symbol]
@@ -309,8 +289,7 @@
  ;   Source file: /data/x/auxin/src/rnd/3rnd.lisp
 ```
 
-#### RND:3NIN-SPHERE
-
+## `3NIN-SPHERE`
 ```
  ; RND:3NIN-SPHERE
  ;   [symbol]
@@ -325,8 +304,7 @@
  ;   Source file: /data/x/auxin/src/rnd/3rnd.lisp
 ```
 
-#### RND:3NON-LINE
-
+## `3NON-LINE`
 ```
  ; RND:3NON-LINE
  ;   [symbol]
@@ -341,17 +319,15 @@
  ;   Source file: /data/x/auxin/src/rnd/3rnd.lisp
 ```
 
-#### RND:3NON-LINE\*
-
+## `3NON-LINE*`
 ```
-:missing:todo:
+:missing:
 
  ; RND:3NON-LINE*
  ;   [symbol]
 ```
 
-#### RND:3NON-SPHERE
-
+## `3NON-SPHERE`
 ```
  ; RND:3NON-SPHERE
  ;   [symbol]
@@ -366,8 +342,7 @@
  ;   Source file: /data/x/auxin/src/rnd/3rnd.lisp
 ```
 
-#### RND:3ON-LINE
-
+## `3ON-LINE`
 ```
  ; RND:3ON-LINE
  ;   [symbol]
@@ -382,17 +357,15 @@
  ;   Source file: /data/x/auxin/src/rnd/3rnd.lisp
 ```
 
-#### RND:3ON-LINE\*
-
+## `3ON-LINE*`
 ```
-:missing:todo:
+:missing:
 
  ; RND:3ON-LINE*
  ;   [symbol]
 ```
 
-#### RND:3ON-SPHERE
-
+## `3ON-SPHERE`
 ```
  ; RND:3ON-SPHERE
  ;   [symbol]
@@ -408,8 +381,7 @@
  ;   Source file: /data/x/auxin/src/rnd/3rnd.lisp
 ```
 
-#### RND:3WALKER
-
+## `3WALKER`
 ```
  ; RND:3WALKER
  ;   [symbol]
@@ -424,8 +396,7 @@
  ;   Source file: /data/x/auxin/src/rnd/walkers.lisp
 ```
 
-#### RND:3WALKER-ACC
-
+## `3WALKER-ACC`
 ```
  ; RND:3WALKER-ACC
  ;   [symbol]
@@ -440,17 +411,15 @@
  ;   Source file: /data/x/auxin/src/rnd/walkers.lisp
 ```
 
-#### RND:ARRAY-SPLIT
-
+## `ARRAY-SPLIT`
 ```
-:missing:todo:
+:missing:
 
  ; RND:ARRAY-SPLIT
  ;   [symbol]
 ```
 
-#### RND:BERNOULLI
-
+## `BERNOULLI`
 ```
  ; RND:BERNOULLI
  ;   [symbol]
@@ -464,8 +433,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:EITHER
-
+## `EITHER`
 ```
  ; RND:EITHER
  ;   [symbol]
@@ -477,8 +445,7 @@
  ;   Source file: /data/x/auxin/src/rnd/macros.lisp
 ```
 
-#### RND:MAKE-RND-STATE
-
+## `MAKE-RND-STATE`
 ```
  ; RND:MAKE-RND-STATE
  ;   [symbol]
@@ -491,17 +458,15 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:MAX-DISTANCE-SAMPLE
-
+## `MAX-DISTANCE-SAMPLE`
 ```
-:missing:todo:
+:missing:
 
  ; RND:MAX-DISTANCE-SAMPLE
  ;   [symbol]
 ```
 
-#### RND:NORM
-
+## `NORM`
 ```
  ; RND:NORM
  ;   [symbol]
@@ -518,8 +483,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:NRND
-
+## `NRND`
 ```
  ; RND:NRND
  ;   [symbol]
@@ -534,8 +498,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:NRND\*
-
+## `NRND*`
 ```
  ; RND:NRND*
  ;   [symbol]
@@ -550,8 +513,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:NRND-FROM
-
+## `NRND-FROM`
 ```
  ; RND:NRND-FROM
  ;   [symbol]
@@ -565,8 +527,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:NRND-FROM\*
-
+## `NRND-FROM*`
 ```
  ; RND:NRND-FROM*
  ;   [symbol]
@@ -580,8 +541,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:NRNDI
-
+## `NRNDI`
 ```
  ; RND:NRNDI
  ;   [symbol]
@@ -596,8 +556,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:NRNDRNG
-
+## `NRNDRNG`
 ```
  ; RND:NRNDRNG
  ;   [symbol]
@@ -613,8 +572,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:NRNDRNGI
-
+## `NRNDRNGI`
 ```
  ; RND:NRNDRNGI
  ;   [symbol]
@@ -629,8 +587,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:PROB
-
+## `PROB`
 ```
  ; RND:PROB
  ;   [symbol]
@@ -643,8 +600,7 @@
  ;   Source file: /data/x/auxin/src/rnd/macros.lisp
 ```
 
-#### RND:PROB\*
-
+## `PROB*`
 ```
  ; RND:PROB*
  ;   [symbol]
@@ -657,8 +613,7 @@
  ;   Source file: /data/x/auxin/src/rnd/macros.lisp
 ```
 
-#### RND:RCOND
-
+## `RCOND`
 ```
  ; RND:RCOND
  ;   [symbol]
@@ -671,8 +626,7 @@
  ;   Source file: /data/x/auxin/src/rnd/macros.lisp
 ```
 
-#### RND:REP
-
+## `REP`
 ```
  ; RND:REP
  ;   [symbol]
@@ -684,8 +638,7 @@
  ;   Source file: /data/x/auxin/src/rnd/macros.lisp
 ```
 
-#### RND:RND
-
+## `RND`
 ```
  ; RND:RND
  ;   [symbol]
@@ -700,8 +653,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:RND\*
-
+## `RND*`
 ```
  ; RND:RND*
  ;   [symbol]
@@ -716,8 +668,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:RNDGET
-
+## `RNDGET`
 ```
  ; RND:RNDGET
  ;   [symbol]
@@ -730,8 +681,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:RNDI
-
+## `RNDI`
 ```
  ; RND:RNDI
  ;   [symbol]
@@ -746,8 +696,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:RNDRNG
-
+## `RNDRNG`
 ```
  ; RND:RNDRNG
  ;   [symbol]
@@ -762,8 +711,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:RNDRNGI
-
+## `RNDRNGI`
 ```
  ; RND:RNDRNGI
  ;   [symbol]
@@ -780,8 +728,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:RNDSPACE
-
+## `RNDSPACE`
 ```
  ; RND:RNDSPACE
  ;   [symbol]
@@ -797,8 +744,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:RNDSPACEI
-
+## `RNDSPACEI`
 ```
  ; RND:RNDSPACEI
  ;   [symbol]
@@ -813,8 +759,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:SET-RND-STATE
-
+## `SET-RND-STATE`
 ```
  ; RND:SET-RND-STATE
  ;   [symbol]
@@ -827,8 +772,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:SHUFFLE
-
+## `SHUFFLE`
 ```
  ; RND:SHUFFLE
  ;   [symbol]
@@ -842,8 +786,7 @@
  ;   Source file: /data/x/auxin/src/rnd/rnd.lisp
 ```
 
-#### RND:WALKER
-
+## `WALKER`
 ```
  ; RND:WALKER
  ;   [symbol]
@@ -857,8 +800,7 @@
  ;   Source file: /data/x/auxin/src/rnd/walkers.lisp
 ```
 
-#### RND:WALKER-ACC
-
+## `WALKER-ACC`
 ```
  ; RND:WALKER-ACC
  ;   [symbol]

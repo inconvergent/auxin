@@ -1,5 +1,4 @@
-#### GRIDFONT:MAKE
-
+## `MAKE`
 ```
  ; GRIDFONT:MAKE
  ;   [symbol]
@@ -16,8 +15,7 @@
  ;   Source file: /data/x/auxin/src/gridfont/main.lisp
 ```
 
-#### GRIDFONT:NL
-
+## `NL`
 ```
  ; GRIDFONT:NL
  ;   [symbol]
@@ -32,8 +30,7 @@
  ;   Source file: /data/x/auxin/src/gridfont/main.lisp
 ```
 
-#### GRIDFONT:UPDATE
-
+## `UPDATE`
 ```
  ; GRIDFONT:UPDATE
  ;   [symbol]
@@ -49,8 +46,7 @@
  ;   Source file: /data/x/auxin/src/gridfont/main.lisp
 ```
 
-#### GRIDFONT:WC
-
+## `WC`
 ```
  ; GRIDFONT:WC
  ;   [symbol]

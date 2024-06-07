@@ -1,7 +1,6 @@
-#### ORTHO:@CAM
-
+## `@CAM`
 ```
-:missing:todo:
+:missing:
 
  ; ORTHO:@CAM
  ;   [symbol]
@@ -15,10 +14,9 @@
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
 ```
 
-#### ORTHO:@UP
-
+## `@UP`
 ```
-:missing:todo:
+:missing:
 
  ; ORTHO:@UP
  ;   [symbol]
@@ -32,10 +30,9 @@
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
 ```
 
-#### ORTHO:@VPN
-
+## `@VPN`
 ```
-:missing:todo:
+:missing:
 
  ; ORTHO:@VPN
  ;   [symbol]
@@ -49,10 +46,9 @@
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
 ```
 
-#### ORTHO:@XY
-
+## `@XY`
 ```
-:missing:todo:
+:missing:
 
  ; ORTHO:@XY
  ;   [symbol]
@@ -65,8 +61,7 @@
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
 ```
 
-#### ORTHO:EXPORT-DATA
-
+## `EXPORT-DATA`
 ```
  ; ORTHO:EXPORT-DATA
  ;   [symbol]
@@ -79,8 +74,7 @@
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
 ```
 
-#### ORTHO:IMPORT-DATA
-
+## `IMPORT-DATA`
 ```
  ; ORTHO:IMPORT-DATA
  ;   [symbol]
@@ -93,8 +87,7 @@
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
 ```
 
-#### ORTHO:MAKE
-
+## `MAKE`
 ```
  ; ORTHO:MAKE
  ;   [symbol]
@@ -124,8 +117,7 @@
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
 ```
 
-#### ORTHO:MAKE-RAYFX
-
+## `MAKE-RAYFX`
 ```
  ; ORTHO:MAKE-RAYFX
  ;   [symbol]
@@ -138,26 +130,23 @@
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
 ```
 
-#### ORTHO:PAN-CAM
-
+## `PAN-CAM`
 ```
-:missing:todo:
+:missing:
 
  ; ORTHO:PAN-CAM
  ;   [symbol]
 ```
 
-#### ORTHO:PAN-XY
-
+## `PAN-XY`
 ```
-:missing:todo:
+:missing:
 
  ; ORTHO:PAN-XY
  ;   [symbol]
 ```
 
-#### ORTHO:PROJECT
-
+## `PROJECT`
 ```
  ; ORTHO:PROJECT
  ;   [symbol]
@@ -172,8 +161,7 @@
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
 ```
 
-#### ORTHO:PROJECT\*
-
+## `PROJECT*`
 ```
  ; ORTHO:PROJECT*
  ;   [symbol]
@@ -190,35 +178,31 @@
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
 ```
 
-#### ORTHO:PROJECT-OFFSET
-
+## `PROJECT-OFFSET`
 ```
-:missing:todo:
+:missing:
 
  ; ORTHO:PROJECT-OFFSET
  ;   [symbol]
 ```
 
-#### ORTHO:PROJECT-OFFSET\*
-
+## `PROJECT-OFFSET*`
 ```
-:missing:todo:
+:missing:
 
  ; ORTHO:PROJECT-OFFSET*
  ;   [symbol]
 ```
 
-#### ORTHO:ROTATE
-
+## `ROTATE`
 ```
-:missing:todo:
+:missing:
 
  ; ORTHO:ROTATE
  ;   [symbol]
 ```
 
-#### ORTHO:UPDATE
-
+## `UPDATE`
 ```
  ; ORTHO:UPDATE
  ;   [symbol]
@@ -241,10 +225,9 @@
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
 ```
 
-#### ORTHO:ZOOM
-
+## `ZOOM`
 ```
-:missing:todo:
+:missing:
 
  ; ORTHO:ZOOM
  ;   [symbol]

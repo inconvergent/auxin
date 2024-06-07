@@ -1,7 +1,6 @@
-#### AUXIN:\*EPS\*
-
+## `*EPS*`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:*EPS*
  ;   [symbol]
@@ -11,10 +10,9 @@
  ;   Value: 5.960465e-8
 ```
 
-#### AUXIN:\*OPT\*
-
+## `*OPT*`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:*OPT*
  ;   [symbol]
@@ -24,10 +22,9 @@
  ;           (COMPILATION-SPEED 0))
 ```
 
-#### AUXIN:\*SRNDOPT\*
-
+## `*SRNDOPT*`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:*SRNDOPT*
  ;   [symbol]
@@ -36,10 +33,9 @@
  ;   Value: (OPTIMIZE SPEED (SAFETY 0) (DEBUG 1))
 ```
 
-#### AUXIN:ABBREV
-
+## `ABBREV`
 ```
-:missing:todo:
+:missing:
 
  ; VEQ::ABBREV
  ;   [symbol]
@@ -49,10 +45,9 @@
  ;   Source file: /data/x/veq/src/generic-utils.lisp
 ```
 
-#### AUXIN:AIF
-
+## `AIF`
 ```
-:missing:todo:
+:missing:
 
  ; VEQ::AIF
  ;   [symbol]
@@ -62,10 +57,9 @@
  ;   Source file: /data/x/veq/src/generic-utils.lisp
 ```
 
-#### AUXIN:ANIMATE
-
+## `ANIMATE`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:ANIMATE
  ;   [symbol]
@@ -75,8 +69,7 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:APPEND-NUMBER
-
+## `APPEND-NUMBER`
 ```
  ; AUXIN:APPEND-NUMBER
  ;   [symbol]
@@ -90,10 +83,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:AWF
-
+## `AWF`
 ```
-:missing:todo:
+:missing:
 
  ; VEQ::AWF
  ;   [symbol]
@@ -103,10 +95,9 @@
  ;   Source file: /data/x/veq/src/generic-utils.lisp
 ```
 
-#### AUXIN:AWG
-
+## `AWG`
 ```
-:missing:todo:
+:missing:
 
  ; VEQ::AWG
  ;   [symbol]
@@ -116,10 +107,9 @@
  ;   Source file: /data/x/veq/src/generic-utils.lisp
 ```
 
-#### AUXIN:CMD-ARGS
-
+## `CMD-ARGS`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:CMD-ARGS
  ;   [symbol]
@@ -130,10 +120,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:D?
-
+## `D?`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:D?
  ;   [symbol]
@@ -144,8 +133,7 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:DEFINE-STRUCT-LOAD-FORM
-
+## `DEFINE-STRUCT-LOAD-FORM`
 ```
  ; AUXIN:DEFINE-STRUCT-LOAD-FORM
  ;   [symbol]
@@ -157,10 +145,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:DSB
-
+## `DSB`
 ```
-:missing:todo:
+:missing:
 
  ; VEQ:DSB
  ;   [symbol]
@@ -170,10 +157,9 @@
  ;   Source file: /data/x/veq/src/generic-utils.lisp
 ```
 
-#### AUXIN:ENSURE-FILENAME
-
+## `ENSURE-FILENAME`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:ENSURE-FILENAME
  ;   [symbol]
@@ -185,10 +171,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:ENSURE-VECTOR
-
+## `ENSURE-VECTOR`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:ENSURE-VECTOR
  ;   [symbol]
@@ -199,10 +184,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:EV
-
+## `EV`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:EV
  ;   [symbol]
@@ -212,10 +196,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:GI
-
+## `GI`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:GI
  ;   [symbol]
@@ -225,10 +208,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:I?
-
+## `I?`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:I?
  ;   [symbol]
@@ -239,10 +221,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:INTERNAL-PATH-STRING
-
+## `INTERNAL-PATH-STRING`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:INTERNAL-PATH-STRING
  ;   [symbol]
@@ -254,19 +235,17 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:IT
-
+## `IT`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:IT
  ;   [symbol]
 ```
 
-#### AUXIN:ITER-TIMER
-
+## `ITER-TIMER`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:ITER-TIMER
  ;   [symbol]
@@ -282,10 +261,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:KI
-
+## `KI`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:KI
  ;   [symbol]
@@ -295,10 +273,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:KV
-
+## `KV`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:KV
  ;   [symbol]
@@ -309,10 +286,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:LAST\*
-
+## `LAST*`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:LAST*
  ;   [symbol]
@@ -324,8 +300,7 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:LST>N
-
+## `LST>N`
 ```
  ; AUXIN:LST>N
  ;   [symbol]
@@ -340,8 +315,7 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:LVEXTEND
-
+## `LVEXTEND`
 ```
  ; AUXIN:LVEXTEND
  ;   [symbol]
@@ -354,10 +328,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:MAKE-ADJUSTABLE-VECTOR
-
+## `MAKE-ADJUSTABLE-VECTOR`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:MAKE-ADJUSTABLE-VECTOR
  ;   [symbol]
@@ -369,10 +342,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:MAKE-ANIMATION
-
+## `MAKE-ANIMATION`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:MAKE-ANIMATION
  ;   [symbol]
@@ -382,10 +354,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:ME
-
+## `ME`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:ME
  ;   [symbol]
@@ -395,10 +366,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:MKSTR
-
+## `MKSTR`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:MKSTR
  ;   [symbol]
@@ -409,10 +379,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:MMSS
-
+## `MMSS`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:MMSS
  ;   [symbol]
@@ -424,10 +393,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:MVB
-
+## `MVB`
 ```
-:missing:todo:
+:missing:
 
  ; VEQ:MVB
  ;   [symbol]
@@ -437,10 +405,9 @@
  ;   Source file: /data/x/veq/src/generic-utils.lisp
 ```
 
-#### AUXIN:MVC
-
+## `MVC`
 ```
-:missing:todo:
+:missing:
 
  ; VEQ:MVC
  ;   [symbol]
@@ -450,10 +417,9 @@
  ;   Source file: /data/x/veq/src/generic-utils.lisp
 ```
 
-#### AUXIN:NOW
-
+## `NOW`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:NOW
  ;   [symbol]
@@ -465,10 +431,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:NUMSHOW
-
+## `NUMSHOW`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:NUMSHOW
  ;   [symbol]
@@ -480,10 +445,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:PRINT-EVERY
-
+## `PRINT-EVERY`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:PRINT-EVERY
  ;   [symbol]
@@ -495,8 +459,7 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:PSH
-
+## `PSH`
 ```
  ; AUXIN:PSH
  ;   [symbol]
@@ -508,10 +471,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:PSYMB
-
+## `PSYMB`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:PSYMB
  ;   [symbol]
@@ -522,10 +484,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:REREAD
-
+## `REREAD`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:REREAD
  ;   [symbol]
@@ -536,10 +497,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:SHOW-HT
-
+## `SHOW-HT`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:SHOW-HT
  ;   [symbol]
@@ -550,10 +510,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:SMALL-IND
-
+## `SMALL-IND`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:SMALL-IND
  ;   [symbol]
@@ -563,8 +522,7 @@
  ;   Expansion: (INTEGER 0 30000)
 ```
 
-#### AUXIN:SPLIT
-
+## `SPLIT`
 ```
  ; AUXIN:SPLIT
  ;   [symbol]
@@ -577,10 +535,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:STRING-LIST-CONCAT
-
+## `STRING-LIST-CONCAT`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:STRING-LIST-CONCAT
  ;   [symbol]
@@ -591,10 +548,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:SYMB
-
+## `SYMB`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:SYMB
  ;   [symbol]
@@ -605,10 +561,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:TAV
-
+## `TAV`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:TAV
  ;   [symbol]
@@ -618,10 +573,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:TERMINATE
-
+## `TERMINATE`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:TERMINATE
  ;   [symbol]
@@ -632,10 +586,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:TL
-
+## `TL`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:TL
  ;   [symbol]
@@ -645,10 +598,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:TO-ADJUSTABLE-VECTOR
-
+## `TO-ADJUSTABLE-VECTOR`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:TO-ADJUSTABLE-VECTOR
  ;   [symbol]
@@ -660,10 +612,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:TO-LIST
-
+## `TO-LIST`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:TO-LIST
  ;   [symbol]
@@ -674,10 +625,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:TO-VECTOR
-
+## `TO-VECTOR`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:TO-VECTOR
  ;   [symbol]
@@ -689,10 +639,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:TV
-
+## `TV`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:TV
  ;   [symbol]
@@ -702,10 +651,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:UNDUP
-
+## `UNDUP`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:UNDUP
  ;   [symbol]
@@ -716,10 +664,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:V?
-
+## `V?`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:V?
  ;   [symbol]
@@ -733,10 +680,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:VECTOR-FIRST
-
+## `VECTOR-FIRST`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:VECTOR-FIRST
  ;   [symbol]
@@ -748,10 +694,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:VECTOR-LAST
-
+## `VECTOR-LAST`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:VECTOR-LAST
  ;   [symbol]
@@ -763,10 +708,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:VEXTEND
-
+## `VEXTEND`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:VEXTEND
  ;   [symbol]
@@ -776,10 +720,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:VL
-
+## `VL`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:VL
  ;   [symbol]
@@ -789,10 +732,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:WHEEL
-
+## `WHEEL`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:WHEEL
  ;   [symbol]
@@ -804,10 +746,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:WITH-FAST-STACK
-
+## `WITH-FAST-STACK`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:WITH-FAST-STACK
  ;   [symbol]
@@ -819,10 +760,9 @@
  ;   Source file: /data/x/auxin/src/utils.lisp
 ```
 
-#### AUXIN:WITH-STRUCT
-
+## `WITH-STRUCT`
 ```
-:missing:todo:
+:missing:
 
  ; AUXIN:WITH-STRUCT
  ;   [symbol]

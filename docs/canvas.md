@@ -1,7 +1,6 @@
-#### CANVAS:CANVAS
-
+## `CANVAS`
 ```
-:missing:todo:
+:missing:
 
  ; CANVAS:CANVAS
  ;   [symbol]
@@ -23,8 +22,7 @@
  ;       Initform: NIL
 ```
 
-#### CANVAS:MAKE
-
+## `MAKE`
 ```
  ; CANVAS:MAKE
  ;   [symbol]
@@ -38,8 +36,7 @@
  ;   Source file: /data/x/auxin/src/draw/canvas.lisp
 ```
 
-#### CANVAS:SAVE
-
+## `SAVE`
 ```
  ; CANVAS:SAVE
  ;   [symbol]
@@ -53,8 +50,7 @@
  ;   Source file: /data/x/auxin/src/draw/canvas.lisp
 ```
 
-#### CANVAS:SET-GRAY-PIX
-
+## `SET-GRAY-PIX`
 ```
  ; CANVAS:SET-GRAY-PIX
  ;   [symbol]
@@ -70,8 +66,7 @@
  ;   Source file: /data/x/auxin/src/draw/canvas.lisp
 ```
 
-#### CANVAS:SET-PIX
-
+## `SET-PIX`
 ```
  ; CANVAS:SET-PIX
  ;   [symbol]

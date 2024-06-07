@@ -1,14 +1,12 @@
-#### KDTREE:2NN
-
+## `2NN`
 ```
-:missing:todo:
+:missing:
 
  ; KDTREE:2NN
  ;   [symbol]
 ```
 
-#### KDTREE:2RAD
-
+## `2RAD`
 ```
  ; KDTREE:2RAD
  ;   [symbol]
@@ -23,10 +21,9 @@
  ;   Source file: /data/x/auxin/src/spatial/kdtree.lisp
 ```
 
-#### KDTREE:MAKE
-
+## `MAKE`
 ```
-:missing:todo:
+:missing:
 
  ; KDTREE:MAKE
  ;   [symbol]

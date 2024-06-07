@@ -1,7 +1,6 @@
-#### PARALLEL:CREATE-CHANNEL
-
+## `CREATE-CHANNEL`
 ```
-:missing:todo:
+:missing:
 
  ; PARALLEL:CREATE-CHANNEL
  ;   [symbol]
@@ -12,10 +11,9 @@
  ;   Source file: /data/x/auxin/src/parallel/main.lisp
 ```
 
-#### PARALLEL:END
-
+## `END`
 ```
-:missing:todo:
+:missing:
 
  ; PARALLEL:END
  ;   [symbol]
@@ -26,10 +24,9 @@
  ;   Source file: /data/x/auxin/src/parallel/main.lisp
 ```
 
-#### PARALLEL:INFO
-
+## `INFO`
 ```
-:missing:todo:
+:missing:
 
  ; PARALLEL:INFO
  ;   [symbol]
@@ -40,10 +37,9 @@
  ;   Source file: /data/x/auxin/src/parallel/main.lisp
 ```
 
-#### PARALLEL:INIT
-
+## `INIT`
 ```
-:missing:todo:
+:missing:
 
  ; PARALLEL:INIT
  ;   [symbol]

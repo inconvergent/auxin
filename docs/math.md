@@ -1,5 +1,4 @@
-#### MATH:ADD
-
+## `ADD`
 ```
  ; MATH:ADD
  ;   [symbol]
@@ -12,8 +11,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:ARGMAX
-
+## `ARGMAX`
 ```
  ; MATH:ARGMAX
  ;   [symbol]
@@ -27,8 +25,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:ARGMIN
-
+## `ARGMIN`
 ```
  ; MATH:ARGMIN
  ;   [symbol]
@@ -42,8 +39,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:CLOSE-PATH
-
+## `CLOSE-PATH`
 ```
  ; MATH:CLOSE-PATH
  ;   [symbol]
@@ -56,8 +52,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:CLOSE-PATH\*
-
+## `CLOSE-PATH*`
 ```
  ; MATH:CLOSE-PATH*
  ;   [symbol]
@@ -70,8 +65,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:COPY-SORT
-
+## `COPY-SORT`
 ```
  ; MATH:COPY-SORT
  ;   [symbol]
@@ -85,8 +79,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:IMOD
-
+## `IMOD`
 ```
  ; MATH:IMOD
  ;   [symbol]
@@ -102,8 +95,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:INTEGER-SEARCH
-
+## `INTEGER-SEARCH`
 ```
  ; MATH:INTEGER-SEARCH
  ;   [symbol]
@@ -117,10 +109,9 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:LAST\*
-
+## `LAST*`
 ```
-:missing:todo:
+:missing:
 
  ; MATH:LAST*
  ;   [symbol]
@@ -131,26 +122,23 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:LERP
-
+## `LERP`
 ```
-:missing:todo:
+:missing:
 
  ; MATH:LERP
  ;   [symbol]
 ```
 
-#### MATH:LGET
-
+## `LGET`
 ```
-:missing:todo:
+:missing:
 
  ; MATH:LGET
  ;   [symbol]
 ```
 
-#### MATH:LINSPACE
-
+## `LINSPACE`
 ```
  ; MATH:LINSPACE
  ;   [symbol]
@@ -166,8 +154,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:LIST>THAN
-
+## `LIST>THAN`
 ```
  ; MATH:LIST>THAN
  ;   [symbol]
@@ -181,8 +168,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:LL-TRANSPOSE
-
+## `LL-TRANSPOSE`
 ```
  ; MATH:LL-TRANSPOSE
  ;   [symbol]
@@ -196,8 +182,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:LPOS
-
+## `LPOS`
 ```
  ; MATH:LPOS
  ;   [symbol]
@@ -211,8 +196,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:MOD2
-
+## `MOD2`
 ```
  ; MATH:MOD2
  ;   [symbol]
@@ -225,8 +209,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:MULT
-
+## `MULT`
 ```
  ; MATH:MULT
  ;   [symbol]
@@ -239,8 +222,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:NREP
-
+## `NREP`
 ```
  ; MATH:NREP
  ;   [symbol]
@@ -252,8 +234,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:RANGE
-
+## `RANGE`
 ```
  ; MATH:RANGE
  ;   [symbol]
@@ -266,8 +247,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:RANGE-SEARCH
-
+## `RANGE-SEARCH`
 ```
  ; MATH:RANGE-SEARCH
  ;   [symbol]
@@ -282,8 +262,7 @@
  ;   Source file: /data/x/auxin/src/math.lisp
 ```
 
-#### MATH:SUB
-
+## `SUB`
 ```
  ; MATH:SUB
  ;   [symbol]

@@ -1,5 +1,4 @@
-#### SRND:2IN-CIRC
-
+## `2IN-CIRC`
 ```
  ; SRND:2IN-CIRC
  ;   [symbol]
@@ -14,10 +13,9 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
-#### SRND:2IN-CIRC+
-
+## `2IN-CIRC+`
 ```
-:missing:todo:
+:missing:
 
  ; SRND:2IN-CIRC+
  ;   [symbol]
@@ -27,8 +25,7 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
-#### SRND:2ON-CIRC
-
+## `2ON-CIRC`
 ```
  ; SRND:2ON-CIRC
  ;   [symbol]
@@ -43,10 +40,9 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
-#### SRND:2ON-CIRC+
-
+## `2ON-CIRC+`
 ```
-:missing:todo:
+:missing:
 
  ; SRND:2ON-CIRC+
  ;   [symbol]
@@ -56,8 +52,7 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
-#### SRND:3IN-SPHERE
-
+## `3IN-SPHERE`
 ```
  ; SRND:3IN-SPHERE
  ;   [symbol]
@@ -73,10 +68,9 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
-#### SRND:3IN-SPHERE+
-
+## `3IN-SPHERE+`
 ```
-:missing:todo:
+:missing:
 
  ; SRND:3IN-SPHERE+
  ;   [symbol]
@@ -86,8 +80,7 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
-#### SRND:3ON-SPHERE
-
+## `3ON-SPHERE`
 ```
  ; SRND:3ON-SPHERE
  ;   [symbol]
@@ -103,10 +96,9 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
-#### SRND:3ON-SPHERE+
-
+## `3ON-SPHERE+`
 ```
-:missing:todo:
+:missing:
 
  ; SRND:3ON-SPHERE+
  ;   [symbol]
@@ -116,8 +108,7 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
-#### SRND:MAKE
-
+## `MAKE`
 ```
  ; SRND:MAKE
  ;   [symbol]
@@ -131,8 +122,7 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
-#### SRND:PROB
-
+## `PROB`
 ```
  ; SRND:PROB
  ;   [symbol]
@@ -145,8 +135,7 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
-#### SRND:RCOND
-
+## `RCOND`
 ```
  ; SRND:RCOND
  ;   [symbol]
@@ -159,8 +148,7 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
-#### SRND:RND
-
+## `RND`
 ```
  ; SRND:RND
  ;   [symbol]
@@ -172,8 +160,7 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
-#### SRND:RND\*
-
+## `RND*`
 ```
  ; SRND:RND*
  ;   [symbol]
@@ -185,8 +172,7 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
-#### SRND:RNDRNG
-
+## `RNDRNG`
 ```
  ; SRND:RNDRNG
  ;   [symbol]
@@ -198,8 +184,7 @@
  ;   Source file: /data/x/auxin/src/rnd/srnd.lisp
 ```
 
-#### SRND:SRND
-
+## `SRND`
 ```
  ; SRND:SRND
  ;   [symbol]

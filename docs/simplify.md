@@ -1,5 +1,4 @@
-#### SIMPLIFY:PATH
-
+## `PATH`
 ```
  ; SIMPLIFY:PATH
  ;   [symbol]

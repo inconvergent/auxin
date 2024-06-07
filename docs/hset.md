@@ -1,5 +1,4 @@
-#### HSET:ADD
-
+## `ADD`
 ```
  ; HSET:ADD
  ;   [symbol]
@@ -14,8 +13,7 @@
  ;   Source file: /data/x/auxin/src/hset.lisp
 ```
 
-#### HSET:ADD\*
-
+## `ADD*`
 ```
  ; HSET:ADD*
  ;   [symbol]
@@ -28,8 +26,7 @@
  ;   Source file: /data/x/auxin/src/hset.lisp
 ```
 
-#### HSET:COPY
-
+## `COPY`
 ```
  ; HSET:COPY
  ;   [symbol]
@@ -44,8 +41,7 @@
  ;   Source file: /data/x/auxin/src/hset.lisp
 ```
 
-#### HSET:DEL
-
+## `DEL`
 ```
  ; HSET:DEL
  ;   [symbol]
@@ -60,8 +56,7 @@
  ;   Source file: /data/x/auxin/src/hset.lisp
 ```
 
-#### HSET:DEL\*
-
+## `DEL*`
 ```
  ; HSET:DEL*
  ;   [symbol]
@@ -74,8 +69,7 @@
  ;   Source file: /data/x/auxin/src/hset.lisp
 ```
 
-#### HSET:INTER
-
+## `INTER`
 ```
  ; HSET:INTER
  ;   [symbol]
@@ -89,8 +83,7 @@
  ;   Source file: /data/x/auxin/src/hset.lisp
 ```
 
-#### HSET:MAKE
-
+## `MAKE`
 ```
  ; HSET:MAKE
  ;   [symbol]
@@ -104,8 +97,7 @@
  ;   Source file: /data/x/auxin/src/hset.lisp
 ```
 
-#### HSET:MEM
-
+## `MEM`
 ```
  ; HSET:MEM
  ;   [symbol]
@@ -120,8 +112,7 @@
  ;   Source file: /data/x/auxin/src/hset.lisp
 ```
 
-#### HSET:MEM\*
-
+## `MEM*`
 ```
  ; HSET:MEM*
  ;   [symbol]
@@ -134,8 +125,7 @@
  ;   Source file: /data/x/auxin/src/hset.lisp
 ```
 
-#### HSET:NUM
-
+## `NUM`
 ```
  ; HSET:NUM
  ;   [symbol]
@@ -149,8 +139,7 @@
  ;   Source file: /data/x/auxin/src/hset.lisp
 ```
 
-#### HSET:SYMDIFF
-
+## `SYMDIFF`
 ```
  ; HSET:SYMDIFF
  ;   [symbol]
@@ -164,8 +153,7 @@
  ;   Source file: /data/x/auxin/src/hset.lisp
 ```
 
-#### HSET:TO-LIST
-
+## `TO-LIST`
 ```
  ; HSET:TO-LIST
  ;   [symbol]
@@ -178,8 +166,7 @@
  ;   Source file: /data/x/auxin/src/hset.lisp
 ```
 
-#### HSET:UNI
-
+## `UNI`
 ```
  ; HSET:UNI
  ;   [symbol]

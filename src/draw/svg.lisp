@@ -152,10 +152,12 @@ remaining arguments are identical to wsvg:make."
     :stroke (-select-stroke wsvg stroke) :stroke-opacity (-select-so wsvg so)
     :stroke-width (-select-sw wsvg sw)))
 
-; TODO: this is not very general?
-(defun ensure-list (pts)
+(defun ensure-list (pts) ; TODO: this is messy and probably won't always work
   (declare (sequence pts))
-  (etypecase pts (list pts) (vector (veq:2$to-list pts))))
+  (etypecase pts (list pts)
+    (vector (typecase (aref pts 0)
+                      (number (veq:2$to-list pts))
+                      (list (coerce pts 'list))))))
 
 (defun path (wsvg pts* &key sw fill stroke so fo closed lj
                        &aux (pts (ensure-list pts*)))

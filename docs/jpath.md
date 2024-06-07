@@ -1,7 +1,6 @@
-#### JPATH:JPATH
-
+## `JPATH`
 ```
-:missing:todo:
+:missing:
 
  ; JPATH:JPATH
  ;   [symbol]
@@ -15,10 +14,9 @@
  ;   Source file: /data/x/auxin/src/draw/jpath.lisp
 ```
 
-#### JPATH:MAKE-LIMITS
-
+## `MAKE-LIMITS`
 ```
-:missing:todo:
+:missing:
 
  ; JPATH:MAKE-LIMITS
  ;   [symbol]
@@ -28,8 +26,7 @@
  ;   Source file: /data/x/auxin/src/draw/jpath.lisp
 ```
 
-#### JPATH:PATH->DIAGONALS
-
+## `PATH->DIAGONALS`
 ```
  ; JPATH:PATH->DIAGONALS
  ;   [symbol]
@@ -47,8 +44,7 @@
  ;   Source file: /data/x/auxin/src/draw/jpath.lisp
 ```
 
-#### JPATH:PATH->JOINTS
-
+## `PATH->JOINTS`
 ```
  ; JPATH:PATH->JOINTS
  ;   [symbol]

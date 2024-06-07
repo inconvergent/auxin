@@ -1,5 +1,4 @@
-#### WSVG/QRY:SELECTORS
-
+## `SELECTORS`
 ```
  ; WSVG/QRY:SELECTORS
  ;   [symbol]
