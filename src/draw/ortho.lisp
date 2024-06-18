@@ -46,7 +46,6 @@ view plane offset (xy) and scaling (s).
                 (u (veq:f3rot v vpn veq:fpi5)))
       (veq:~ u v (f3!@*. u s) (f3!@*. v s)))))
 
-
 (veq:fvdef -look (cam look)
   (declare #.*opt* (veq:fvec cam look))
   (veq:f3$point (veq:f3norm (f3!@- (veq:f3$ cam) (veq:f3$ look)))))
@@ -106,12 +105,9 @@ view plane offset (xy) and scaling (s).
          (vpn* (if vpn vpn (-look cam look))))
     (auxin:mvb ((:va 3 u v su sv)) (-get-u-v up vpn* s)
       (declare (veq:ff u v su sv))
-      (let ((res (make-ortho :vpn vpn* :up up :cam cam
-                             :s s :xy xy :raylen raylen
-                             :u (veq:f3$point u)
-                             :v (veq:f3$point v)
-                             :su (veq:f3$point su)
-                             :sv (veq:f3$point sv))))
+      (let ((res (make-ortho :vpn vpn* :up up :cam cam :s s :xy xy :raylen raylen
+                             :u (veq:f3$point u)   :v (veq:f3$point v)
+                             :su (veq:f3$point su) :sv (veq:f3$point sv))))
         (setf (ortho-dstfx res) (make-dstfx res)
               (ortho-projfx res) (make-projfx res)
               (ortho-rayfx res) (make-rayfx res))
@@ -170,6 +166,14 @@ view plane offset (xy) and scaling (s).
       (:roll (update c :up (veq:f3$point
                              (veq:f3rot (veq:f3$s c ortho- :up :vpn val))))))))
 
+(veq:fvdef* vm (p (:va 3 look))
+  (declare #.*opt* (ortho p) (veq:ff look)) "view matrix, compatible with gmsh/scene"
+  (veq:fmake-view-matrix (veq:f3$ (ortho::ortho-cam p)) look
+                         (veq:f3$ (ortho::ortho-up p))))
+
+(veq:fvdef pm (p s &optional (near 0.1) (far 50) &aux (s (/ s)))
+  (declare #.*opt* (ortho p) (veq:ff s near)) "projection matrix. compatible with gmsh/scene"
+  (veq:fmake-ortho-proj-matrix s s near far))
 
 (veq:fvdef* project (proj (:va 3 pt))
   (declare #.*opt* (ortho proj) (veq:ff pt))

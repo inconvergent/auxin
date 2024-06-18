@@ -14,6 +14,20 @@
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
 ```
 
+## `@S`
+```
+:missing:
+
+ ; ORTHO:@S
+ ;   [symbol]
+ ; 
+ ; @S names a compiled function:
+ ;   Lambda-list: (PROJ)
+ ;   Derived type: (FUNCTION (T) (VALUES SINGLE-FLOAT &OPTIONAL))
+ ;   Inline proclamation: INLINE (inline expansion available)
+ ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+```
+
 ## `@UP`
 ```
 :missing:
@@ -146,6 +160,21 @@
  ;   [symbol]
 ```
 
+## `PM`
+```
+ ; ORTHO:PM
+ ;   [symbol]
+ ; 
+ ; PM names a compiled function:
+ ;   Lambda-list: (P S &OPTIONAL (NEAR 0.1) (FAR 50) &AUX (S (/ S)))
+ ;   Derived type: (FUNCTION
+ ;                  (ORTHO::ORTHO SINGLE-FLOAT &OPTIONAL SINGLE-FLOAT T)
+ ;                  (VALUES (SIMPLE-ARRAY SINGLE-FLOAT (16)) &OPTIONAL))
+ ;   Documentation:
+ ;     projection matrix. compatible with gmsh/scene
+ ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+```
+
 ## `PROJECT`
 ```
  ; ORTHO:PROJECT
@@ -222,6 +251,21 @@
  ;     
  ;       ensures that internal state is updated appropriately.
  ; 
+ ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+```
+
+## `VM`
+```
+ ; ORTHO:VM
+ ;   [symbol]
+ ; 
+ ; VM names a macro:
+ ;   Lambda-list: (&REST REST)
+ ;   Documentation:
+ ;     WRAPS: %VM
+ ;     ARGS: (P (VA 3 LOOK))
+ ;     DOCSTRING: view matrix, compatible with gmsh/scene
+ ;     defined via veq:FVDEF*
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
 ```
 
