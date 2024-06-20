@@ -168,11 +168,11 @@ view plane offset (xy) and scaling (s).
 
 (veq:fvdef* vm (p (:va 3 look))
   (declare #.*opt* (ortho p) (veq:ff look)) "view matrix, compatible with gmsh/scene"
-  (veq:fmake-view-matrix (veq:f3$ (ortho::ortho-cam p)) look
-                         (veq:f3$ (ortho::ortho-up p))))
+  (veq:fmake-view-matrix (veq:f3$ (ortho-cam p)) look
+                         (veq:f3$ (ortho-up p))))
 
-(veq:fvdef pm (p s &optional (near 0.1) (far 50) &aux (s (/ s)))
-  (declare #.*opt* (ortho p) (veq:ff s near)) "projection matrix. compatible with gmsh/scene"
+(veq:fvdef pm (p s &optional (near 0.1) (far 50f0) &aux (s (/ s)))
+  (declare #.*opt* (ortho p) (veq:ff near far s)) "projection matrix. compatible with gmsh/scene"
   (veq:fmake-ortho-proj-matrix s s near far))
 
 (veq:fvdef* project (proj (:va 3 pt))

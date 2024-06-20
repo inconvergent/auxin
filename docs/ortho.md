@@ -166,9 +166,10 @@
  ;   [symbol]
  ; 
  ; PM names a compiled function:
- ;   Lambda-list: (P S &OPTIONAL (NEAR 0.1) (FAR 50) &AUX (S (/ S)))
+ ;   Lambda-list: (P S &OPTIONAL (NEAR 0.1) (FAR 50.0) &AUX (S (/ S)))
  ;   Derived type: (FUNCTION
- ;                  (ORTHO::ORTHO SINGLE-FLOAT &OPTIONAL SINGLE-FLOAT T)
+ ;                  (ORTHO::ORTHO SINGLE-FLOAT &OPTIONAL SINGLE-FLOAT
+ ;                   SINGLE-FLOAT)
  ;                  (VALUES (SIMPLE-ARRAY SINGLE-FLOAT (16)) &OPTIONAL))
  ;   Documentation:
  ;     projection matrix. compatible with gmsh/scene
