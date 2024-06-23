@@ -28,7 +28,7 @@
 
 (defpackage #:ortho
   (:use #:common-lisp)
-  (:export #:export-data #:import-data #:make #:make-rayfx #:pan-cam #:pan-xy
+  (:export #:ortho #:export-data #:import-data #:make #:make-rayfx #:pan-cam #:pan-xy
            #:project #:project* #:project-offset #:project-offset* #:rotate
            #:update #:zoom
            #:vm #:pm

@@ -82,7 +82,7 @@
  ; 
  ; EXPORT-DATA names a compiled function:
  ;   Lambda-list: (P)
- ;   Derived type: (FUNCTION (ORTHO::ORTHO) (VALUES CONS &OPTIONAL))
+ ;   Derived type: (FUNCTION (ORTHO:ORTHO) (VALUES CONS &OPTIONAL))
  ;   Documentation:
  ;     export the neccessary values to recreate ortho
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
@@ -116,7 +116,7 @@
  ;                   (:CAM (SIMPLE-ARRAY SINGLE-FLOAT))
  ;                   (:XY (SIMPLE-ARRAY SINGLE-FLOAT)) (:S SINGLE-FLOAT)
  ;                   (:VPN T) (:LOOK T) (:RAYLEN SINGLE-FLOAT))
- ;                  (VALUES ORTHO::ORTHO &OPTIONAL))
+ ;                  (VALUES ORTHO:ORTHO &OPTIONAL))
  ;   Documentation:
  ;     
  ;       make projection.
@@ -138,10 +138,64 @@
  ; 
  ; MAKE-RAYFX names a compiled function:
  ;   Lambda-list: (PROJ)
- ;   Derived type: (FUNCTION (ORTHO::ORTHO) (VALUES FUNCTION &OPTIONAL))
+ ;   Derived type: (FUNCTION (ORTHO:ORTHO) (VALUES FUNCTION &OPTIONAL))
  ;   Documentation:
  ;     cast a ray in direction -vpn from pt
  ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+```
+
+## `ORTHO`
+```
+:missing:
+
+ ; ORTHO:ORTHO
+ ;   [symbol]
+ ; 
+ ; ORTHO names the structure-class #<STRUCTURE-CLASS ORTHO:ORTHO>:
+ ;   Class precedence-list: ORTHO:ORTHO, STRUCTURE-OBJECT,
+ ;                          SB-PCL::SLOT-OBJECT, T
+ ;   Direct superclasses: STRUCTURE-OBJECT
+ ;   No subclasses.
+ ;   Slots:
+ ;     ORTHO::VPN
+ ;       Type: VEQ:FVEC
+ ;       Initform: (ORTHO::ZERO)
+ ;     ORTHO::UP
+ ;       Type: VEQ:FVEC
+ ;       Initform: (ORTHO::ZERO)
+ ;     ORTHO::CAM
+ ;       Type: VEQ:FVEC
+ ;       Initform: (ORTHO::ZERO)
+ ;     ORTHO::U
+ ;       Type: VEQ:FVEC
+ ;       Initform: (ORTHO::ZERO)
+ ;     ORTHO::V
+ ;       Type: VEQ:FVEC
+ ;       Initform: (ORTHO::ZERO)
+ ;     ORTHO::SU
+ ;       Type: VEQ:FVEC
+ ;       Initform: (ORTHO::ZERO)
+ ;     ORTHO::SV
+ ;       Type: VEQ:FVEC
+ ;       Initform: (ORTHO::ZERO)
+ ;     ORTHO::XY
+ ;       Type: VEQ:FVEC
+ ;       Initform: (VEQ:F2$POINT 0.0 0.0)
+ ;     ORTHO::S
+ ;       Type: VEQ:FF (unboxed)
+ ;       Initform: 1.0
+ ;     ORTHO::RAYLEN
+ ;       Type: VEQ:FF (unboxed)
+ ;       Initform: 5000.0
+ ;     ORTHO::PROJFX
+ ;       Type: FUNCTION
+ ;       Initform: #'ORTHO::3IDENTITY
+ ;     ORTHO::DSTFX
+ ;       Type: FUNCTION
+ ;       Initform: #'ORTHO::3IDENTITY
+ ;     ORTHO::RAYFX
+ ;       Type: FUNCTION
+ ;       Initform: #'ORTHO::3IDENTITY
 ```
 
 ## `PAN-CAM`
@@ -168,7 +222,7 @@
  ; PM names a compiled function:
  ;   Lambda-list: (P S &OPTIONAL (NEAR 0.1) (FAR 50.0) &AUX (S (/ S)))
  ;   Derived type: (FUNCTION
- ;                  (ORTHO::ORTHO SINGLE-FLOAT &OPTIONAL SINGLE-FLOAT
+ ;                  (ORTHO:ORTHO SINGLE-FLOAT &OPTIONAL SINGLE-FLOAT
  ;                   SINGLE-FLOAT)
  ;                  (VALUES (SIMPLE-ARRAY SINGLE-FLOAT (16)) &OPTIONAL))
  ;   Documentation:
@@ -198,7 +252,7 @@
  ; 
  ; PROJECT* names a compiled function:
  ;   Lambda-list: (PROJ PATH)
- ;   Derived type: (FUNCTION (ORTHO::ORTHO (SIMPLE-ARRAY SINGLE-FLOAT))
+ ;   Derived type: (FUNCTION (ORTHO:ORTHO (SIMPLE-ARRAY SINGLE-FLOAT))
  ;                  (VALUES (SIMPLE-ARRAY SINGLE-FLOAT . #1=((*)))
  ;                          (SIMPLE-ARRAY SINGLE-FLOAT . #1#) &OPTIONAL))
  ;   Documentation:
@@ -240,9 +294,9 @@
  ; UPDATE names a compiled function:
  ;   Lambda-list: (PROJ &KEY S XY UP CAM VPN LOOK)
  ;   Derived type: (FUNCTION
- ;                  (ORTHO::ORTHO &KEY (:S T) (:XY T) (:UP T) (:CAM T)
+ ;                  (ORTHO:ORTHO &KEY (:S T) (:XY T) (:UP T) (:CAM T)
  ;                   (:VPN T) (:LOOK T))
- ;                  (VALUES ORTHO::ORTHO &OPTIONAL))
+ ;                  (VALUES ORTHO:ORTHO &OPTIONAL))
  ;   Documentation:
  ;     
  ;       update projection parameters.
