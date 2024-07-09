@@ -218,7 +218,8 @@
                           (format s "~a~a ~04,2f № ~4@<~d~> Δ~07,2f ∇~07,2f 𝛿~05,2f  ☰ ~a~%"
                                   (f@prefx) (wheel r) r i (mmss progr 2)
                                   (mmss (- (* tot (/ progr i)) progr) 2)
-                                  (abs (- last progr)) (f@infofx i progr))
+                                  (abs (- last progr))
+                                  (f@infofx i progr (abs (- progr last ))))
                           (finish-output))
                         (setf last progr))))
                (incf i)

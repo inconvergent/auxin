@@ -18,8 +18,8 @@
  ;   [symbol]
  ; 
  ; *OPT* names a special variable:
- ;   Value: (OPTIMIZE (SAFETY . #1=(1)) (SPEED 3) (DEBUG . #1#) (SPACE 2)
- ;           (COMPILATION-SPEED 0))
+ ;   Value: (OPTIMIZE (SAFETY . #1=(1)) (SPEED . #2=(3)) (DEBUG . #1#)
+ ;           (SPACE . #2#))
 ```
 
 ## `*SRNDOPT*`
@@ -30,7 +30,7 @@
  ;   [symbol]
  ; 
  ; *SRNDOPT* names a special variable:
- ;   Value: (OPTIMIZE SPEED (SAFETY 0) (DEBUG 1))
+ ;   Value: (OPTIMIZE SPEED (SAFETY 0) (DEBUG 1) (SPACE 3))
 ```
 
 ## `ABBREV`

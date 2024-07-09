@@ -10,8 +10,8 @@
 
 (declaim (single-float *eps*) (boolean *dev*))
 (defparameter *eps* veq::*eps*)
-(defparameter *srndopt* '(optimize speed (safety 0) (debug 1)))
+(defparameter *srndopt* '(optimize speed (safety 0) (debug 1) (space 3)))
 
 (init-config (optimize safety (speed 0) debug (space 1))
-             (optimize (safety 1) (speed 3) (debug 1) (space 2) (compilation-speed 0)))
+             (optimize (safety 1) (speed 3) (debug 1) (space 3)))
 
