@@ -18,19 +18,7 @@
  ;   [symbol]
  ; 
  ; *OPT* names a special variable:
- ;   Value: (OPTIMIZE (SAFETY . #1=(1)) (SPEED . #2=(3)) (DEBUG . #1#)
- ;           (SPACE . #2#))
-```
-
-## `*SRNDOPT*`
-```
-:missing:
-
- ; AUXIN:*SRNDOPT*
- ;   [symbol]
- ; 
- ; *SRNDOPT* names a special variable:
- ;   Value: (OPTIMIZE SPEED (SAFETY 0) (DEBUG 1) (SPACE 3))
+ ;   Value: (OPTIMIZE (SAFETY 1) (SPEED 3) (DEBUG 1) (SPACE 3))
 ```
 
 ## `ABBREV`
@@ -42,7 +30,7 @@
  ; 
  ; ABBREV names a macro:
  ;   Lambda-list: (SHORT LONG)
- ;   Source file: /data/x/veq/src/generic-utils.lisp
+ ;   Source file: /home/anders/x/veq/src/generic-utils.lisp
 ```
 
 ## `AIF`
@@ -54,7 +42,7 @@
  ; 
  ; AIF names a macro:
  ;   Lambda-list: (TEST-FORM THEN-FORM &OPTIONAL ELSE-FORM)
- ;   Source file: /data/x/veq/src/generic-utils.lisp
+ ;   Source file: /home/anders/x/veq/src/generic-utils.lisp
 ```
 
 ## `ANIMATE`
@@ -66,7 +54,7 @@
  ; 
  ; ANIMATE names a macro:
  ;   Lambda-list: (ANI)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `APPEND-NUMBER`
@@ -80,31 +68,33 @@
  ;                  (VALUES SIMPLE-STRING &OPTIONAL))
  ;   Documentation:
  ;     append number i to fn with zero padding.
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `AWF`
 ```
-:missing:
-
  ; VEQ::AWF
  ;   [symbol]
  ; 
  ; AWF names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/veq/src/generic-utils.lisp
+ ;   Documentation:
+ ;     alias: FLATTEN
+ ; 
+ ;   Source file: /home/anders/x/veq/src/generic-utils.lisp
 ```
 
 ## `AWG`
 ```
-:missing:
-
  ; VEQ::AWG
  ;   [symbol]
  ; 
  ; AWG names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/veq/src/generic-utils.lisp
+ ;   Documentation:
+ ;     alias: WITH-GENSYMS
+ ; 
+ ;   Source file: /home/anders/x/veq/src/generic-utils.lisp
 ```
 
 ## `CMD-ARGS`
@@ -117,7 +107,7 @@
  ; CMD-ARGS names a compiled function:
  ;   Lambda-list: ()
  ;   Derived type: (FUNCTION NIL (VALUES T &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `D?`
@@ -130,7 +120,7 @@
  ; D? names a compiled function:
  ;   Lambda-list: (F)
  ;   Derived type: (FUNCTION (T) (VALUES &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `DEFINE-STRUCT-LOAD-FORM`
@@ -142,19 +132,20 @@
  ;   Lambda-list: (STRUCT-NAME)
  ;   Documentation:
  ;     allow struct to be dumped to fasl files.
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `DSB`
 ```
-:missing:
-
  ; VEQ:DSB
  ;   [symbol]
  ; 
  ; DSB names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/veq/src/generic-utils.lisp
+ ;   Documentation:
+ ;     alias: DESTRUCTURING-BIND
+ ; 
+ ;   Source file: /home/anders/x/veq/src/generic-utils.lisp
 ```
 
 ## `ENSURE-FILENAME`
@@ -168,7 +159,7 @@
  ;   Lambda-list: (FN &OPTIONAL (POSTFIX ) (SILENT NIL))
  ;   Derived type: (FUNCTION (T &OPTIONAL T T)
  ;                  (VALUES SIMPLE-STRING &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `ENSURE-VECTOR`
@@ -181,19 +172,20 @@
  ; ENSURE-VECTOR names a compiled function:
  ;   Lambda-list: (O &KEY (TYPE T))
  ;   Derived type: (FUNCTION (SEQUENCE &KEY (:TYPE T)) *)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `EV`
 ```
-:missing:
-
  ; AUXIN:EV
  ;   [symbol]
  ; 
  ; EV names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Documentation:
+ ;     alias: ENSURE-VECTOR
+ ; 
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `GI`
@@ -205,7 +197,7 @@
  ; 
  ; GI names a macro:
  ;   Lambda-list: (V)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `I?`
@@ -218,7 +210,7 @@
  ; I? names a compiled function:
  ;   Lambda-list: (F)
  ;   Derived type: (FUNCTION (T) (VALUES &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `INTERNAL-PATH-STRING`
@@ -232,7 +224,7 @@
  ;   Lambda-list: (PATH &OPTIONAL (PKG AUXIN))
  ;   Derived type: (FUNCTION (STRING &OPTIONAL T)
  ;                  (VALUES (OR SIMPLE-STRING NULL) &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `IT`
@@ -258,7 +250,7 @@
  ;                  ((UNSIGNED-BYTE 32) &KEY (:INT (UNSIGNED-BYTE 32))
  ;                   (:S T) (:PREFX T) (:INFOFX FUNCTION))
  ;                  (VALUES FUNCTION &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `KI`
@@ -270,7 +262,7 @@
  ; 
  ; KI names a macro:
  ;   Lambda-list: (V)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `KV`
@@ -283,7 +275,7 @@
  ; KV names a compiled function:
  ;   Lambda-list: (&REST ARGS)
  ;   Derived type: (FUNCTION * (VALUES SYMBOL &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `LAST*`
@@ -297,7 +289,7 @@
  ;   Lambda-list: (A)
  ;   Derived type: (FUNCTION (T) (VALUES T &OPTIONAL))
  ;   Inline proclamation: INLINE (inline expansion available)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `LST>N`
@@ -312,7 +304,7 @@
  ;   Documentation:
  ;     is list, l, longer than n?
  ;   Inline proclamation: INLINE (inline expansion available)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `LVEXTEND`
@@ -325,7 +317,7 @@
  ;   Derived type: (FUNCTION (SEQUENCE VECTOR) (VALUES NULL &OPTIONAL))
  ;   Documentation:
  ;     extend v with all items in x.
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `MAKE-ADJUSTABLE-VECTOR`
@@ -338,8 +330,8 @@
  ; MAKE-ADJUSTABLE-VECTOR names a compiled function:
  ;   Lambda-list: (&KEY INIT (TYPE T) (SIZE 128))
  ;   Derived type: (FUNCTION (&KEY (:INIT T) (:TYPE T) (:SIZE T))
- ;                  (VALUES (AND ARRAY (NOT SIMPLE-ARRAY)) &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;                  (VALUES (AND VECTOR (NOT SIMPLE-ARRAY)) &OPTIONAL))
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `MAKE-ANIMATION`
@@ -351,7 +343,7 @@
  ; 
  ; MAKE-ANIMATION names a macro:
  ;   Lambda-list: ((ANI) &BODY BODY)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `ME`
@@ -363,7 +355,7 @@
  ; 
  ; ME names a macro:
  ;   Lambda-list: (V)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `MKSTR`
@@ -376,7 +368,7 @@
  ; MKSTR names a compiled function:
  ;   Lambda-list: (&REST ARGS)
  ;   Derived type: (FUNCTION * (VALUES SIMPLE-STRING &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `MMSS`
@@ -387,34 +379,36 @@
  ;   [symbol]
  ; 
  ; MMSS names a compiled function:
- ;   Lambda-list: (I &OPTIONAL (DEC 2))
- ;   Derived type: (FUNCTION (SINGLE-FLOAT &OPTIONAL T)
+ ;   Lambda-list: (I)
+ ;   Derived type: (FUNCTION (SINGLE-FLOAT)
  ;                  (VALUES SIMPLE-STRING &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `MVB`
 ```
-:missing:
-
  ; VEQ:MVB
  ;   [symbol]
  ; 
  ; MVB names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/veq/src/generic-utils.lisp
+ ;   Documentation:
+ ;     alias: MULTIPLE-VALUE-BIND
+ ; 
+ ;   Source file: /home/anders/x/veq/src/generic-utils.lisp
 ```
 
 ## `MVC`
 ```
-:missing:
-
  ; VEQ:MVC
  ;   [symbol]
  ; 
  ; MVC names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/veq/src/generic-utils.lisp
+ ;   Documentation:
+ ;     alias: MULTIPLE-VALUE-CALL
+ ; 
+ ;   Source file: /home/anders/x/veq/src/generic-utils.lisp
 ```
 
 ## `NOW`
@@ -428,7 +422,7 @@
  ;   Lambda-list: (&OPTIONAL (T0 0.0))
  ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT)
  ;                  (VALUES (SINGLE-FLOAT 0.0) &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `NUMSHOW`
@@ -442,7 +436,7 @@
  ;   Lambda-list: (A &KEY (TEN 6) (PREC 6))
  ;   Derived type: (FUNCTION (NUMBER &KEY (:TEN T) (:PREC T))
  ;                  (VALUES SIMPLE-STRING &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `PRINT-EVERY`
@@ -456,7 +450,7 @@
  ;   Lambda-list: (I &OPTIONAL (N 1))
  ;   Derived type: (FUNCTION (FIXNUM &OPTIONAL FIXNUM)
  ;                  (VALUES NULL &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `PSH`
@@ -468,7 +462,7 @@
  ;   Lambda-list: (A L)
  ;   Documentation:
  ;     push a to l, return a. a is evaluated only once.
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `PSYMB`
@@ -481,7 +475,7 @@
  ; PSYMB names a compiled function:
  ;   Lambda-list: (PACKAGE &REST ARGS)
  ;   Derived type: (FUNCTION (T &REST T) (VALUES SYMBOL &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `REREAD`
@@ -494,7 +488,7 @@
  ; REREAD names a compiled function:
  ;   Lambda-list: (&REST ARGS)
  ;   Derived type: (FUNCTION * (VALUES T &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `SHOW-HT`
@@ -507,7 +501,7 @@
  ; SHOW-HT names a compiled function:
  ;   Lambda-list: (HT)
  ;   Derived type: (FUNCTION (T) (VALUES T &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `SMALL-IND`
@@ -532,7 +526,7 @@
  ;   Derived type: (FUNCTION (STRING T) *)
  ;   Documentation:
  ;     split s at c
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `STRING-LIST-CONCAT`
@@ -545,7 +539,7 @@
  ; STRING-LIST-CONCAT names a compiled function:
  ;   Lambda-list: (L)
  ;   Derived type: (FUNCTION (LIST) (VALUES SIMPLE-STRING &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `SYMB`
@@ -558,19 +552,20 @@
  ; SYMB names a compiled function:
  ;   Lambda-list: (&REST ARGS)
  ;   Derived type: (FUNCTION * (VALUES SYMBOL &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `TAV`
 ```
-:missing:
-
  ; AUXIN:TAV
  ;   [symbol]
  ; 
  ; TAV names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Documentation:
+ ;     alias: TO-ADJUSTABLE-VECTOR
+ ; 
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `TERMINATE`
@@ -583,19 +578,20 @@
  ; TERMINATE names a compiled function:
  ;   Lambda-list: (STATUS &OPTIONAL SILENT)
  ;   Derived type: (FUNCTION (T &OPTIONAL T) *)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `TL`
 ```
-:missing:
-
  ; AUXIN:TL
  ;   [symbol]
  ; 
  ; TL names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Documentation:
+ ;     alias: TO-LIST
+ ; 
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `TO-ADJUSTABLE-VECTOR`
@@ -609,7 +605,7 @@
  ;   Lambda-list: (INIT &KEY (TYPE T))
  ;   Derived type: (FUNCTION (SEQUENCE &KEY (:TYPE T))
  ;                  (VALUES (AND VECTOR (NOT SIMPLE-ARRAY)) &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `TO-LIST`
@@ -622,7 +618,7 @@
  ; TO-LIST names a compiled function:
  ;   Lambda-list: (A)
  ;   Derived type: (FUNCTION (SEQUENCE) (VALUES LIST &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `TO-VECTOR`
@@ -636,19 +632,20 @@
  ;   Lambda-list: (INIT &KEY (TYPE T))
  ;   Derived type: (FUNCTION (LIST &KEY (:TYPE T))
  ;                  (VALUES (SIMPLE-ARRAY * (*)) &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `TV`
 ```
-:missing:
-
  ; AUXIN:TV
  ;   [symbol]
  ; 
  ; TV names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Documentation:
+ ;     alias: TO-VECTOR
+ ; 
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `UNDUP`
@@ -661,7 +658,7 @@
  ; UNDUP names a compiled function:
  ;   Lambda-list: (E)
  ;   Derived type: (FUNCTION (T) (VALUES SEQUENCE &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `V?`
@@ -677,7 +674,7 @@
  ;                  (SLOT-VALUE (FIND-SYSTEM (QUOTE AUXIN))
  ;                              (QUOTE VERSION))))
  ;   Derived type: (FUNCTION (&OPTIONAL T) (VALUES T &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `VECTOR-FIRST`
@@ -691,7 +688,7 @@
  ;   Lambda-list: (A)
  ;   Derived type: (FUNCTION (VECTOR) (VALUES T &OPTIONAL))
  ;   Inline proclamation: INLINE (inline expansion available)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `VECTOR-LAST`
@@ -705,31 +702,33 @@
  ;   Lambda-list: (A)
  ;   Derived type: (FUNCTION (VECTOR) (VALUES T &OPTIONAL))
  ;   Inline proclamation: INLINE (inline expansion available)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `VEXTEND`
 ```
-:missing:
-
  ; AUXIN:VEXTEND
  ;   [symbol]
  ; 
  ; VEXTEND names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Documentation:
+ ;     alias: VECTOR-PUSH-EXTEND
+ ; 
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `VL`
 ```
-:missing:
-
  ; AUXIN:VL
  ;   [symbol]
  ; 
  ; VL names a macro:
  ;   Lambda-list: (&REST ARGS)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Documentation:
+ ;     alias: VECTOR-LAST
+ ; 
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `WHEEL`
@@ -743,7 +742,7 @@
  ;   Lambda-list: (S)
  ;   Derived type: (FUNCTION (SINGLE-FLOAT)
  ;                  (VALUES (SIMPLE-ARRAY CHARACTER (1)) &OPTIONAL))
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `WITH-FAST-STACK`
@@ -757,7 +756,7 @@
  ;   Lambda-list: ((SYM &KEY (TYPE (QUOTE FIXNUM)) (N 1000) (V 0)
  ;                  (SAFE-Z 100))
  ;                 &REST BODY)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
 ## `WITH-STRUCT`
@@ -769,6 +768,6 @@
  ; 
  ; WITH-STRUCT names a macro:
  ;   Lambda-list: ((NAME . FIELDS) STRUCT &BODY BODY)
- ;   Source file: /data/x/auxin/src/utils.lisp
+ ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 

@@ -5,12 +5,11 @@
  ; 
  ; ADD names a compiled function:
  ;   Lambda-list: (S E)
- ;   Derived type: (FUNCTION (HASH-TABLE FIXNUM)
- ;                  (VALUES BOOLEAN &OPTIONAL))
+ ;   Derived type: (FUNCTION (HASH-TABLE FIXNUM) (VALUES T &OPTIONAL))
  ;   Documentation:
  ;     add e to fixnum set.
  ;   Inline proclamation: INLINE (inline expansion available)
- ;   Source file: /data/x/auxin/src/hset.lisp
+ ;   Source file: /home/anders/x/auxin/src/hset.lisp
 ```
 
 ## `ADD*`
@@ -23,7 +22,7 @@
  ;   Derived type: (FUNCTION (HASH-TABLE SEQUENCE) (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     add sequence of fixnums to fixnum set.
- ;   Source file: /data/x/auxin/src/hset.lisp
+ ;   Source file: /home/anders/x/auxin/src/hset.lisp
 ```
 
 ## `COPY`
@@ -38,7 +37,7 @@
  ;                  (VALUES HASH-TABLE &OPTIONAL))
  ;   Documentation:
  ;     copy fixnum set.
- ;   Source file: /data/x/auxin/src/hset.lisp
+ ;   Source file: /home/anders/x/auxin/src/hset.lisp
 ```
 
 ## `DEL`
@@ -53,7 +52,7 @@
  ;   Documentation:
  ;     del e from fixnum set.
  ;   Inline proclamation: INLINE (inline expansion available)
- ;   Source file: /data/x/auxin/src/hset.lisp
+ ;   Source file: /home/anders/x/auxin/src/hset.lisp
 ```
 
 ## `DEL*`
@@ -66,7 +65,7 @@
  ;   Derived type: (FUNCTION (HASH-TABLE SEQUENCE) (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     del sequence of fixnum from fixnum set.
- ;   Source file: /data/x/auxin/src/hset.lisp
+ ;   Source file: /home/anders/x/auxin/src/hset.lisp
 ```
 
 ## `INTER`
@@ -80,7 +79,7 @@
  ;                  (VALUES HASH-TABLE &OPTIONAL))
  ;   Documentation:
  ;     return new fixnum set which contains the intersection of a,b.
- ;   Source file: /data/x/auxin/src/hset.lisp
+ ;   Source file: /home/anders/x/auxin/src/hset.lisp
 ```
 
 ## `MAKE`
@@ -94,7 +93,7 @@
  ;                  (VALUES HASH-TABLE &OPTIONAL))
  ;   Documentation:
  ;     create fixnum set. init (optional) is a list of integers.
- ;   Source file: /data/x/auxin/src/hset.lisp
+ ;   Source file: /home/anders/x/auxin/src/hset.lisp
 ```
 
 ## `MEM`
@@ -109,7 +108,7 @@
  ;   Documentation:
  ;     t if e is member of fixnum set s.
  ;   Inline proclamation: INLINE (inline expansion available)
- ;   Source file: /data/x/auxin/src/hset.lisp
+ ;   Source file: /home/anders/x/auxin/src/hset.lisp
 ```
 
 ## `MEM*`
@@ -122,7 +121,7 @@
  ;   Derived type: (FUNCTION (HASH-TABLE SEQUENCE) (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     returns list with a boolean for each fixnum in sequence ee.
- ;   Source file: /data/x/auxin/src/hset.lisp
+ ;   Source file: /home/anders/x/auxin/src/hset.lisp
 ```
 
 ## `NUM`
@@ -136,7 +135,7 @@
  ;                  (VALUES (UNSIGNED-BYTE 44) &OPTIONAL))
  ;   Documentation:
  ;     count elements in fixnum set.
- ;   Source file: /data/x/auxin/src/hset.lisp
+ ;   Source file: /home/anders/x/auxin/src/hset.lisp
 ```
 
 ## `SYMDIFF`
@@ -150,7 +149,7 @@
  ;                  (VALUES HASH-TABLE &OPTIONAL))
  ;   Documentation:
  ;     return new fixnum set which contains the symmetric difference of a,b.
- ;   Source file: /data/x/auxin/src/hset.lisp
+ ;   Source file: /home/anders/x/auxin/src/hset.lisp
 ```
 
 ## `TO-LIST`
@@ -163,7 +162,7 @@
  ;   Derived type: (FUNCTION (HASH-TABLE) (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     get unordered list of elements in fixnum set.
- ;   Source file: /data/x/auxin/src/hset.lisp
+ ;   Source file: /home/anders/x/auxin/src/hset.lisp
 ```
 
 ## `UNI`
@@ -177,6 +176,6 @@
  ;                  (VALUES HASH-TABLE &OPTIONAL))
  ;   Documentation:
  ;     return new fixnum set which contains the union of a,b.
- ;   Source file: /data/x/auxin/src/hset.lisp
+ ;   Source file: /home/anders/x/auxin/src/hset.lisp
 ```
 

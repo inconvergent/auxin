@@ -18,7 +18,7 @@
  ;     ARGS: (KD R (VA 2 X) &AUX (R2 (* R R)) (RES (LIST)))
  ;     DOCSTRING: get indices of all verts in rad around x
  ;     defined via veq:FVDEF*
- ;   Source file: /data/x/auxin/src/spatial/kdtree.lisp
+ ;   Source file: /home/anders/x/auxin/src/spatial/kdtree.lisp
 ```
 
 ## `MAKE`
@@ -32,6 +32,6 @@
  ;   Lambda-list: (N VFX DFX &OPTIONAL (DIM 2))
  ;   Derived type: (FUNCTION (T T T &OPTIONAL T)
  ;                  (VALUES KDTREE::KDTREE &OPTIONAL))
- ;   Source file: /data/x/auxin/src/spatial/kdtree.lisp
+ ;   Source file: /home/anders/x/auxin/src/spatial/kdtree.lisp
 ```
 

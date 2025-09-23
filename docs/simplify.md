@@ -14,6 +14,6 @@
  ;   Documentation:
  ;     simplify path, pts. lim is the distance of candidate pt to candidate line
  ;     returns new path
- ;   Source file: /data/x/auxin/src/draw/simplify-path.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/simplify-path.lisp
 ```
 

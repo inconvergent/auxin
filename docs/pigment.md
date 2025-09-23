@@ -9,7 +9,7 @@
  ;                  (VALUES SIMPLE-STRING SINGLE-FLOAT &OPTIONAL))
  ;   Documentation:
  ;     (values #rrggbb a)
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `AS-HSV`
@@ -22,7 +22,7 @@
  ;   Derived type: (FUNCTION (PIGMENT::RGBA) (VALUES CONS &OPTIONAL))
  ;   Documentation:
  ;     return pigment as (list h s v a)
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `AS-LIST`
@@ -35,7 +35,7 @@
  ;   Derived type: (FUNCTION (PIGMENT::RGBA) (VALUES CONS &OPTIONAL))
  ;   Documentation:
  ;     return list with (r g b a), (r g b) is pre multiplied
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `AS-LIST*`
@@ -48,7 +48,7 @@
  ;   Derived type: (FUNCTION (PIGMENT::RGBA) (VALUES CONS &OPTIONAL))
  ;   Documentation:
  ;     return (r g b a)
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `AS-VAL`
@@ -63,7 +63,7 @@
  ;                          SINGLE-FLOAT &OPTIONAL))
  ;   Documentation:
  ;     as values, pre-multiplied
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `AS-VAL*`
@@ -78,7 +78,7 @@
  ;                          SINGLE-FLOAT &OPTIONAL))
  ;   Documentation:
  ;     as values
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `BLACK`
@@ -91,7 +91,7 @@
  ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
  ;   Documentation:
  ;     black
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `BLUE`
@@ -104,7 +104,7 @@
  ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
  ;   Documentation:
  ;     blue
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `CMYK`
@@ -120,7 +120,7 @@
  ;                  *)
  ;   Documentation:
  ;     create pigment from (c m y k a). a is optional.
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `COPY`
@@ -134,7 +134,7 @@
  ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     copy a pigment
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `CYAN`
@@ -147,7 +147,7 @@
  ;   Derived type: (FUNCTION (&KEY (:SAT T) (:VAL T) (:ALPHA T)) *)
  ;   Documentation:
  ;     cyan with s, v, a
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `DARK`
@@ -160,7 +160,7 @@
  ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
  ;   Documentation:
  ;     0.2 gray
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `GRAY`
@@ -173,7 +173,7 @@
  ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT SINGLE-FLOAT) *)
  ;   Documentation:
  ;     v gray
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `GREEN`
@@ -186,7 +186,7 @@
  ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
  ;   Documentation:
  ;     green
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `HSV`
@@ -202,7 +202,7 @@
  ;                  *)
  ;   Documentation:
  ;     create pigment from (h s v a). a is optional.
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `MAGENTA`
@@ -215,7 +215,7 @@
  ;   Derived type: (FUNCTION (&KEY (:SAT T) (:VAL T) (:ALPHA T)) *)
  ;   Documentation:
  ;     magenta with s, v, a
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `MAKE`
@@ -232,7 +232,7 @@
  ;   Documentation:
  ;     make a pigment instance (r g b a). all values should range be [0 1].
  ;     stored internally with pre-multiplied alpha.
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `MDARK`
@@ -245,7 +245,7 @@
  ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
  ;   Documentation:
  ;     0.3 gray
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `RED`
@@ -258,7 +258,7 @@
  ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
  ;   Documentation:
  ;     red
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `RGB`
@@ -274,7 +274,7 @@
  ;                  *)
  ;   Documentation:
  ;     same as make.
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `SCALE`
@@ -289,7 +289,7 @@
  ;   Documentation:
  ;     scale by s. scales with alpha value.
  ;     note: this trival scale of pre-multiplied values.
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `SCALE!`
@@ -303,7 +303,7 @@
  ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     scale by s in place.
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `TRANSPARENT`
@@ -317,7 +317,7 @@
  ;                  (VALUES PIGMENT::RGBA &OPTIONAL))
  ;   Documentation:
  ;     transparent.
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `VDARK`
@@ -330,7 +330,7 @@
  ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
  ;   Documentation:
  ;     0.1
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `WHITE`
@@ -343,7 +343,7 @@
  ;   Derived type: (FUNCTION (&OPTIONAL SINGLE-FLOAT) *)
  ;   Documentation:
  ;     white
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `WITH`
@@ -355,7 +355,7 @@
  ;   Lambda-list: ((C R G B A) &BODY BODY)
  ;   Documentation:
  ;     pre-multiplied (values ra ga ba a). ex: (with (pigment r g b a) (list r g b a)).
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `WITH*`
@@ -367,7 +367,7 @@
  ;   Lambda-list: ((C R G B A) &BODY BODY)
  ;   Documentation:
  ;     (values r g b a). ex: (with (pigment r g b a) (list r g b a)).
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 
 ## `YELLOW`
@@ -380,6 +380,6 @@
  ;   Derived type: (FUNCTION (&KEY (:SAT T) (:VAL T) (:ALPHA T)) *)
  ;   Documentation:
  ;     yellow with s, v, a
- ;   Source file: /data/x/auxin/src/draw/pigment.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/pigment.lisp
 ```
 

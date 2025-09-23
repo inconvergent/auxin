@@ -11,7 +11,7 @@
  ;                  ((SIMPLE-ARRAY SINGLE-FLOAT) SINGLE-FLOAT &KEY
  ;                   (:REP FIXNUM) (:CLOSED BOOLEAN) (:LIMITS T))
  ;                  (VALUES T &OPTIONAL))
- ;   Source file: /data/x/auxin/src/draw/jpath.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/jpath.lisp
 ```
 
 ## `MAKE-LIMITS`
@@ -23,7 +23,7 @@
  ; 
  ; MAKE-LIMITS names a macro:
  ;   Lambda-list: (A B C)
- ;   Source file: /data/x/auxin/src/draw/jpath.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/jpath.lisp
 ```
 
 ## `PATH->DIAGONALS`
@@ -41,7 +41,7 @@
  ;     return (orientation line) for every point in path. lerp-ing along lines will
  ;     return controll points. lerp direction should be flipped when orientation is
  ;     nil. sharp or chamfered points correspond to two lines
- ;   Source file: /data/x/auxin/src/draw/jpath.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/jpath.lisp
 ```
 
 ## `PATH->JOINTS`
@@ -58,6 +58,6 @@
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     joints contain information about how to offset around points in path.
- ;   Source file: /data/x/auxin/src/draw/jpath.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/jpath.lisp
 ```
 

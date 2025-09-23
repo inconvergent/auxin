@@ -188,14 +188,12 @@
   (abs (- (* (veq:ff (get-internal-real-time))
              #.(veq:ff (/ internal-time-units-per-second)))
           t0)))
-(defun mmss (i &optional (dec 2))
+(defun mmss (i)
   (declare (veq:ff i))
-  (let ((h (mod i #.(* 60 60)))
-        (s (mod (floor i) 60))
-        (m (floor (/ i 60)))
-        (ms (format nil (format nil "~~0,~df" dec)
-                        (mod (nth-value 1 (truncate i)) 1.0))))
-  (format nil "~03d:~2,'0d~a" m s ms)))
+  (let ((ms (format nil "~2,1f" (nth-value 1 (truncate i)))))
+   (format nil "~03d:~2,'0d~a"
+     (floor (/ i 60)) (mod (floor i) 60)
+     (lqn:tail ms 2))))
 
 (defun wheel (s)
   (declare (veq:ff s))
@@ -220,10 +218,11 @@
                (cond ((and (> i 0) (zerop (mod i int)))
                       (progn
                         (unless silent
-                          (format s "~a № ~4@<~d~> ~a ~04,2f ↓↑~a || ~a 𝛿~05,2f  ☰  ~a~%"
-                                  (f@prefx) i (wheel r) r (mmss progr 2)
-                                  (mmss (- (* tot (/ progr i)) progr) 2)
-                                  (abs (- last progr))
+                          (format s "██ ~a ~a█ ~4@<~d~>|~a █ ~a  [Δ~a; ↓~a] ██ ~a~%"
+                                  (lqn:seq (lqn:now) 11 19) (f@prefx) i
+                                  (lqn:tail (lqn:fmt "~05,3f" r) 3)
+                                  (mmss progr) (mmss (abs (- last progr)))
+                                  (mmss (- (* tot (/ progr i)) progr))
                                   (f@infofx i progr (abs (- progr last ))))
                           (finish-output))
                         (setf last progr))))

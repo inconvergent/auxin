@@ -8,7 +8,7 @@
  ; CREATE-CHANNEL names a compiled function:
  ;   Lambda-list: ()
  ;   Derived type: (FUNCTION NIL *)
- ;   Source file: /data/x/auxin/src/parallel/main.lisp
+ ;   Source file: /home/anders/x/auxin/src/parallel/main.lisp
 ```
 
 ## `END`
@@ -21,7 +21,7 @@
  ; END names a compiled function:
  ;   Lambda-list: ()
  ;   Derived type: (FUNCTION NIL *)
- ;   Source file: /data/x/auxin/src/parallel/main.lisp
+ ;   Source file: /home/anders/x/auxin/src/parallel/main.lisp
 ```
 
 ## `INFO`
@@ -34,7 +34,7 @@
  ; INFO names a compiled function:
  ;   Lambda-list: ()
  ;   Derived type: (FUNCTION NIL (VALUES NULL &OPTIONAL))
- ;   Source file: /data/x/auxin/src/parallel/main.lisp
+ ;   Source file: /home/anders/x/auxin/src/parallel/main.lisp
 ```
 
 ## `INIT`
@@ -48,6 +48,6 @@
  ;   Lambda-list: (&KEY (CORES 4) (NAME custom-kernel))
  ;   Derived type: (FUNCTION (&KEY (:CORES T) (:NAME T))
  ;                  (VALUES T &OPTIONAL))
- ;   Source file: /data/x/auxin/src/parallel/main.lisp
+ ;   Source file: /home/anders/x/auxin/src/parallel/main.lisp
 ```
 

@@ -30,6 +30,8 @@
   (stroke-width 1.1f0 :type veq:ff :read-only nil)
   (stroke-opacity nil :read-only nil)
   (fill-opacity nil :read-only nil)
+  ; fill-Rule="evenodd" ; todo
+  ; fill "NONE" ; todo
   (rep-scale 1f0 :type veq:ff :read-only nil)
   (line-join "bevel" :type string :read-only nil)
   (scene nil :read-only nil))
@@ -46,6 +48,14 @@
           do (push (aref l i) res)
              (push (aref l (1+ i)) res)
           finally (return (reverse res)))))
+
+
+(defun ensure-list (pts) ; TODO: this is messy and probably won't always work
+  (declare (sequence pts))
+  (etypecase pts (list pts)
+    (vector (typecase (aref pts 0)
+                      (number (veq:2$to-list pts))
+                      (list (coerce pts 'list))))))
 
 ; this is a rewrite of macro draw from
 ; https://github.com/wmannis/cl-svg/blob/master/svg.lisp#L269
@@ -133,31 +143,32 @@ remaining arguments are identical to wsvg:make."
 ;      (vec:vec-x axy) (vec:vec-y axy) rad rad arcflag
 ;      (vec:vec-x bxy) (vec:vec-y bxy))))
 
-(defun -accumulate-path (pth a)
+(defun -accumulate-path-pt (pth a &optional mt)
   (labels ((-lt (x y) (cl-svg:line-to x y))
            (-mt (x y) (cl-svg:move-to x y)))
-    (cl-svg:with-path pth (apply (if (> (length pth) 0) #'-lt #'-mt) a))))
+    (cl-svg:with-path pth (apply (if (or mt (= (length pth) 0)) #'-mt #'-lt ) a))))
 
-; TODO: handle more cases
+; TODO: more alternatives
+(defun -accumulate-compound-path (parts &aux (res (cl-svg:make-path)))
+  (labels ((do-cpnd (ty part c)
+             (ecase ty (:path (loop for p of-type list in (ensure-list part)
+                                    for i from 0
+                                    do (-accumulate-path-pt res p (if (= i 0) t nil)))
+                              (when c (cl-svg:with-path res "Z")))
+                       (:bzspl (error "compound bzspl: not implemented")))))
+    (etypecase parts
+      (list   (loop for (ty part closed) in parts     do (do-cpnd ty part closed)))
+      (vector (loop for (ty part closed) across parts do (do-cpnd ty part closed)))))
+  res)
+
 (defun compound (wsvg components &key sw fill stroke fo so)
   (declare (wsvg wsvg) (sequence components))
-  (draw% (wsvg-scene wsvg)
-    (:path :d (loop with pth = (cl-svg:make-path)
-                    for (ct c) in components
-                    do (ecase ct (:path (loop for p in c
-                                              do (-accumulate-path pth p)))
-                                 (:bzspl (list)))
-                    finally (return pth)))
+   (draw% (wsvg-scene wsvg)
+    (:path :d (-accumulate-compound-path components))
     :fill (-select-fill fill) :fill-opacity (-select-fo wsvg fo)
     :stroke (-select-stroke wsvg stroke) :stroke-opacity (-select-so wsvg so)
     :stroke-width (-select-sw wsvg sw)))
 
-(defun ensure-list (pts) ; TODO: this is messy and probably won't always work
-  (declare (sequence pts))
-  (etypecase pts (list pts)
-    (vector (typecase (aref pts 0)
-                      (number (veq:2$to-list pts))
-                      (list (coerce pts 'list))))))
 
 (defun path (wsvg pts* &key sw fill stroke so fo closed lj
                        &aux (pts (ensure-list pts*)))
@@ -166,16 +177,43 @@ remaining arguments are identical to wsvg:make."
 such as ((1f0 2f0) (3f0 4f0)).
 use fill, stroke, sw, so, fo, as described in wsvg:make
 if closed is t, the path will join back to the initial coordinate."
-  (draw% (wsvg-scene wsvg)
-    (:path :d (loop with pth = (cl-svg:make-path)
-                    for p of-type list in pts
-                    do (-accumulate-path pth p)
-                    finally (when closed (cl-svg:with-path pth "Z"))
-                            (return pth)))
-    :fill (-select-fill fill) :fill-opacity (-select-fo wsvg fo)
-    :stroke (-select-stroke wsvg stroke) :stroke-opacity (-select-so wsvg so)
-    :stroke-width (-select-sw wsvg sw)
-    :stroke-linejoin (-select-line-join wsvg lj)))
+  (labels ((-accumulate-path (pts closed &optional (pth (cl-svg:make-path)))
+             (loop for p of-type list in pts
+                   do (-accumulate-path-pt pth p))
+             (when closed (cl-svg:with-path pth "Z"))
+             pth))
+   (draw% (wsvg-scene wsvg)
+    (:path :d (-accumulate-path pts closed))
+     :fill (-select-fill fill) :fill-opacity (-select-fo wsvg fo)
+     :stroke (-select-stroke wsvg stroke) :stroke-opacity (-select-so wsvg so)
+     :stroke-width (-select-sw wsvg sw)
+     :stroke-linejoin (-select-line-join wsvg lj))))
+
+(veq:fvdef do-stipple (sampler s g rnd &aux (l (+ s g)))
+  (declare (pth:pth sampler) (veq:ff s g l))
+  (loop with len = (pth:@len sampler)
+        for x = (if rnd (rnd:rnd g) 0f0) then (+ x l)
+        for xx = (min len (+ x s))
+        while (< x len) collect (pth:lpos sampler (/ x len) (/ xx len))))
+
+(defun stipple (wsvg pth ss sg &key rnd sw fill stroke so fo closed lj)
+  (declare (wsvg wsvg) (veq:ff ss sg) (veq:fvec pth))
+  "stipple with line length ss and gap length sg. see path."
+  (labels ((-accumulate-path-stip (pts pth) ; very similar to below
+             (loop for p of-type list in pts
+                   for i from 0
+                   do (-accumulate-path-pt pth p (if (= i 0) t nil)))
+             pth))
+   (let ((res (cl-svg:make-path)))
+    (loop with sampler = (pth:make pth :dim 2 :closed closed)
+          for l in (do-stipple sampler ss sg rnd)
+          do (-accumulate-path-stip (ensure-list l) res))
+    (draw% (wsvg-scene wsvg)
+     (:path :d res)
+      :fill (-select-fill fill) :fill-opacity (-select-fo wsvg fo)
+      :stroke (-select-stroke wsvg stroke) :stroke-opacity (-select-so wsvg so)
+      :stroke-width (-select-sw wsvg sw)
+      :stroke-linejoin (-select-line-join wsvg lj)))))
 
 ; (defun -get-pts (pts closed)
 ;   (declare (sequence pts))

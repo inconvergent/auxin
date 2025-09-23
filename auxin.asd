@@ -1,7 +1,7 @@
 
 (asdf:defsystem #:auxin
   :description "Auxiliary Utilities for Generative Art"
-  :version "2.2.1"
+  :version "3.1.0"
   :author "anders hoff/inconvergent"
   :licence "MIT"
   :in-order-to ((asdf:test-op (asdf:test-op #:auxin/tests)))
@@ -18,16 +18,10 @@
                (:file "state" :depends-on ("utils"))
                (:file "hset" :depends-on ("utils"))
                (:file "math" :depends-on ("utils"))
-               (:file "rnd/srnd" :depends-on ("utils"))
-               (:file "rnd/macros" :depends-on ("utils"))
-               (:file "rnd/rnd" :depends-on ("rnd/macros"))
-               (:file "rnd/2rnd" :depends-on ("rnd/rnd"))
-               (:file "rnd/3rnd" :depends-on ("rnd/rnd"))
-               (:file "rnd/walkers" :depends-on ("rnd/2rnd" "rnd/3rnd"))
-               (:file "fn" :depends-on ("rnd/rnd"))
+               (:file "fn" :depends-on ("utils"))
                (:file "gridfont/main" :depends-on ("utils"))
-               (:file "draw/path" :depends-on ("rnd/rnd"))
-               (:file "draw/bzspl" :depends-on ("rnd/rnd"))
+               (:file "draw/path" :depends-on ("utils"))
+               (:file "draw/bzspl" :depends-on ("utils"))
                (:file "draw/pigment" :depends-on ("utils"))
                (:file "draw/ortho" :depends-on ("utils"))
                (:file "draw/simplify-path" :depends-on ("utils"))
@@ -39,7 +33,7 @@
 
 (asdf:defsystem #:auxin/tests
   :depends-on (#:auxin #:prove #:asdf #:uiop)
-  :version "2.2.1"
+  :version "3.1.0"
   :perform (asdf:test-op (o s) (uiop:symbol-call ':auxin-tests '#:run-tests))
   :pathname "test/"
   :serial t

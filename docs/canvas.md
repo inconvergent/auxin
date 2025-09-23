@@ -33,7 +33,7 @@
  ;                  (VALUES CANVAS:CANVAS &OPTIONAL))
  ;   Documentation:
  ;     make square PNG canvas instance of size to.
- ;   Source file: /data/x/auxin/src/draw/canvas.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/canvas.lisp
 ```
 
 ## `SAVE`
@@ -47,7 +47,7 @@
  ;                  *)
  ;   Documentation:
  ;     save as 8 bit PNG file fn with gamma.
- ;   Source file: /data/x/auxin/src/draw/canvas.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/canvas.lisp
 ```
 
 ## `SET-GRAY-PIX`
@@ -63,7 +63,7 @@
  ;   Documentation:
  ;     set (i j) to value c where 0.0 =< c =< 1.0.
  ;   Inline proclamation: INLINE (inline expansion available)
- ;   Source file: /data/x/auxin/src/draw/canvas.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/canvas.lisp
 ```
 
 ## `SET-PIX`
@@ -80,6 +80,6 @@
  ;   Documentation:
  ;     set (i j) to value (r g b) where 0.0 =< r,g,b =< 1.0.
  ;   Inline proclamation: INLINE (inline expansion available)
- ;   Source file: /data/x/auxin/src/draw/canvas.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/canvas.lisp
 ```
 

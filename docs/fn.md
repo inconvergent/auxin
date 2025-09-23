@@ -8,7 +8,7 @@
  ;   Derived type: (FUNCTION NIL (VALUES T &OPTIONAL))
  ;   Documentation:
  ;     generate file names using https://github.com/inconvergent/fn
- ;   Source file: /data/x/auxin/src/fn.lisp
+ ;   Source file: /home/anders/x/auxin/src/fn.lisp
 ```
 
 ## `SEED`
@@ -21,6 +21,6 @@
  ; SEED names a compiled function:
  ;   Lambda-list: (FN)
  ;   Derived type: (FUNCTION (T) (VALUES T (OR NULL INTEGER) &OPTIONAL))
- ;   Source file: /data/x/auxin/src/fn.lisp
+ ;   Source file: /home/anders/x/auxin/src/fn.lisp
 ```
 

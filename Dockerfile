@@ -30,6 +30,7 @@ RUN mkdir -p ~/quicklisp/ && ln -s  /opt/quicklisp/setup.lisp ~/quicklisp/setup.
 
 RUN git clone https://github.com/inconvergent/cl-veq.git quicklisp/local-projects/veq
 RUN git clone https://github.com/inconvergent/cl-grph.git quicklisp/local-projects/grph
+RUN git clone https://github.com/inconvergent/lqn.git quicklisp/local-projects/lqn
 
 WORKDIR /opt/quicklisp/local-projects/auxin
 

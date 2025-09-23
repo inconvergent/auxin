@@ -8,7 +8,7 @@
  ; @CLOSED names a compiled function:
  ;   Lambda-list: (PTH)
  ;   Derived type: (FUNCTION (PTH:PTH) (VALUES BOOLEAN &OPTIONAL))
- ;   Source file: /data/x/auxin/src/draw/path.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/path.lisp
 ```
 
 ## `@DIM`
@@ -22,7 +22,7 @@
  ;   Lambda-list: (PTH)
  ;   Derived type: (FUNCTION (PTH:PTH)
  ;                  (VALUES (UNSIGNED-BYTE 32) &OPTIONAL))
- ;   Source file: /data/x/auxin/src/draw/path.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/path.lisp
 ```
 
 ## `@LEN`
@@ -35,7 +35,7 @@
  ;   Derived type: (FUNCTION (PTH:PTH) (VALUES SINGLE-FLOAT &OPTIONAL))
  ;   Documentation:
  ;     the total length of pth
- ;   Source file: /data/x/auxin/src/draw/path.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/path.lisp
 ```
 
 ## `@N`
@@ -49,7 +49,7 @@
  ;   Lambda-list: (PTH)
  ;   Derived type: (FUNCTION (PTH:PTH)
  ;                  (VALUES (UNSIGNED-BYTE 32) &OPTIONAL))
- ;   Source file: /data/x/auxin/src/draw/path.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/path.lisp
 ```
 
 ## `@NS`
@@ -63,7 +63,7 @@
  ;   Lambda-list: (PTH)
  ;   Derived type: (FUNCTION (PTH:PTH)
  ;                  (VALUES (UNSIGNED-BYTE 32) &OPTIONAL))
- ;   Source file: /data/x/auxin/src/draw/path.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/path.lisp
 ```
 
 ## `@PTS`
@@ -76,7 +76,7 @@
  ;   Derived type: (FUNCTION (PTH:PTH &OPTIONAL BOOLEAN) *)
  ;   Documentation:
  ;     returns all points in pth
- ;   Source file: /data/x/auxin/src/draw/path.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/path.lisp
 ```
 
 ## `ARC`
@@ -92,7 +92,7 @@
  ;                  (VALUES T &OPTIONAL))
  ;   Documentation:
  ;     arc from a to b with rad r
- ;   Source file: /data/x/auxin/src/draw/path.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/path.lisp
 ```
 
 ## `LPOS`
@@ -106,7 +106,7 @@
  ;   Documentation:
  ;     get all points [(pos a) ... (pos b)].
  ;     if pth is closed and b < a it will move through (pos 0)
- ;   Source file: /data/x/auxin/src/draw/path.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/path.lisp
 ```
 
 ## `MAKE`
@@ -122,7 +122,7 @@
  ;                  (VALUES PTH:PTH &OPTIONAL))
  ;   Documentation:
  ;     initiate a pth from pts
- ;   Source file: /data/x/auxin/src/draw/path.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/path.lisp
 ```
 
 ## `POS`
@@ -138,7 +138,7 @@
  ;   Documentation:
  ;     get the coordinate of the linear interpolation along pth where 0.0 <= a <= 1.0.
  ;     if pth is closed (pos a) equals (pos b).
- ;   Source file: /data/x/auxin/src/draw/path.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/path.lisp
 ```
 
 ## `PRT`
@@ -152,7 +152,7 @@
  ;   Lambda-list: (PTH &OPTIONAL (N (PTH-N PTH)))
  ;   Derived type: (FUNCTION (PTH:PTH &OPTIONAL T)
  ;                  (VALUES PTH:PTH &OPTIONAL))
- ;   Source file: /data/x/auxin/src/draw/path.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/path.lisp
 ```
 
 ## `PTH`
@@ -202,6 +202,6 @@
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     stipple pth/fvec p with lines of length s and gaps of length g
- ;   Source file: /data/x/auxin/src/draw/path.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/path.lisp
 ```
 

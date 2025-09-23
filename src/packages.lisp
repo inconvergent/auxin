@@ -4,7 +4,7 @@
   (:import-from #:veq #:awf #:awg #:group #:ungroup #:aif #:abbrev #:mvc #:mvb #:dsb)
   (:export
    #:d? #:i? #:v?
-   #:*eps* #:*opt* #:*srndopt* #:small-ind
+   #:*eps* #:*opt* #:small-ind
    #:cmd-args #:terminate #:internal-path-string #:define-struct-load-form
    #:abbrev #:awg #:awf #:aif #:awf #:awg #:dsb #:mvb #:mvc
    #:append-number #:ensure-filename
@@ -42,36 +42,6 @@
            #:list>than #:ll-transpose #:lpos #:mod2 #:mult #:nrep #:range
            #:range-search #:sub)
   (:import-from #:auxin #:*opt* #:ensure-vector))
-
-(defpackage #:rnd
-  (:use #:common-lisp)
-  (:export
-    #:make-rnd-state #:set-rnd-state
-    #:2in-circ #:2in-rect #:2in-square #:2nin-circ
-    #:2nin-rect #:2nin-square #:2non-circ #:2non-line #:2non-line*
-    #:2on-circ #:2on-line #:2on-line*
-    #:2walker #:2walker-acc
-    #:3in-box #:3in-cube #:3in-sphere
-    #:3nin-box #:3nin-cube #:3nin-sphere
-    #:3non-line #:3non-line* #:3non-sphere
-    #:3on-line #:3on-line* #:3on-sphere
-    #:3walker #:3walker-acc
-    #:norm #:bernoulli #:2ndistsample #:max-distance-sample
-    #:nrnd #:nrnd* #:nrnd-from #:nrnd-from* #:nrndi #:nrndrng #:nrndrngi
-    #:prob #:prob* #:rcond #:either
-    #:rep #:rnd #:rnd* #:rndget #:shuffle
-    #:rndi #:rndrng #:rndrngi #:array-split
-    #:rndspace #:rndspacei
-    #:walker #:walker-acc)
-  (:import-from #:auxin #:*opt* #:mvb #:ensure-vector #:make-adjustable-vector
-                #:to-vector #:vextend))
-
-(defpackage #:srnd
-  (:use #:common-lisp)
-  (:export #:2in-circ #:2on-circ #:2in-circ+ #:2on-circ+
-           #:3in-sphere #:3on-sphere #:3in-sphere+ #:3on-sphere+
-           #:rnd #:rnd* #:rndrng #:make #:srnd #:prob #:rcond)
-  (:import-from #:auxin #:*srndopt*))
 
 (defpackage #:state
   (:use #:common-lisp)
@@ -138,8 +108,10 @@
 
 (defpackage #:wsvg
   (:use #:common-lisp)
-  (:export #:*half-long* #:*half-short* #:*long* #:*short* #:bzspl #:carc
-           #:circ #:compound #:draw #:wcirc #:hatch #:jpath #:make #:make*
+  (:import-from #:veq #:strip-arg-keys #:get-arg-key)
+  (:export #:*half-long* #:*half-short* #:*long* #:*short*
+           #:make #:make* #:bzspl #:carc
+           #:circ #:compound #:draw #:wcirc #:hatch #:jpath #:stipple
            #:path #:rect #:save #:square #:update #:wpath #:sign
            #:u->mm #:mm->u)
   (:import-from #:auxin #:dsb #:ensure-filename #:with-struct))
@@ -147,7 +119,7 @@
 (defpackage #:wsvg/qry
   (:use #:common-lisp)
   (:import-from #:veq #:dsb #:strip-arg-keys #:get-arg-key)
-  (:export #:selectors))
+  (:export #:grph-draw #:proc-grph-draw))
 
 (defpackage #:canvas
   (:use #:common-lisp)

@@ -96,7 +96,7 @@
   (-do-op (canv size vals indfx)
     (let ((png (make-instance 'zpng::pixel-streamed-png
                  :color-type :truecolor :width size :height size)))
-      (with-open-file (fstream (auxin:ensure-filename fn ".png")
+      (with-open-file (fstream (auxin:ensure-filename fn ".png" t)
                         :direction :output :if-exists :supersede
                         :if-does-not-exist :create
                         :element-type '(unsigned-byte 8))

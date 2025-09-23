@@ -63,7 +63,7 @@
  ;     use fill, stroke, sw, so, fo, as described in wsvg:make to override.
  ;     if closed is t, the path will join back to the initial coordinate.
  ;     must provide at least three points.
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `CARC`
@@ -87,7 +87,7 @@
  ;                  (VALUES T &OPTIONAL))
  ;   Documentation:
  ;     draw a circle of radius rad at xy. defaults to origin.
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `COMPOUND`
@@ -103,7 +103,7 @@
  ;                  (WSVG::WSVG SEQUENCE &KEY (:SW T) (:FILL T)
  ;                   (:STROKE T) (:FO T) (:SO T))
  ;                  (VALUES T &OPTIONAL))
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `DRAW`
@@ -120,7 +120,7 @@
  ;   Documentation:
  ;     draw any svg dpath from string d
  ;     ex: M20,230 Q40,205 50,230 T90,230
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `HATCH`
@@ -150,7 +150,7 @@
  ;     - ns: sets the number of parallel lines used to fill
  ;     - rs: set fill repetiton scale. you must set either rs or ns.
  ;     - width: width of emulated path.
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `MAKE`
@@ -175,7 +175,7 @@
  ;       kind of hatching or wide line emulation.
  ;     - stroke-opacity (so) sets default opacity. default is 1.0
  ;     - fill-opacity (fo) sets default fill opacity. default is 1.0
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `MAKE*`
@@ -194,7 +194,7 @@
  ;   Documentation:
  ;     make wsvg instance for drawing svgs with width/height.
  ;     remaining arguments are identical to wsvg:make.
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `MM->U`
@@ -211,7 +211,7 @@
  ;                   (OR FLOAT (COMPLEX SINGLE-FLOAT)
  ;                       (COMPLEX DOUBLE-FLOAT))
  ;                   &OPTIONAL))
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `PATH`
@@ -231,7 +231,7 @@
  ;     such as ((1f0 2f0) (3f0 4f0)).
  ;     use fill, stroke, sw, so, fo, as described in wsvg:make
  ;     if closed is t, the path will join back to the initial coordinate.
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `RECT`
@@ -247,7 +247,7 @@
  ;                  (VALUES T &OPTIONAL))
  ;   Documentation:
  ;     draw a rectangle of size w,h at xy. defaults to origin.
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `SAVE`
@@ -260,7 +260,7 @@
  ;   Derived type: (FUNCTION (WSVG::WSVG T) *)
  ;   Documentation:
  ;     save as fn.svg
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `SIGN`
@@ -277,7 +277,7 @@
  ;                  (VALUES NULL &OPTIONAL))
  ;   Documentation:
  ;     write str along the edge at :tl, :tr :bl or :br (default). shift with x,y
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `SQUARE`
@@ -293,7 +293,24 @@
  ;                  *)
  ;   Documentation:
  ;     draw a square of size s at xy. defaults to origin.
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
+```
+
+## `STIPPLE`
+```
+ ; WSVG:STIPPLE
+ ;   [symbol]
+ ; 
+ ; STIPPLE names a compiled function:
+ ;   Lambda-list: (WSVG PTH SS SG &KEY RND SW FILL STROKE SO FO CLOSED LJ)
+ ;   Derived type: (FUNCTION
+ ;                  (WSVG::WSVG (SIMPLE-ARRAY SINGLE-FLOAT) SINGLE-FLOAT
+ ;                   SINGLE-FLOAT &KEY (:RND T) (:SW T) (:FILL T)
+ ;                   (:STROKE T) (:SO T) (:FO T) (:CLOSED T) (:LJ T))
+ ;                  (VALUES T &OPTIONAL))
+ ;   Documentation:
+ ;     stipple with line length ss and gap length sg. see path.
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `U->MM`
@@ -310,7 +327,7 @@
  ;                   (OR FLOAT (COMPLEX SINGLE-FLOAT)
  ;                       (COMPLEX DOUBLE-FLOAT))
  ;                   &OPTIONAL))
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `UPDATE`
@@ -326,7 +343,7 @@
  ;                  (WSVG::WSVG &KEY (:STROKE T) (:SW T) (:RS T) (:FO T)
  ;                   (:SO T))
  ;                  (VALUES (OR NULL SINGLE-FLOAT) &OPTIONAL))
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `WCIRC`
@@ -342,7 +359,7 @@
  ;                  (VALUES NULL &OPTIONAL))
  ;   Documentation:
  ;     draw a circled filled with concentric circles. use rs to set density.
- ;   Source file: /data/x/auxin/src/draw/svg.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/svg.lisp
 ```
 
 ## `WPATH`

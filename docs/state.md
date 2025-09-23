@@ -7,7 +7,7 @@
  ;   Lambda-list: ((ST K &KEY DEFAULT) &BODY BODY)
  ;   Documentation:
  ;     access state[key] as state:it. final form of body is assigned to state[key]
- ;   Source file: /data/x/auxin/src/state.lisp
+ ;   Source file: /home/anders/x/auxin/src/state.lisp
 ```
 
 ## `IT`
@@ -29,7 +29,7 @@
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     get keys of state (or default)
- ;   Source file: /data/x/auxin/src/state.lisp
+ ;   Source file: /home/anders/x/auxin/src/state.lisp
 ```
 
 ## `LSET`
@@ -42,7 +42,7 @@
  ;   Derived type: (FUNCTION (STATE::STATE LIST T) (VALUES NULL &OPTIONAL))
  ;   Documentation:
  ;     set keys of st to v. returns keys
- ;   Source file: /data/x/auxin/src/state.lisp
+ ;   Source file: /home/anders/x/auxin/src/state.lisp
 ```
 
 ## `MAKE`
@@ -53,9 +53,10 @@
  ;   [symbol]
  ; 
  ; MAKE names a compiled function:
+ ;   A constructor for STATE::STATE
  ;   Lambda-list: ()
  ;   Derived type: (FUNCTION NIL (VALUES STATE::STATE &OPTIONAL))
- ;   Source file: /data/x/auxin/src/state.lisp
+ ;   Source file: /home/anders/x/auxin/src/state.lisp
 ```
 
 ## `SGET`
@@ -69,7 +70,7 @@
  ;                  (VALUES T BOOLEAN &OPTIONAL))
  ;   Documentation:
  ;     get k of state (or default)
- ;   Source file: /data/x/auxin/src/state.lisp
+ ;   Source file: /home/anders/x/auxin/src/state.lisp
  ; 
  ; (SETF SGET) has setf-expansion: STATE::-SSET
 ```
@@ -84,7 +85,7 @@
  ;   Derived type: (FUNCTION (STATE::STATE) (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     get state as alist
- ;   Source file: /data/x/auxin/src/state.lisp
+ ;   Source file: /home/anders/x/auxin/src/state.lisp
 ```
 
 ## `WITH`

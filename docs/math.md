@@ -8,7 +8,7 @@
  ;   Derived type: (FUNCTION (LIST LIST) (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     element wise + for two lists of FIXNUM
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `ARGMAX`
@@ -22,7 +22,7 @@
  ;                  (VALUES UNSIGNED-BYTE T &OPTIONAL))
  ;   Documentation:
  ;     returns (values index val) for the largest val in ll
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `ARGMIN`
@@ -36,7 +36,7 @@
  ;                  (VALUES UNSIGNED-BYTE T &OPTIONAL))
  ;   Documentation:
  ;     returns (values index val) for the smallest val in ll.
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `CLOSE-PATH`
@@ -49,7 +49,7 @@
  ;   Derived type: (FUNCTION (LIST) (VALUES CONS &OPTIONAL))
  ;   Documentation:
  ;     append first element of p to end of p.
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `CLOSE-PATH*`
@@ -62,7 +62,7 @@
  ;   Derived type: (FUNCTION (LIST) (VALUES CONS &OPTIONAL))
  ;   Documentation:
  ;     append last element of p to front of p.
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `COPY-SORT`
@@ -73,10 +73,13 @@
  ; COPY-SORT names a compiled function:
  ;   Lambda-list: (A FX &KEY (KEY (FUNCTION IDENTITY)))
  ;   Derived type: (FUNCTION (SEQUENCE T &KEY (:KEY T))
- ;                  (VALUES SEQUENCE &OPTIONAL))
+ ;                  (VALUES
+ ;                   (OR LIST (SIMPLE-ARRAY * (*))
+ ;                       SB-KERNEL:EXTENDED-SEQUENCE)
+ ;                   &OPTIONAL))
  ;   Documentation:
  ;     sort a without side effects to a. not very efficent.
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `IMOD`
@@ -88,11 +91,11 @@
  ;   Lambda-list: (I INC M)
  ;   Derived type: (FUNCTION (FIXNUM FIXNUM FIXNUM)
  ;                  (VALUES
- ;                   (INTEGER -4611686018427387903 4611686018427387903)
+ ;                   (INTEGER -4611686018427387903 4611686018427387902)
  ;                   &OPTIONAL))
  ;   Documentation:
  ;     (mod (+ i inc) m) for fixnums
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `INTEGER-SEARCH`
@@ -106,7 +109,7 @@
  ;                  (VALUES (OR (MOD 17592186044415) NULL) &OPTIONAL))
  ;   Documentation:
  ;     binary integer search. assumes presorted list of integers
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `LAST*`
@@ -119,7 +122,7 @@
  ; LAST* names a compiled function:
  ;   Lambda-list: (L)
  ;   Derived type: (FUNCTION (LIST) (VALUES T &OPTIONAL))
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `LERP`
@@ -151,7 +154,7 @@
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     n veq:ffs from a to b.
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `LIST>THAN`
@@ -165,7 +168,7 @@
  ;                  (VALUES BOOLEAN &OPTIONAL))
  ;   Documentation:
  ;     list is longer than n?
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `LL-TRANSPOSE`
@@ -179,7 +182,7 @@
  ;   Documentation:
  ;     transpose list of lists.
  ;     assumes all initial lists in l have the same length.
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `LPOS`
@@ -193,7 +196,7 @@
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     apply fx to every element in ll.
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `MOD2`
@@ -206,7 +209,7 @@
  ;   Derived type: (FUNCTION (FIXNUM) (VALUES BIT &OPTIONAL))
  ;   Documentation:
  ;     (mod i 2) for fixnums.
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `MULT`
@@ -219,7 +222,7 @@
  ;   Derived type: (FUNCTION (LIST LIST) (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     element wise * for two lists of FIXNUM
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `NREP`
@@ -231,7 +234,7 @@
  ;   Lambda-list: (N &BODY BODY)
  ;   Documentation:
  ;     returns list with body :evaluated: n times.
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `RANGE`
@@ -244,7 +247,7 @@
  ;   Derived type: (FUNCTION (FIXNUM &OPTIONAL T) (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     fixnums from 0 to a, or a to b.
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `RANGE-SEARCH`
@@ -259,7 +262,7 @@
  ;   Documentation:
  ;     binary range search.  range must be sorted in ascending order. f is a value
  ;     inside the range you are looking for.
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 
 ## `SUB`
@@ -272,6 +275,6 @@
  ;   Derived type: (FUNCTION (LIST LIST) (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     element wise - for two lists of FIXNUM
- ;   Source file: /data/x/auxin/src/math.lisp
+ ;   Source file: /home/anders/x/auxin/src/math.lisp
 ```
 

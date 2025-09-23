@@ -11,7 +11,7 @@
  ;                  (VALUES SINGLE-FLOAT SINGLE-FLOAT SINGLE-FLOAT
  ;                          &OPTIONAL))
  ;   Inline proclamation: INLINE (inline expansion available)
- ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/ortho.lisp
 ```
 
 ## `@S`
@@ -25,7 +25,7 @@
  ;   Lambda-list: (PROJ)
  ;   Derived type: (FUNCTION (T) (VALUES SINGLE-FLOAT &OPTIONAL))
  ;   Inline proclamation: INLINE (inline expansion available)
- ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/ortho.lisp
 ```
 
 ## `@UP`
@@ -41,7 +41,7 @@
  ;                  (VALUES SINGLE-FLOAT SINGLE-FLOAT SINGLE-FLOAT
  ;                          &OPTIONAL))
  ;   Inline proclamation: INLINE (inline expansion available)
- ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/ortho.lisp
 ```
 
 ## `@VPN`
@@ -57,7 +57,7 @@
  ;                  (VALUES SINGLE-FLOAT SINGLE-FLOAT SINGLE-FLOAT
  ;                          &OPTIONAL))
  ;   Inline proclamation: INLINE (inline expansion available)
- ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/ortho.lisp
 ```
 
 ## `@XY`
@@ -72,7 +72,7 @@
  ;   Derived type: (FUNCTION (T)
  ;                  (VALUES SINGLE-FLOAT SINGLE-FLOAT &OPTIONAL))
  ;   Inline proclamation: INLINE (inline expansion available)
- ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/ortho.lisp
 ```
 
 ## `EXPORT-DATA`
@@ -85,7 +85,7 @@
  ;   Derived type: (FUNCTION (ORTHO:ORTHO) (VALUES CONS &OPTIONAL))
  ;   Documentation:
  ;     export the neccessary values to recreate ortho
- ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/ortho.lisp
 ```
 
 ## `IMPORT-DATA`
@@ -98,7 +98,7 @@
  ;   Derived type: (FUNCTION (LIST) *)
  ;   Documentation:
  ;     recreate proj from an a list exported by ortho:export-data
- ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/ortho.lisp
 ```
 
 ## `MAKE`
@@ -128,7 +128,7 @@
  ;       default scale is 1
  ;       default xy is (0 0)
  ; 
- ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/ortho.lisp
 ```
 
 ## `MAKE-RAYFX`
@@ -141,7 +141,7 @@
  ;   Derived type: (FUNCTION (ORTHO:ORTHO) (VALUES FUNCTION &OPTIONAL))
  ;   Documentation:
  ;     cast a ray in direction -vpn from pt
- ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/ortho.lisp
 ```
 
 ## `ORTHO`
@@ -227,7 +227,7 @@
  ;                  (VALUES (SIMPLE-ARRAY SINGLE-FLOAT (16)) &OPTIONAL))
  ;   Documentation:
  ;     projection matrix. compatible with gmsh/scene
- ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/ortho.lisp
 ```
 
 ## `PROJECT`
@@ -242,7 +242,7 @@
  ;     ARGS: (PROJ (VA 3 PT))
  ;     DOCSTRING: project single point. returns (values x y d)
  ;     defined via veq:FVDEF*
- ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/ortho.lisp
 ```
 
 ## `PROJECT*`
@@ -253,13 +253,13 @@
  ; PROJECT* names a compiled function:
  ;   Lambda-list: (PROJ PATH)
  ;   Derived type: (FUNCTION (ORTHO:ORTHO (SIMPLE-ARRAY SINGLE-FLOAT))
- ;                  (VALUES (SIMPLE-ARRAY SINGLE-FLOAT . #1=((*)))
- ;                          (SIMPLE-ARRAY SINGLE-FLOAT . #1#) &OPTIONAL))
+ ;                  (VALUES (SIMPLE-ARRAY SINGLE-FLOAT (*))
+ ;                          (SIMPLE-ARRAY SINGLE-FLOAT (*)) &OPTIONAL))
  ;   Documentation:
  ;     project a path #(x1 y1 z1 x2 y2 z2 ...).
  ;        returns projected path and distances:
  ;     (values #(px1 py1 px2 py2 ...) #(d1 d2 ...))
- ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/ortho.lisp
 ```
 
 ## `PROJECT-OFFSET`
@@ -306,7 +306,7 @@
  ;     
  ;       ensures that internal state is updated appropriately.
  ; 
- ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/ortho.lisp
 ```
 
 ## `VM`
@@ -321,7 +321,7 @@
  ;     ARGS: (P (VA 3 LOOK))
  ;     DOCSTRING: view matrix, compatible with gmsh/scene
  ;     defined via veq:FVDEF*
- ;   Source file: /data/x/auxin/src/draw/ortho.lisp
+ ;   Source file: /home/anders/x/auxin/src/draw/ortho.lisp
 ```
 
 ## `ZOOM`

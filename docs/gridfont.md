@@ -12,7 +12,7 @@
  ;   Documentation:
  ;     make gridfont instance from fn.dat.
  ;     NOTE: this loads a dat file. convert using /var/gridfont-make-dat.lisp
- ;   Source file: /data/x/auxin/src/gridfont/main.lisp
+ ;   Source file: /home/anders/x/auxin/src/gridfont/main.lisp
 ```
 
 ## `NL`
@@ -27,7 +27,7 @@
  ;                  (VALUES CONS &OPTIONAL))
  ;   Documentation:
  ;     write a newline
- ;   Source file: /data/x/auxin/src/gridfont/main.lisp
+ ;   Source file: /home/anders/x/auxin/src/gridfont/main.lisp
 ```
 
 ## `UPDATE`
@@ -43,7 +43,7 @@
  ;                  (VALUES (OR NULL SINGLE-FLOAT) &OPTIONAL))
  ;   Documentation:
  ;     update gridfont properties
- ;   Source file: /data/x/auxin/src/gridfont/main.lisp
+ ;   Source file: /home/anders/x/auxin/src/gridfont/main.lisp
 ```
 
 ## `WC`
@@ -57,6 +57,6 @@
  ;                  (VALUES LIST &OPTIONAL))
  ;   Documentation:
  ;     write single character, c
- ;   Source file: /data/x/auxin/src/gridfont/main.lisp
+ ;   Source file: /home/anders/x/auxin/src/gridfont/main.lisp
 ```
 
