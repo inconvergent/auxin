@@ -139,10 +139,12 @@
                             :element-type type :adjustable t))
 (defun undup (e)
   (declare (optimize speed))
+  "remove duplicates w/out side-effects. (wraps delete-duplicates)"
   (delete-duplicates (awf e)))
 
 (defun internal-path-string (path &optional (pkg :auxin))
   (declare (string path))
+  "get full path to file inside pkg."
   (namestring (asdf:system-relative-pathname pkg path)))
 
 (defun show-ht (ht) ; TODO: this is probably not very general

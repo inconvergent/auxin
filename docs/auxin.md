@@ -215,8 +215,6 @@
 
 ## `INTERNAL-PATH-STRING`
 ```
-:missing:
-
  ; AUXIN:INTERNAL-PATH-STRING
  ;   [symbol]
  ; 
@@ -224,6 +222,8 @@
  ;   Lambda-list: (PATH &OPTIONAL (PKG AUXIN))
  ;   Derived type: (FUNCTION (STRING &OPTIONAL T)
  ;                  (VALUES (OR SIMPLE-STRING NULL) &OPTIONAL))
+ ;   Documentation:
+ ;     get full path to file inside pkg.
  ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
@@ -650,14 +650,14 @@
 
 ## `UNDUP`
 ```
-:missing:
-
  ; AUXIN:UNDUP
  ;   [symbol]
  ; 
  ; UNDUP names a compiled function:
  ;   Lambda-list: (E)
  ;   Derived type: (FUNCTION (T) (VALUES SEQUENCE &OPTIONAL))
+ ;   Documentation:
+ ;     remove duplicates w/out side-effects. (wraps delete-duplicates)
  ;   Source file: /home/anders/x/auxin/src/utils.lisp
 ```
 
